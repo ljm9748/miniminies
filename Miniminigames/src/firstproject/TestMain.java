@@ -7,6 +7,7 @@ public class TestMain {
 		
 		System.out.println("여러분안녕하세요! 미니미니게임즈 입니다");
 		System.out.println("git branch test");
+		System.out.println("hii");
 
 	}
 
