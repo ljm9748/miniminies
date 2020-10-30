@@ -6,8 +6,7 @@ public class TestMain {
 		// TODO Auto-generated method stub
 		
 		System.out.println("여러분안녕하세요! 미니미니게임즈 입니다");
-		System.out.println("git branch test");
-
+		
 	}
 
 }
