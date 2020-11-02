@@ -54,6 +54,8 @@ public class SaleMain {
 					
 					break;
 					
+					// 보유 금액을 연동하고 싶습니다. 
+					
 				case 2:
 					// RandomBoxSeller 타입의 참조변수 선언
 					RandomBoxSeller randomboxseller = null;
