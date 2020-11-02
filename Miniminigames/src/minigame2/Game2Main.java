@@ -67,8 +67,8 @@ public class Game2Main {
 			break;
 			
 		case 2:
-			nomalLevel nomal = new nomalLevel();
-			nomal.nomalGame();
+			hardMode hard = new hardMode();
+			hard.playerMakeDrink();
 			break;
 			
 		// 게임 종료	

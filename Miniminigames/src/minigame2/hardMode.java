@@ -2,37 +2,44 @@ package minigame2;
 
 import java.util.Scanner;
 
-public class Player {
-
+public class hardMode {
 	/*
-	 플레이어 : 1. 주문을 확인함
-	  	     2. 음료를 만듬	
-	  	     3. 손님에게 제공 (비교판단??)
+	 하드모드는 3번 연속 진행되고 한 번이라도 틀릴시 바로 탈락함.
+	 3번 모두 성공하면 포인트를 받을 수 있음!
 	 */
-	
 	
 	// game2Life가 0이되면 game2Continue를 false로 변경해 게임이 종료되도록 함.(라이프개념)
 	boolean game2Continue = true;
 	
-	// 기본 Life는 5로 설정
-	int game2Life = 5;
+	// 기본 nomalMode는 Life는 3으로 설정
+	// 모두 맞춰야 점수를 받기때문에 한 번만 실패해도 탈락
+	int game2Life = 3;
+	
+	// nomalMode는 3번을 모두 성공해야 포인트를 받을 수 있음.
+	int victory = 0;
 	
 
 	//플레이어는 음료를 만든다
 	void playerMakeDrink() {
 		
-		// 계속 실행되도록 반복문 
-		while(game2Continue) {
+	// 계속 실행되도록 반복문 
+	while(game2Continue) {
+		
+		// 만약 victory == 3이면 포인트를 얻는다!
+		if(victory == 3) {
+			System.out.println("대 성공~!! point+200");
+			break;
+		}
 			
 		// 음료의 재료를 입력받을 스캐너
 		Scanner sc = new Scanner(System.in);
-		 
+		
 		// 먼저 고객이 주문하는 것을 표현함.
 		Customer choiceMenu = new Customer();
 		choiceMenu.csOrder();
 		
 		System.out.println("**************************");
-		System.out.println("                  남은 목숨 : "+game2Life       );
+		System.out.println(" 한  번  틀  리  면  게  임  오  버  입  니  다" );
 		System.out.println("---------------------------------");
 		System.out.println(" ┌-----준비된 재료 리스트를 확인하세요----┐");
 		System.out.println(" | 물 | 우유 | 커피 | 바닐라 | 초코 | 없음|");
@@ -48,14 +55,13 @@ public class Player {
 		// -> 물이나 우유외에 다른내용이 입력되면
 		// -> 라이프를 차감하고 다시 선택하도록 함
 		// -> 라이프를 차감했을때 라이프가 0이라면 게임오버.
-		
 		if(var1.equals("물") || var1.equals("우유")){
 			System.out.println("메인 재료를 넣었습니다^0^");
 		} else {
 			--game2Life;
-			System.out.println("정해진 재료만 넣을 수 있습니다 T.T 남은목숨 : "+ game2Life);
+			System.out.println("정해진 재료만 넣을 수 있습니다 T.T");
 			
-			if(game2Life==0) {
+			if(game2Life < 3 ){
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			}
@@ -72,9 +78,9 @@ public class Player {
 			System.out.println("추가 재료 1번을 넣었습니다^0^");
 		} else {
 			--game2Life;
-			System.out.println("정해진 재료만 넣을 수 있습니다 T.T 남은목숨 : "+ game2Life);
+			System.out.println("정해진 재료만 넣을 수 있습니다 T.T ");
 			
-			if(game2Life==0) {
+			if(game2Life < 3) {
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			}
@@ -91,9 +97,9 @@ public class Player {
 			System.out.println("추가 2번을 넣었습니다^0^");
 		} else {
 			--game2Life;
-			System.out.println("정해진 재료만 넣을 수 있습니다 T.T 남은목숨 : "+ game2Life);
+			System.out.println("정해진 재료만 넣을 수 있습니다 T.T");
 			
-			if(game2Life==0) {
+			if(game2Life < 3) {
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			}
@@ -113,25 +119,27 @@ public class Player {
 		String cDrink = choiceMenu.lastChoice();
 		
 		
-		// 고객이 주문한음료 .equals 플레이거가 만든음료  
+		// 고객이 주문한음료 .equals 플레이어가 만든음료
 		if(cDrink.equals(pDrink)) {
-			System.out.println("잘 마셨습니다~ ^^ 포인트 +100"); // 포인트는 팀원들과 협의 후 적정선으로 int타입으로 추가 (10:45)
-			break;
-		// 고객이 주문한 음료와 일치하지 않는다면? =  라이프 차감 + 포인트없음 + 실패	
+			++victory;
+			System.out.println("잘 마셨습니다~ ^^ 성공 회수 : " + victory); 			
 		} else {
 			--game2Life;
-			System.out.println("더럽게 맛 없네 다신 안와!!!!!!!! 남은목숨 : " + game2Life);
+			System.out.println("더럽게 맛 없네 다신 안와!!!!!!!!");
 			
-			if(game2Life==0) {
+			if(game2Life < 3) {
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			continue;
 			}
+			
 		}
 		
-		} // 반복문 끝
+		}
+	
+	}	
 		
-	}
-}
+}	
+
 
 
