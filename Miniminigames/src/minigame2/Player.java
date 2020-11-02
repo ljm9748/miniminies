@@ -16,9 +16,7 @@ public class Player {
 	// 기본 Life는 5로 설정
 	int game2Life = 5;
 	
-	// Make Drink 클래스에서 return값이 있음 확인하고 수정 11-02(10 : 11)
-	String drink;
-	
+
 	//플레이어는 음료를 만든다
 	void playerMakeDrink() {
 		
