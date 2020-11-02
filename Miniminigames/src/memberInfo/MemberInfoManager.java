@@ -103,8 +103,13 @@ public class MemberInfoManager implements Util{
 		
 		
 	}
-	public void deleteInfo() {}
-	private int searchId(String id) {
+	public void deleteInfo() {//회원탈퇴
+		members.remove(membernum);
+		System.out.println("회원탈퇴되셨습니다. 프로그램을 종료합니다.");
+		save();
+		System.exit(0);
+	}
+	private int searchId(String id) {//아이디의 인덱스 찾기
 		int index= -1;
 		
 		for (int i = 0; i < members.size(); i++) {
@@ -118,28 +123,61 @@ public class MemberInfoManager implements Util{
 		return index;
 	}
 
-	private boolean isMember(String id, String name) {
+	private boolean isMember(String id, String name) {//가입여부 확인
 		//중복아이디 찾기
 		int tmpidx= this.searchId(id);
 		if (tmpidx == -1) return false;
 		
 		if(members.get(tmpidx).getName().equals(name)) {
-			System.out.println("이미가입된 회원정보");
+			//System.out.println("이미가입된 회원정보");
 			return true;
 		}
 		
 		return false;
 	}
-	public void updatePoint() {}
+	public void updatePoint(int getPoint) {//얻은 양 기준, 잃었으면 음수표현
+		if(members.get(membernum).getPoint()+getPoint <0) {
+			System.out.println("포인트가 부족합니다");
+			return;
+		}
+		int tmppoint= members.get(membernum).getPoint()+getPoint;
+		members.get(membernum).setPoint(tmppoint);
+	}
+	
 	public int updateScore() {
 		int changedScore=0;
 		return changedScore;
 	}
-	public void changeName() {}
-	public void changePassword() {}
+	public void changeName(String newname) {
+		members.get(membernum).setName(newname);
+	}
+	public void changePassword() {
+		System.out.println("비밀번호 변경을 위해 기존 비밀번호를 입력해 주세요: ");
+		String pwBefore= SC.nextLine();
+		if(members.get(membernum).getPassword() == pwBefore) {
+			String pwAfter= SC.nextLine();
+			members.get(membernum).setPassword(pwAfter);
+		}
+	}
 	
 	
 	//기능
-	public void resetLife() {}
+	public void resetLife() {
+		//정각마다 라이프 늘려주는기능 나중에 구현
+	}
+	public void login(String id, String password) {
+		int tmpidx= searchId(id);
+		if(tmpidx == -1) {
+			System.out.println("해당 아이디로 가입된 회원정보가 없습니다. 초기화면으로 돌아갑니다.");
+			return;
+		}
+		if(members.get(tmpidx).getPassword() == password) {
+			membernum= tmpidx;
+			System.out.println("로그인에 성공했습니다.");
+			return;
+		}
+		System.out.println("아이디와 비밀번호가 올바르지 않습니다. 초기화면으로 돌아갑니다.");
+		return;
+	}
 
 }
