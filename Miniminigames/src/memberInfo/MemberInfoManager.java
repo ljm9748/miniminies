@@ -66,7 +66,7 @@ public class MemberInfoManager implements Util{
 			System.out.println("저장완료");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			System.out.println("저장과정에 오류가 발생했습니다. 다시 시도해 주세요");
+			System.out.println("저장과정에 오류가 발생했습니다. 다시 시도해 주세요");,
 			e.printStackTrace();
 		}
 		
@@ -103,8 +103,13 @@ public class MemberInfoManager implements Util{
 		
 		
 	}
-	public void deleteInfo() {}
-	private int searchId(String id) {
+	public void deleteInfo() {//회원탈퇴
+		members.remove(membernum);
+		System.out.println("회원탈퇴되셨습니다. 프로그램을 종료합니다.");
+		save();
+		System.exit(0);
+	}
+	private int searchId(String id) {//아이디의 인덱스 찾기
 		int index= -1;
 		
 		for (int i = 0; i < members.size(); i++) {
@@ -118,13 +123,13 @@ public class MemberInfoManager implements Util{
 		return index;
 	}
 
-	private boolean isMember(String id, String name) {
+	private boolean isMember(String id, String name) {//가입여부 확인
 		//중복아이디 찾기
 		int tmpidx= this.searchId(id);
 		if (tmpidx == -1) return false;
 		
 		if(members.get(tmpidx).getName().equals(name)) {
-			System.out.println("이미가입된 회원정보");
+			//System.out.println("이미가입된 회원정보");
 			return true;
 		}
 		
@@ -141,5 +146,6 @@ public class MemberInfoManager implements Util{
 	
 	//기능
 	public void resetLife() {}
+	public void login() {}
 
 }
