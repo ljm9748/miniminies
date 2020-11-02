@@ -144,9 +144,11 @@ public class MemberInfoManager implements Util{
 		members.get(membernum).setPoint(tmppoint);
 	}
 	
-	public int updateScore() {
-		int changedScore=0;
-		return changedScore;
+	public void updateScore(int gamenum, int winLose) {//이기면 0 지면 1
+		int nowscore=members.get(membernum).getScore(gamenum, winLose);
+		if(winLose==0) nowscore += 1;
+		else nowscore -=1;
+		members.get(membernum).setScore(gamenum, winLose, nowscore);
 	}
 	public void changeName(String newname) {
 		members.get(membernum).setName(newname);
@@ -159,7 +161,20 @@ public class MemberInfoManager implements Util{
 			members.get(membernum).setPassword(pwAfter);
 		}
 	}
-	
+	public void useLife() {
+		int tmpnow= members.get(membernum).getLife();
+		if(tmpnow<1) {
+			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
+			return;
+		}
+		members.get(membernum).setLife(tmpnow-1);
+		
+	}
+	public void showAllInfo() {
+		for (int i = 0; i < members.size(); i++) {
+			members.get(i).showInfo();
+		}
+	}
 	
 	//기능
 	public void resetLife() {
