@@ -27,7 +27,8 @@ public class LifeBuyer {
 
 		// 참조변수는 객체의 주소를 저장하고 있다.-> 셀러의 참조값을 받도록 참조변수를 매개변수로 정의
 		// LifeSeller seller -> LifeSeller 클래스로 만든 객체의 주소를 저장하는 변수
-		void buyApple(LifeSeller seller, int point) {
+		
+		void buyLife(LifeSeller seller, int point) {
 			// 구매할 사과의 개수를 구한다.
 			int numLife = seller.saleLife(point);
 			// 나의 라이프의 개수 증가
@@ -40,6 +41,7 @@ public class LifeBuyer {
 
 		// 현재 상태(금액, 라이프의 개수) 값을 출력
 		void showBuyLifeResult() {
+			// 지급한 포인트 금액 출력
 			System.out.println("보유 금액 >> " + myPoint);
 			System.out.println("보유 라이프 개수 >> " + numOfLife);
 		}
