@@ -39,9 +39,23 @@ public class Game2Main {
 		System.out.println(" 1. 게임을 시작합니다.");
 		System.out.println(" 2. 게임 종료하기 .");
 			
+		try {
 			// 입력받은 int 타입의 정수를 select에 넣음
 			// ++ 숫자가 아닌 입력  & 범위 이상의 숫자 예외처리 해야함.
 			select = sc.nextInt();
+			sc.nextLine();
+			
+			// 메뉴 번호외 숫자를 입력했을때 예외처리
+			if(!(select>0 && select<3)) {
+			System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
+			}
+			
+			// 문자나 기타 기호를 입력했을때 예외처리
+		} catch (Exception e) {
+			System.out.println("메뉴입력이 잘못되었습니다. \n 다시 선택해주세요.");
+			sc.nextLine();
+			continue;
+		}
 			
 		switch(select) {
 		
