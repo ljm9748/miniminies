@@ -9,7 +9,7 @@ public class Customer {
 	
 		// 손님은 메뉴를 4가지중에 하나를 골라야함.
 	
-	public String csMenuChoice() {
+	public String csRandomChoice() {
 		// 배열의 index로 사용할 cnt
 		int cnt = 0;
 		// String타입의 배열 메뉴리스트를 생성함.
@@ -27,7 +27,7 @@ public class Customer {
 	// 손님은 주문을 합니다.
 	void csOrder() {
 		// csMenuChoice();에서 나온 return 값을 String 타입의 menu에 저장
-		String menu = csMenuChoice();
+		String menu = csRandomChoice();
 		
 		// 손님이 주문하는 것을 표현함 
 		System.out.println("**************************");
@@ -45,12 +45,14 @@ public class Customer {
 		// 1. 랜덤수의 index를 받아 menu 를 출력하기때문에 비교판단을 하는 과정에서 이곳에있는 String타입을 사용할시 menu가 바뀌었음
 		// 2. 이때문에 올바른 판단이 이루어지지 않아 제대로 입력해도 어떤때는 패스 , 어떤때는 실패함 (4가지 랜덤중 같은메뉴가 두번연속나오면 성공으로 처리되었음)
 		// 3. 그래서 csOrder에서 나온 값을 Class(Player의 saveMenu)의 변수에 넣고 그변수는 추가 행동이 없는한 처음에 주문한 menu의 값을 가지고있도록 함
-		// 4. 즉 랜덤이 다시 돌아가지 않도록 비교를 위한 변수를 나누어버렸음
+		// 4. 즉 랜덤이 다시 돌아가지 않도록 비교를 위한 변수를 나누어버렸음 + getter 의 역할도 함.
 		// 5. 성공.
 	}
 
 	public String lastChoice() {
 		return saveMenu;
 	}
+
+
 }
 
