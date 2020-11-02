@@ -3,6 +3,7 @@ package minigame2;
 import java.util.Scanner;
 
 public class hardMode {
+	
 	/*
 	 하드모드는 3번 연속 진행되고 한 번이라도 틀릴시 바로 탈락함.
 	 3번 모두 성공하면 포인트를 받을 수 있음!
@@ -18,14 +19,13 @@ public class hardMode {
 	// nomalMode는 3번을 모두 성공해야 포인트를 받을 수 있음.
 	int victory = 0;
 	
-
 	//플레이어는 음료를 만든다
 	void playerMakeDrink() {
 		
 	// 계속 실행되도록 반복문 
 	while(game2Continue) {
 		
-		// 만약 victory == 3이면 포인트를 얻는다!
+		// 만약 victory == 3이면 포인트를 얻는다! -> 게임종료(성공)
 		if(victory == 3) {
 			System.out.println("대 성공~!! point+200");
 			break;
