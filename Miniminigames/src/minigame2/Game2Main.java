@@ -36,8 +36,9 @@ public class Game2Main {
 		// 프로그램 유지를 위한 루프
 	while(true) {
 		System.out.println("*****메뉴를 선택해주세요*****");
-		System.out.println(" 1. 게임을 시작합니다.");
-		System.out.println(" 2. 게임 종료하기 .");
+		System.out.println(" 1. 게임을 시작합니다 (easyMode)");
+		System.out.println(" 2. 게임을 시작합니다 (hardMode)");
+		System.out.println(" 3. 게임 종료하기");
 			
 		try {
 			// 입력받은 int 타입의 정수를 select에 넣음
@@ -46,7 +47,7 @@ public class Game2Main {
 			sc.nextLine();
 			
 			// 메뉴 번호외 숫자를 입력했을때 예외처리
-			if(!(select>0 && select<3)) {
+			if(!(select>0 && select<4)) {
 			System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
 			}
 			
@@ -61,14 +62,21 @@ public class Game2Main {
 		
 		// 게임 시작 
 		case 1:
-			Player p1 = new Player();
-			p1.playerMakeDrink();
+			Player easy = new Player();
+			easy.playerMakeDrink();
+			break;
+			
+		case 2:
+			nomalLevel nomal = new nomalLevel();
+			nomal.nomalGame();
 			break;
 			
 		// 게임 종료	
-		case 2:
+		case 3:
 			System.out.println("게임을 종료합니다~ 띠로링~");
 			System.exit(0);
+			
+		
 		}
 	}
 		

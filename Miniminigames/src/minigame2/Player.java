@@ -108,7 +108,7 @@ public class Player {
 		playerMake.recipe(var1, var2, var3);
 		
 		// 플레이어가 만든 음료 = recipe에 입력되어 반환된 음료이름 
-		String pDrink = playerMake.drink;
+		String pDrink = playerMake.getDrink();
 		
 		// 고객이 주문한 음료 = csOrder 에서 선택된 메뉴 (return의 값 : menu)
 		String cDrink = choiceMenu.lastChoice();

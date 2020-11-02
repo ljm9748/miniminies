@@ -8,7 +8,7 @@ public class MakeDrink {
 	Scanner sc = new Scanner(System.in);
 	
 	// 만든 음료의 값을 반환받을 String타입의 drink초기화
-	String drink;
+	private String drink;
 
 	// 재료 3개를 입력받아 음료를 제조함 만약 레시피에 없는 음료일시 else로(실패) 처리
 	void recipe (String var1, String var2, String var3) {
@@ -64,7 +64,9 @@ public class MakeDrink {
 		// 음료 제조 실패
 		} else 
 			System.out.println("음료 제조에 실패했습니다~~T.T");
-		
+			if(drink == null) {
+				drink = "음식물 쓰레기";
+			}
 	}
 
 	public String getDrink() {
