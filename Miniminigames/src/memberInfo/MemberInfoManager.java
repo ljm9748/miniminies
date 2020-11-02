@@ -2,8 +2,10 @@ package memberInfo;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,15 +53,41 @@ public class MemberInfoManager implements Util{
 		}
 		
 	}
-	public void save() {}
+	public void save() {
+		if(members.size()==0) {
+			System.out.println("저장된 데이터가 없어 파일이 저장되지 않았습니다");
+			return;
+		}
+		
+		try {
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("members.ser"));
+			out.writeObject(members);
+			out.close();
+			System.out.println("저장완료");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("저장과정에 오류가 발생했습니다. 다시 시도해 주세요");
+			e.printStackTrace();
+		}
+		
+	}
 	
 	//값 수정
 	public void addInfo() {//회원가입
 		System.out.println("회원가입을 시작합니다.");
 		System.out.println("가입하는 분의 이름을 입력해 주세요: ");
 		String name= SC.nextLine();
-		System.out.println("가입할 아이디를 입력해 주세요: ");
-		String id= SC.nextLine();
+		String id="";
+		do {
+			if(id != "") System.out.println("중복된 아이디가 있습니다 다시 입력해 주세요");
+			System.out.println("가입할 아이디를 입력해 주세요: ");
+			id= SC.nextLine();
+			if(isMember(id, name)) {
+				System.out.println("이미 가입된 회원입니다. 로그인해주세요");
+				return;
+			}
+		}while(searchId(id) != -1);
+
 		String password=null;
 		String passwordCheck="";
 		do{
@@ -68,14 +96,39 @@ public class MemberInfoManager implements Util{
 			password= SC.nextLine();
 			System.out.println("비밀번호 확인을 위해 비밀번호를 한번더 입력해 주세요: ");
 			passwordCheck = SC.nextLine();
-		}while(password.equals(passwordCheck));
+		}while(!password.equals(passwordCheck));
+		members.add(new MemberInfo(name, id, password));
+		System.out.println("회원가입이 완료되었습니다. 로그인해주세요");
+		return;
 		
 		
 	}
 	public void deleteInfo() {}
-	private int searchIndex() {
+	private int searchId(String id) {
+		int index= -1;
 		
-		return 0;
+		for (int i = 0; i < members.size(); i++) {
+			if (members.get(i).getId().equals(id)) {
+				index= i;
+				break;
+			}
+		}
+		
+		
+		return index;
+	}
+
+	private boolean isMember(String id, String name) {
+		//중복아이디 찾기
+		int tmpidx= this.searchId(id);
+		if (tmpidx == -1) return false;
+		
+		if(members.get(tmpidx).getName().equals(name)) {
+			System.out.println("이미가입된 회원정보");
+			return true;
+		}
+		
+		return false;
 	}
 	public void updatePoint() {}
 	public int updateScore() {

@@ -1,6 +1,8 @@
 package memberInfo;
 
-public class MemberInfo {
+import java.io.Serializable;
+
+public class MemberInfo implements Serializable{
 	
 	private String name;
 	private String id;
