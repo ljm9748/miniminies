@@ -3,13 +3,20 @@ package game01;
 import java.util.Scanner;
 import memberInfo.MemberInfoManager;
 
+import memberInfo.MemberInfoManager;
+
 public class MiniGame {
 
 	//매니저를 불러오는 코드
 	MemberInfoManager members = MemberInfoManager.getManager();
 	
+
+	MemberInfoManager member = MemberInfoManager.getManager();
+	
+
 	//남은 기회
 	int chance = 3;
+
 
 	//미니게임 1
 	boolean miniGame01() {
@@ -227,7 +234,9 @@ public class MiniGame {
 			}
 		}
 	
-	void miniGameManager() {
+
+	public void miniGameManager() {
+
 		members.useLife();
 		
 		for(int i = 0; i < 3; i++) {

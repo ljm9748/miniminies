@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import miniminigame.MenuManager;
 
 public class MemberInfoManager implements Util{
 	
@@ -162,8 +163,10 @@ public class MemberInfoManager implements Util{
 		System.out.println("비밀번호 변경을 위해 기존 비밀번호를 입력해 주세요: ");
 		String pwBefore= SC.nextLine();
 		if(members.get(membernum).getPassword() == pwBefore) {
+			System.out.println("새로운 비밀번호를 입력해주세요: ");
 			String pwAfter= SC.nextLine();
 			members.get(membernum).setPassword(pwAfter);
+			
 		}
 	}
 	public void useLife() {
@@ -204,21 +207,35 @@ public class MemberInfoManager implements Util{
 	}
 	
 	
-	public void login(String id, String password) {
+	public boolean login() {
+		
+		System.out.println("아이디와 비밀번호를 입력해주세용");
+		String id = getStrInput("ID:");
+		String password = getStrInput("Password:");
 		
 		int tmpidx= searchId(id);
+		
 		if(tmpidx == -1) {
 			System.out.println("해당 아이디로 가입된 회원정보가 없습니다. 초기화면으로 돌아갑니다.");
-			return;
+			return false;
 		}
-		else if(members.get(tmpidx).getPassword() == password) {
-			membernum= tmpidx;
+		if(members.get(tmpidx).getPassword().equals(password)) {
+			membernum = tmpidx;
 			System.out.println("로그인에 성공했습니다.");
-			return;
-		}
+			return true;
+			
+		}else {
 		System.out.println("아이디와 비밀번호가 올바르지 않습니다. 초기화면으로 돌아갑니다.");
-		return;
+		return false;
+		}
 	}
+
+
+	private String getStrInput(String msg) {
+		System.out.println(msg);
+		return SC.nextLine();
+	}
+
 
 
 
