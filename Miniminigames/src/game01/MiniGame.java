@@ -2,7 +2,11 @@ package game01;
 
 import java.util.Scanner;
 
+import memberInfo.MemberInfoManager;
+
 public class MiniGame {
+	
+	MemberInfoManager member = MemberInfoManager.getManager();
 	
 	//미니게임 1
 	boolean miniGame01() {
@@ -192,6 +196,7 @@ public class MiniGame {
 		}
 	
 	public void miniGameManager() {
+		
 		for(int i = 0; i < 3; i++) {
 			if(!miniGame01()) continue;
 			

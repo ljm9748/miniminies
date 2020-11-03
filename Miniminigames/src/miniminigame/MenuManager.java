@@ -17,6 +17,45 @@ public class MenuManager implements Util {
 	
 	MemberInfoManager member = MemberInfoManager.getManager();
 	
+	// 로그인 메뉴
+	public void login() {
+		
+		while(true) {
+			System.out.println("\t\t\t"); 
+			System.out.println("\t\t\t"+"메뉴를 선택해주세요\n"); 
+			System.out.println("\t\t\t"+ Menu.JOIN+". 회원가입 \n");
+			System.out.println("\t\t\t"+ Menu.LOGIN+". 로그인  \n"); 
+			
+			int select = 0;
+			
+			try {
+				select = SC.nextInt();
+				if(!(select > 0 && select < 3)) {
+					BadInputException e = new BadInputException(String.valueOf(select));
+					throw e;
+				}
+			} catch (InputMismatchException | BadInputException e) {
+				System.out.println("잘못입력했습니다.");
+				SC.nextLine();
+				continue;
+			} catch (Exception e1) {
+				System.out.println("메뉴를 잘못 입력했습니다. 다시시도 해주세요.");
+				SC.nextLine();
+				continue;
+		}
+			switch(select) {
+			case Menu.JOIN:
+				member.addInfo();
+				member.save();
+				break;
+			case Menu.LOGIN:
+				if(member.login()) 
+					return;
+			}
+		}
+	}
+	
+	
 	
 	// 로그인후 메인 메뉴
 	public void run() {

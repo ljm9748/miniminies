@@ -2,7 +2,8 @@ package miniminigame;
 
 public interface Menu {
 	
-	int JOIN = 1;
+	int JOIN = 1,
+		LOGIN = 2;
 	
 	
 	int GAMES = 1,
