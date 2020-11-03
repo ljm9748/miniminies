@@ -149,7 +149,7 @@ public class MemberInfoManager implements Util{
 		int nowscore=members.get(membernum).getScore(gamenum, winLose);
 		if(winLose==0) nowscore += 1;
 		else nowscore -=1;
-		members.get(membernum).setScore(gamenum, winLose, nowscore);
+		members.get(membernum).setScore(gamenum-1, winLose, nowscore);
 	}
 	
 	public void changeName( ) {
@@ -174,6 +174,15 @@ public class MemberInfoManager implements Util{
 		}
 		members.get(membernum).setLife(tmpnow-1);
 		
+	}
+	
+	public void getLife() {
+		int tmpnow= members.get(membernum).getLife();
+		if(tmpnow<=3) {
+			System.out.println("이미 하트의 개수가 최대이기때문에 구매가 불가능합니다.");
+			return;
+		}
+		members.get(membernum).setLife(tmpnow+1);
 	}
 	public void showAllInfo() {
 		for (int i = 0; i < members.size(); i++) {
