@@ -148,7 +148,7 @@ public class MenuManager implements Util {
 			
 			member.showMemInfo();
 			
-			System.out.println(Menu.EDIT+". 회원정보 수정");
+			System.out.println(Menu.EDIT+". 회원정보 수정 (이름,비밀번호)");
 			System.out.println(Menu.DELET+". 회원탈퇴하기");
 			System.out.println("3.처음으로 되돌아가기");
 			System.out.println("게임종료하려면 0을 누르세요");

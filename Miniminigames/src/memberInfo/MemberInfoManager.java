@@ -161,8 +161,10 @@ public class MemberInfoManager implements Util{
 		System.out.println("비밀번호 변경을 위해 기존 비밀번호를 입력해 주세요: ");
 		String pwBefore= SC.nextLine();
 		if(members.get(membernum).getPassword() == pwBefore) {
+			System.out.println("새로운 비밀번호를 입력해주세요: ");
 			String pwAfter= SC.nextLine();
 			members.get(membernum).setPassword(pwAfter);
+			
 		}
 	}
 	
