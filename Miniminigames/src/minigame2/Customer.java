@@ -7,8 +7,7 @@ public class Customer {
 	  	  2. 플레이어에게 선택한 내용의 주문을 함.	
 	 */
 	
-		// 손님은 메뉴를 4가지중에 하나를 골라야함.
-	
+	// 손님은 메뉴를 4가지중에 하나를 골라야함.
 	public String csRandomChoice() {
 		// 배열의 index로 사용할 cnt
 		int cnt = 0;

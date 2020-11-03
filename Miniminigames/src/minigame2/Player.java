@@ -19,9 +19,23 @@ public class Player {
 	
 	// contains를 활용하여 예외처리 함.
 	String drinkBase = "물 우유 커피 바닐라 초코 없음";
+	
+	static private int win = 0;
+	static private int lose = 0;
+	
+	public int getWin() {
+		return win;
+	}
+
+
+	public int getLose() {
+		return lose;
+	}
 
 	//플레이어는 음료를 만든다
 	void playerMakeDrink() {
+		
+	
 		
 		// 계속 실행되도록 반복문 
 		while(game2Continue) {
@@ -55,6 +69,7 @@ public class Player {
 			
 		// 이 과정에서 game2Life가 0이면 그대로 게임오버.	
 			if(game2Life==0) {
+				++lose;
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			}
@@ -69,10 +84,12 @@ public class Player {
 		if(drinkBase.contains(var2)){
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
+		
 			--game2Life;
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T 남은목숨 : "+ game2Life);
 			
 			if(game2Life==0) {
+				++lose;
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			}
@@ -91,6 +108,7 @@ public class Player {
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T 남은목숨 : "+ game2Life);
 			
 			if(game2Life==0) {
+				++lose;
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			}
@@ -110,15 +128,18 @@ public class Player {
 		
 		// 고객이 주문한음료 .equals 플레이거가 만든음료  
 		if(cDrink.equals(pDrink)) {
+			++win;
 			System.out.println("잘 마셨습니다~ ^^ 포인트 +50"); // 포인트 100단위로 수정해야함 (1103 10:16)
 			break;
 			
 		// 고객이 주문한 음료와 일치하지 않는다면? =  라이프 차감 + 포인트없음 + 실패	
 		} else {
+			++lose;
 			--game2Life;
 			System.out.println("더럽게 맛 없네 다신 안와!!!!!!!! 남은목숨 : " + game2Life);
 			
 			if(game2Life==0) {
+				++lose;
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			continue;

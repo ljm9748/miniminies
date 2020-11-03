@@ -2,7 +2,7 @@ package minigame2;
 
 import java.util.Scanner;
 
-public class hardMode {
+public class HardMode {
 	
 	/*
 	 하드모드는 3번 연속 진행되고 한 번이라도 틀릴시 바로 탈락함.
@@ -22,10 +22,18 @@ public class hardMode {
 	
 	// contains를 활용하여 예외처리 함.
 		String drinkBase = "물 우유 커피 바닐라 초코 없음";
+		
 	// 게임 랭킹에 사용 될 승,패
-	private int win = 0;
-	private int lose = 0;
+	private static int win = 0;
+	private static int lose = 0;
 	
+	public int getWin() {
+		return win;
+	}
+	public int getLose() {
+		return lose;
+	}
+
 	void playerMakeDrink() {
 		
 	// 계속 실행되도록 반복문 
@@ -60,7 +68,6 @@ public class hardMode {
 		
 		// contains를 활용해서 해당하는 재료(drinkBase)가 아니면 else로 빠지게 함.
 		if(drinkBase.contains(var1)){
-			++victory;
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
 			--game2Life;
@@ -81,7 +88,6 @@ public class hardMode {
 		System.out.println("두 번째로 넣을 재료는 = " + var2);
 		
 		if(drinkBase.contains(var2)){
-			++victory;
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
 			--game2Life;
@@ -101,7 +107,6 @@ public class hardMode {
 		System.out.println("세 번째로 넣을 재료는 = " +var3);
 		
 		if(drinkBase.contains(var3)){
-			++victory;
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
 			--game2Life;
