@@ -1,12 +1,9 @@
 package miniminigame;
 
-public interface BadInputException extends Exception {
+public class BadInputException extends Exception {
 	
-	public BadInputException(String msg) {
-		
+	public BadInputException (String msg) {
 		super(msg);
-
 	}
 
 }
-

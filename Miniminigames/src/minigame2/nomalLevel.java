@@ -34,7 +34,7 @@ public class nomalLevel {
 		
 	Scanner sc = new Scanner(System.in);
 	
-	void nomalGame() {
+	public void nomalGame() {
 			while(game2Continue) {
 		
 			// 노말모드 손님 3명
