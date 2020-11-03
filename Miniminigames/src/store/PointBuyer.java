@@ -42,9 +42,9 @@ public class PointBuyer {
 					// 현재 상태(금액, 라이프의 개수) 값을 출력
 				void showBuyPointResult() {
 					// 지급한 포인트 금액 출력
-					System.out.println("구매한 포인트 >> " + getPoint);
-					System.out.println("현재 보유 포인트 >> " + myPoint);
-					System.out.println("현재 보유 금액 >> " + myMoney);
+					System.out.println("구매한 포인트는 " + getPoint + "p 입니다.");
+					System.out.println("현재 보유 포인트 >> " + myPoint + "p 입니다.");
+					System.out.println("현재 보유 금액 >> " + myMoney + "원 입니다.");
 					
 				}
 

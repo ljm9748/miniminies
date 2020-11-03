@@ -10,7 +10,7 @@ public class SaleMain {
 		
 			while(true) {
 		
-				System.out.println("*****메뉴를 입력하세요*****");
+				System.out.println("\n****메뉴를 입력하세요*****");
 				System.out.println("1. 라이프 충전");
 				System.out.println("2. 랜덤박스 구매");
 				System.out.println("3. 포인트 충전");
@@ -46,7 +46,7 @@ public class SaleMain {
 					System.out.println("\n# 라이프 판매자의 현재 지표\n");
 					lifeseller.showSaleLifeResult();
 					
-					System.out.println("----------------------------------");
+					System.out.println("\n----------------------------------");
 					
 								
 					System.out.println("\n# 라이프 구매자의 현재 지표\n");

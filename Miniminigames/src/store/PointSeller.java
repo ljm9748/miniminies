@@ -56,8 +56,8 @@ public class PointSeller { // 		(point)seller <-> buyer(money)
 				// 반환하는 데이터가 없으므로 반환타입을 void 타입으로 메소드 정의
 				void showSalePointResult() { 	// 반환 타입이 x
 					//System.out.println(" >> " + numOfPoint);					
-					System.out.println("판매한 포인트 >> " + givePoint );
-					System.out.println("현재 보유 금액 >> " + myMoney);
+					System.out.println("판매한 포인트는 " + givePoint +"p 입니다.");
+					System.out.println("현재 보유 금액은 " + myMoney +"원 입니다.");
 				}
 
 }

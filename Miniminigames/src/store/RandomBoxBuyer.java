@@ -43,8 +43,8 @@ public class RandomBoxBuyer {
 				// 현재 상태(금액, 라이프의 개수) 값을 출력
 			void showBuyRandomBoxResult() {
 				// 지급한 포인트 금액 출력
-				System.out.println("랜덤박스 결과 >> " + givePoint);
-				System.out.println("보유 금액 >> " + myPoint);
+				System.out.println("랜덤박스 결과는 " + givePoint + "p 입니다.");
+				System.out.println("보유 포인트는 " + myPoint +"p 입니다.");
 				
 			}
 }

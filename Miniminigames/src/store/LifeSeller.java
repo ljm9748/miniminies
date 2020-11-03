@@ -57,8 +57,8 @@ public class LifeSeller {
 		// 받는 데이터가 없으므로 매개변수 정의하지 않는다.
 		// 반환하는 데이터가 없으므로 반환타입을 void 타입으로 메소드 정의
 		void showSaleLifeResult() { 	// 반환 타입이 x
-			System.out.println("판매한 라이프의 개수 >> " + numLife);
-			System.out.println("판매 수익 금액 >> " + myPoint );
-			System.out.println("보유 금액 >> " + myMoney);
+			System.out.println("판매한 라이프의 개수는 " + numLife + "개 입니다.");
+			System.out.println("판매 수익 금액은 " + myPoint +"원 입니다." );
+			System.out.println("보유 금액은 " + myMoney + "원 입니다.");
 		}
 }
