@@ -12,13 +12,13 @@ public class Player {
 	
 	
 	// game2Life가 0이되면 game2Continue를 false로 변경해 게임이 종료되도록 함.(라이프개념)
-	boolean game2Continue = true;
+	private boolean game2Continue = true;
 	
 	// 기본 Life는 5로 설정
-	int game2Life = 5;
+	private int game2Life = 5;
 	
 	// contains를 활용하여 예외처리 함.
-	String drinkBase = "물 우유 커피 바닐라 초코 없음";
+	String drinkBase = "물 우유 커피 바닐라 초코 얼음";
 	
 	static private int win = 0;
 	static private int lose = 0;
@@ -51,12 +51,12 @@ public class Player {
 		System.out.println("                  남은 기회 : "+game2Life       );
 		System.out.println("---------------------------------");
 		System.out.println(" ┌-----준비된 재료 리스트를 확인하세요----┐");
-		System.out.println(" | 물 | 우유 | 커피 | 바닐라 | 초코 | 없음|");
+		System.out.println(" | 물 | 우유 | 커피 | 바닐라 | 초코 | 얼음|");
 		System.out.println(" └-------------------------------┘");
 		System.out.println("************************************");
 		
 	
-		System.out.println("첫 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[없음])");
+		System.out.println("첫 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var1 = sc.nextLine();
 		System.out.println("첫 번째로 넣을 재료는 = " + var1);
 		
@@ -77,7 +77,7 @@ public class Player {
 		}
 			
 
-		System.out.println("두 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[없음])");
+		System.out.println("두 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var2 = sc.nextLine();
 		System.out.println("두 번째로 넣을 재료는 = " + var2);
 		
@@ -97,7 +97,7 @@ public class Player {
 		}
 		
 		
-		System.out.println("세 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[없음])");
+		System.out.println("세 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var3 = sc.nextLine();
 		System.out.println("세 번째로 넣을 재료는 = " +var3);
 		

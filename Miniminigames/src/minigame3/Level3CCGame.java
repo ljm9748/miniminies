@@ -3,7 +3,11 @@ package minigame3;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import memberInfo.MemberInfoManager;
+
 public class Level3CCGame {
+	
+	MemberInfoManager members = MemberInfoManager.getManager();
 
 	public void explainGame() {
 		int select=0;
@@ -31,7 +35,9 @@ public class Level3CCGame {
 		
 		switch(select) {
 		case 1 : return;
-		case 2 : System.out.println("게임을 시작합니다.");
+		case 2 : 
+				members.useLife();
+				System.out.println("게임을 시작합니다.");
 				Over o = new Over();
 				Lv3Start lv3 = new Lv3Start(o);
 				CountDownThread cdt = null;

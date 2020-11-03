@@ -146,9 +146,11 @@ public class MemberInfoManager implements Util{
 		members.get(membernum).setPoint(tmppoint);
 	}
 	
-	public int updateScore() {
-		int changedScore=0;
-		return changedScore;
+	public void updateScore(int gamenum, int winLose) {//이기면 0 지면 1
+		int nowscore=members.get(membernum).getScore(gamenum, winLose);
+		if(winLose==0) nowscore += 1;
+		else nowscore -=1;
+		members.get(membernum).setScore(gamenum-1, winLose, nowscore);
 	}
 	
 	public void changeName( ) {
@@ -167,7 +169,29 @@ public class MemberInfoManager implements Util{
 			
 		}
 	}
+	public void useLife() {
+		int tmpnow= members.get(membernum).getLife();
+		if(tmpnow<1) {
+			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
+			return;
+		}
+		members.get(membernum).setLife(tmpnow-1);
+		
+	}
 	
+	public void getLife() {
+		int tmpnow= members.get(membernum).getLife();
+		if(tmpnow<=3) {
+			System.out.println("이미 하트의 개수가 최대이기때문에 구매가 불가능합니다.");
+			return;
+		}
+		members.get(membernum).setLife(tmpnow+1);
+	}
+	public void showAllInfo() {
+		for (int i = 0; i < members.size(); i++) {
+			members.get(i).showInfo();
+		}
+	}
 	
 	//기능
 	public void resetLife() {
