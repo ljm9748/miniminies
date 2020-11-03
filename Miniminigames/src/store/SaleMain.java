@@ -22,7 +22,7 @@ public class SaleMain {
 				// 예외 처리
 				try {
 					select = sc.nextInt();
-					if( !(select>0&&select<6) ) {
+					if( !(select>0 && select<6) ) {
 						
 					}
 				} catch(InputMismatchException e) {
@@ -37,8 +37,17 @@ public class SaleMain {
 	
 				case 1: // 라이프 구매
 					System.out.println("보유하고 있는 포인트를 입력해주세요.");
-					inputNum=sc.nextInt();
 					
+					try {
+						inputNum=sc.nextInt();
+						if(inputNum<0) {
+							
+						}
+					} catch(InputMismatchException e1){
+						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
+						sc.nextLine();
+						continue;
+					}
 					// LifeSeller 타입의 참조변수 선언
 					LifeSeller lifeseller = null;
 					// LifeSeller의 객체 생성
@@ -54,6 +63,9 @@ public class SaleMain {
 												// 현재잔액 포인트, 라이프 개수
 										
 					// 라이프 구매: seller 1에게 원하는 값 지급
+					// 예외처리
+					
+					
 					if(inputNum<100) {
 						System.out.println("잔액이 부족합니다. 포인트를 충전 후 다시 구매해주세요. 메뉴로 돌아갑니다.");
 						continue;
@@ -83,7 +95,16 @@ public class SaleMain {
 					
 				case 2: // 랜덤박스 구매
 					System.out.println("보유하고 있는 포인트를 입력해주세요.");
-					inputNum=sc.nextInt();
+					try {
+						inputNum=sc.nextInt();
+						if(inputNum<0) {
+							
+						}
+					} catch(InputMismatchException e1){
+						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
+						sc.nextLine();
+						continue;
+					}
 					
 					
 					// RandomBoxSeller 타입의 참조변수 선언
@@ -127,7 +148,18 @@ public class SaleMain {
 					
 				case 3: // 포인트 구매
 					System.out.println("보유하고 있는 돈을 입력해주세요.");
-					inputNum=sc.nextInt();
+					try {
+						inputNum=sc.nextInt();
+						if(inputNum<0) {
+							
+						}
+					} catch(InputMismatchException e1){
+						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
+						sc.nextLine();
+						continue;
+					}
+					
+					
 					if(inputNum<100) {
 						System.out.println("금액이 부족합니다. (최소 100원 부터 충전 가능.) \n메뉴로 돌아갑니다.");
 						continue;
@@ -146,14 +178,18 @@ public class SaleMain {
 											
 						// 포인트 구매: pointseller에게 원하는 값 지급
 						int giveMoney = 0 ;			
+						
 						System.out.println("결제할 금액을 입력해주세요. (포인트는 10p당 100원 입니다.)");	
 						giveMoney = sc.nextInt();
+						
+						// 100원 단위로 입력할 수 있도록 안내
 						if(giveMoney%100==0) {
 							pointbuyer.buyPoint(pointseller, giveMoney);
 						} else {
 							System.out.println("100원 단위로 입력해주세요. \n메뉴로 돌아갑니다.");
 						}
 						
+						// 보유한 돈<충전하고자 하는 금액일 경우
 						if(pointbuyer.getMyMoney()<0) {
 							System.out.println("한도를 초과했습니다. 메뉴로 돌아갑니다.");
 						}else {
@@ -169,14 +205,16 @@ public class SaleMain {
 							break;
 						}
 						
-					}
-				}
+					} // case3: if-else
+					
 				
-				
-			}
-		}
-
-
+					
+				} // switch				
+			} // while
+			
+			
+			
+		} // main
 	
 
 }
