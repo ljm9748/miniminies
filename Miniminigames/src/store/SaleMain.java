@@ -1,13 +1,17 @@
 package store;
 
 import java.util.InputMismatchException;
-import memberInfo.MemberInfoManager;
 import java.util.Scanner;
+
+import memberInfo.MemberInfoManager;
+import miniminigame.Menu;
+
+
 
 public class SaleMain {
 	
 	
-	MemberInfoManager members = MemberInfoManager.getManager();
+	static MemberInfoManager members = MemberInfoManager.getManager();
 
 	static Scanner sc = new Scanner(System.in);
 
@@ -42,10 +46,8 @@ public class SaleMain {
 
 			switch (select) {
 //			라이프 구매
-			case 1: 
-				System.out.println("사용자 이름을 입력해주세요.");
-				String inputId = sc.nextLine();
-				sc.nextLine();
+			case Menu.BUY_LIFE: 				
+				
 				System.out.println("보유하고 있는 포인트를 입력해주세요.");
 
 				try {
@@ -68,12 +70,12 @@ public class SaleMain {
 				// myPoint(보유 포인트), numLife(보유 라이프), price(라이프 가격)
 
 				// LifeBuyer 타입의 참조변수 선언과 초기화
-				LifeBuyer lifebuyer = new LifeBuyer(inputId, inputNum, 0); // 인스턴스 생성
+				LifeBuyer lifebuyer = new LifeBuyer( inputNum, 0); // 인스턴스 생성
 				// 현재잔액 포인트, 라이프 개수
 
 				// 라이프 구매: seller 1에게 원하는 값 지급
 				// 예외처리
-
+				
 				if (inputNum < 100) {
 					System.out.println("잔액이 부족합니다. 포인트를 충전 후 다시 구매해주세요. 메뉴로 돌아갑니다.");
 					continue;
@@ -82,6 +84,7 @@ public class SaleMain {
 					System.out.println("구매할 라이프의 개수를 입력하세요.");
 					givePoint = sc.nextInt();
 					lifebuyer.buyLife(lifeseller, givePoint * 100);
+					members.getLife();
 
 					if (lifebuyer.getMyPoint() < 0) {
 						System.out.println("한도를 초과했습니다. 메뉴로 돌아갑니다..");
@@ -97,15 +100,15 @@ public class SaleMain {
 
 						break;
 					}
+					
 				}
 				// 보유 금액을 연동하고 싶습니다.
 
 //			랜덤박스 구매
-			case 2: 
-				System.out.println("사용자 이름을 입력해주세요.");
-				inputId = sc.nextLine();
-				sc.nextLine();
+			case Menu.BUY_RANDOMBOX: 
+				
 				System.out.println("보유하고 있는 포인트를 입력해주세요.");
+				
 				try {
 					inputNum = sc.nextInt();
 					if (inputNum < 0) {
@@ -127,7 +130,7 @@ public class SaleMain {
 				// point, givePoint, price
 
 				// RandomBoxBuyer 타입의 참조변수 선언과 초기화
-				RandomBoxBuyer randomboxbuyer = new RandomBoxBuyer(inputId, inputNum, 0); // 보유 포인트 값 가져오기
+				RandomBoxBuyer randomboxbuyer = new RandomBoxBuyer( inputNum, 0); // 보유 포인트 값 가져오기
 				// myPoint(보유 포인트), getPoint(랜덤박스를 통해 얻은 포인트)
 
 				// 랜덤박스 구매: randomboxseller에게 원하는 값 지급
@@ -138,6 +141,7 @@ public class SaleMain {
 
 				if (givePoint % 100 == 0) {
 					randomboxbuyer.buyRandomBox(randomboxseller, givePoint);
+				
 				} else {
 					System.out.println("100원 단위로 입력해주세요. \n메뉴로 돌아갑니다.");
 
@@ -154,10 +158,8 @@ public class SaleMain {
 				break;
 
 //			포인트 구매	
-			case 3: 
-				System.out.println("사용자 이름을 입력해주세요.");
-				inputId = null;
-				inputId = sc.nextLine();
+			case Menu.BUY_POINT: 
+				
 				sc.nextLine();
 						
 				System.out.println("보유하고 있는 돈을 입력해주세요.");
@@ -184,11 +186,13 @@ public class SaleMain {
 					// getPoint, myMoney
 
 					// RandomBoxBuyer 타입의 참조변수 선언과 초기화
-					PointBuyer pointbuyer = new PointBuyer(inputId ,inputNum, 0, 0); // 포인트 가져오기
+					PointBuyer pointbuyer = new PointBuyer(inputNum, 0, 0); // 포인트 가져오기
 					// myMoney(보유 금액), myPoint, givePoint
 
 					// 포인트 구매: pointseller에게 원하는 값 지급
 					int giveMoney = 0;
+					int inputPoint = 0;
+					inputPoint = giveMoney/10;
 
 					System.out.println("결제할 금액을 입력해주세요. (포인트는 10p당 100원 입니다.)");
 					giveMoney = sc.nextInt();
@@ -196,6 +200,7 @@ public class SaleMain {
 					// 100원 단위로 입력할 수 있도록 안내
 					if (giveMoney % 100 == 0) {
 						pointbuyer.buyPoint(pointseller, giveMoney);
+						members.updatePoint(giveMoney/10);
 					} else {
 						System.out.println("100원 단위로 입력해주세요. \n메뉴로 돌아갑니다.");
 					}
@@ -216,9 +221,9 @@ public class SaleMain {
 					}
 				} // case3: if-else
 				
-			case 4:
+			case Menu.SHOW_SELLER:
 				seller.showSellerResult();
-			case 5:
+			case Menu.SHOW_BUYER:
 				buyer.showBuyerResult();
 
 			} // switch

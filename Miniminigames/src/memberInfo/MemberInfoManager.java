@@ -146,6 +146,9 @@ public class MemberInfoManager implements Util{
 	}
 	
 
+	public void showpoint() {
+		System.out.println("회원님의 현재 포인트: "+ members.get(membernum).getPoint());
+	}
 	
 	public void updateScore(int gamenum, int winLose) {//이기면 0 지면 1
 		int nowscore=members.get(membernum).getScore(gamenum, winLose);
@@ -178,15 +181,18 @@ public class MemberInfoManager implements Util{
 		members.get(membernum).setLife(tmpnow-1);
 		
 	}
-	
 	public void getLife() {
-		int tmpnow= members.get(membernum).getLife();
-		if(tmpnow<=3) {
-			System.out.println("이미 하트의 개수가 최대이기때문에 구매가 불가능합니다.");
-			return;
-		}
-		members.get(membernum).setLife(tmpnow+1);
-	}
+		
+				int tmpnow= members.get(membernum).getLife();
+				if(tmpnow<=3) {
+					System.out.println("이미 하트의 개수가 최대이기때문에 구매가 불가능합니다.");
+					return;
+				}
+				members.get(membernum).setLife(tmpnow+1);
+			
+				
+	}	
+	
 	public void showAllInfo() {
 		for (int i = 0; i < members.size(); i++) {
 			members.get(i).showInfo();

@@ -141,11 +141,15 @@ public class MiniGameMain implements Util, Menu {
 			
 			switch(choice3) {
 			
-			case Menu.LIFE:
+			case Menu.BUY_LIFE:
 				break;
-			case Menu.RANDOMBOX:
+			case Menu.BUY_RANDOMBOX:
 				break;
-			case Menu.POINT:
+			case Menu.BUY_POINT:
+				break;
+			case Menu.SHOW_SELLER:
+				break;
+			case Menu.SHOW_BUYER:
 				break;
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
