@@ -2,7 +2,8 @@ package miniminigame;
 
 public interface Menu {
 	
-	int JOIN = 1;
+	int JOIN = 1,
+		LOGIN = 2;
 	
 	
 	int GAMES = 1,
@@ -27,5 +28,7 @@ public interface Menu {
 	
 	int GAME_RANK =1,
 		TOTAL_RANK =2;
+	
+
 
 }

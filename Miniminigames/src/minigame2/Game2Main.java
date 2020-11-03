@@ -38,21 +38,19 @@ public class Game2Main {
 		// 게임 실행 횟수
 		int numOfGame = 0;
 		
-		// 게임 승패 기록 횟수
-		Player easyWinLose = new Player();
-		HardMode hardWinLose = new HardMode();
+		
 		
 		// 프로그램 유지를 위한 루프
 	while(true) {
 		
 		
-		System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
+		System.out.println("게임 실행 횟수 : " + numOfGame);
 		
-		System.out.println("**********메뉴를 선택해주세요**********");
+		System.out.println("■■■■■■■■■■■ 메뉴를 선택해주세요 ■■■■■■■■■■■■");
 		System.out.println(" 1. 게임을 시작합니다 (easyMode)");
 		System.out.println(" 2. 게임을 시작합니다 (hardMode)");
 		System.out.println(" 3. 게임 종료하기");
-		System.out.println("*********************************");
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 			
 		try {
 			// 입력받은 int 타입의 정수를 select에 넣음

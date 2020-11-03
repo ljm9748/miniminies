@@ -23,7 +23,21 @@ public class HardMode extends Player{
 	// contains를 활용하여 예외처리 함.
 	private String drinkBase = "물 우유 커피 바닐라 초코 얼음";
 		
-	void playerMakeDrink() {
+
+	// 게임 랭킹에 사용 될 승,패
+	private static int win = 0;
+	private static int lose = 0;
+	
+	public int getWin() {
+		return win;
+	}
+	public int getLose() {
+		return lose;
+	}
+
+	public void playerMakeDrink() {
+
+
 		
 	// 계속 실행되도록 반복문 
 	while(game2Continue) {
@@ -44,13 +58,15 @@ public class HardMode extends Player{
 		choiceMenu.csOrder();
 		
 		System.out.println("하드모드는 세번 연속 성공해야 포인트를 얻을 수 있습니다.");
-		System.out.println("************************************");
-		System.out.println(" 한  번  틀  리  면  게  임  오  버  입  니  다" );
-		System.out.println("---------------------------------");
-		System.out.println(" ┌-----준비된 재료 리스트를 확인하세요----┐");
-		System.out.println(" | 물 | 우유 | 커피 | 바닐라 | 초코 | 얼음|");
-		System.out.println(" └-------------------------------┘");
-		System.out.println("************************************");
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+		System.out.println("     한  번  틀  리  면  게  임  오  버  입  니  다" );
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+		System.out.println("--------------------------------------");
+		System.out.println("[[[[[[[[[[[[[[재료저장고]]]]]]]]]]]]]]]]]");
+		System.out.println("┏------------------------------------┓ ");
+		System.out.println("┃  물  | 우유  | 커피  | 바닐라  | 초코 | 얼음   ┃ ");
+		System.out.println("┗------------------------------------┛ ");
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 		
 		System.out.println("첫 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var1 = sc.nextLine();
