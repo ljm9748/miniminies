@@ -10,14 +10,14 @@ public class MiniGame {
 	//매니저를 불러오는 코드
 	MemberInfoManager members = MemberInfoManager.getManager();
 	
-<<<<<<< HEAD
+
 	MemberInfoManager member = MemberInfoManager.getManager();
 	
-=======
+
 	//남은 기회
 	int chance = 3;
 
->>>>>>> branch 'master' of https://github.com/ljm9748/miniminies.git
+
 	//미니게임 1
 	boolean miniGame01() {
 			//영화 명대사 문제를 저장하는 배열
@@ -234,12 +234,10 @@ public class MiniGame {
 			}
 		}
 	
-<<<<<<< HEAD
+
 	public void miniGameManager() {
-=======
-	void miniGameManager() {
+
 		members.useLife();
->>>>>>> branch 'master' of https://github.com/ljm9748/miniminies.git
 		
 		for(int i = 0; i < 3; i++) {
 			if(!miniGame01()) continue;
