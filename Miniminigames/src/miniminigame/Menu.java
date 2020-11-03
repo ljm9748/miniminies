@@ -25,7 +25,6 @@ public interface Menu {
 	int GAME_RANK =1,
 		TOTAL_RANK =2;
 	
-	int START=1;
-		
+
 
 }

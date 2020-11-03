@@ -351,7 +351,9 @@ public class MenuManager implements Util {
 	
 	
 	public void rank() {
-	
+		
+		
+		
 	
 	}
 }
