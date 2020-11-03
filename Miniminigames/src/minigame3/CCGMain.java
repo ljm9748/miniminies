@@ -3,12 +3,25 @@ package minigame3;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import memberInfo.MemberInfoManager;
+
 public class CCGMain {
+	
+	MemberInfoManager members = MemberInfoManager.getManager();
+	
+	
 	public static void main(String[] args) {
+
+
+
+		
 		int select=0;
 		while(true) {
 
 		Scanner sc = new Scanner(System.in);
+		System.out.println("============================================================");
+		System.out.println("\n \t  안녕하세요? 스피드 계산 게임에 입장하신 것을 환영합니다.\n        ");
+		System.out.println("============================================================\n");
 		System.out.println("게임 난이도를 선택하세요.");
 		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★");
 		try {
