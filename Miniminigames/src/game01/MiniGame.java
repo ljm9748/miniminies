@@ -79,7 +79,16 @@ public class MiniGame {
 				
 				return true;			
 			}else {
-				System.out.println("땡!!");
+				System.out.println("땡!! 잘 좀 하라구~");
+				
+				//기회 차감에 대한 코드
+				chance--;
+				
+				if(chance == 0) {
+					System.out.println("넌 세 번이나 되는 기회를 놓쳤어 ㅋㅋ");
+				}else {
+					System.out.println(chance + "번 남았어~");
+				}
 				
 				return false;
 			}
@@ -155,6 +164,15 @@ public class MiniGame {
 			}else {
 				System.out.println("땡!! 다시 처음부터 해 ㅎㅎ");
 				
+				//기회 차감에 대한 코드
+				chance--;
+				
+				if(chance == 0) {
+					System.out.println("넌 세 번이나 되는 기회를 놓쳤어 ㅋㅋ");
+				}else {
+					System.out.println(chance + "번 남았어~");
+				}
+				
 				return false;
 			}
 		}
@@ -190,10 +208,21 @@ public class MiniGame {
 			//사용자가 입력한 값과 정답이 일치하는지 비교
 			if(!(cccA[index] == (sc.nextInt()))) {
 				System.out.println(ccc[index]);
+				
 				return true;			
 			}else {
 				System.out.println(ccc[index]);
 				System.out.println("땡!! 아쉽지만 처음부터 해 ㅎㅎ");
+				
+				//기회 차감에 대한 코드
+				chance--;
+				
+				if(chance == 0) {
+					System.out.println("넌 세 번이나 되는 기회를 놓쳤어 ㅋㅋ");
+				}else {
+					System.out.println(chance + "번 남았어~");
+				}
+				
 				return false;
 			}
 		}
@@ -215,6 +244,7 @@ public class MiniGame {
 			members.updateScore(1, 0);
 			
 			System.out.println("메인으로 돌아갑니다~");
+			
 			return;
 		}
 		System.out.println("HAHAHA!! You Lose!!");
@@ -222,6 +252,7 @@ public class MiniGame {
 		members.updateScore(1, 1);
 		
 		System.out.println("메인으로 돌아갑니다~");
+		
 		return;
 	}
 	
