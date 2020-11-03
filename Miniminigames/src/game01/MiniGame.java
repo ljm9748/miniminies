@@ -175,7 +175,7 @@ public class MiniGame {
 			cccA[1] = 2;
 			cccA[2] = 3;
 			
-			//사용자에게 문제에 대한 정답 입력을 요구
+			//사용자에게 문제에 대한 정답 입력을 요구!!
 			Scanner sc = new Scanner(System.in);
 			
 			System.out.println("참참참!!");
