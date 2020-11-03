@@ -191,7 +191,7 @@ public class MiniGame {
 			}
 		}
 	
-	void miniGameManager() {
+	public void miniGameManager() {
 		for(int i = 0; i < 3; i++) {
 			if(!miniGame01()) continue;
 			

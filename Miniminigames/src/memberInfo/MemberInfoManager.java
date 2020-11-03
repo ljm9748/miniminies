@@ -174,6 +174,10 @@ public class MemberInfoManager implements Util{
 	
 	public void login(String id, String password) {
 		
+		SC.nextLine();
+		id = getStrInput("ID:");
+		password = getStrInput("Password:");
+		
 		int tmpidx= searchId(id);
 		if(tmpidx == -1) {
 			System.out.println("해당 아이디로 가입된 회원정보가 없습니다. 초기화면으로 돌아갑니다.");
@@ -183,12 +187,19 @@ public class MemberInfoManager implements Util{
 			membernum= tmpidx;
 			System.out.println("로그인에 성공했습니다.");
 			return;
-		}
+		}else {
 		System.out.println("아이디와 비밀번호가 올바르지 않습니다. 초기화면으로 돌아갑니다.");
 		return;
+		}
 	}
 
-	//멤버정보
+	private String getStrInput(String msg) {
+		System.out.println( msg);
+		return SC.nextLine();
+	}
+
+
+	//개인멤버정보
 	public void showMemInfo() {
 		
 		
