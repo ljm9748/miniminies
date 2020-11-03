@@ -29,7 +29,7 @@ public class Customer {
 		String menu = csRandomChoice();
 		
 		// 손님이 주문하는 것을 표현함 
-		System.out.println("**************************");
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 		System.out.println("손님이 주문을 하러 왔습니다. 뚜벅뚜벅");
 		System.out.println("손님  : >> "+ menu + "주세요");
 		

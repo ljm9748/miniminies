@@ -44,9 +44,9 @@ public class Game2Main {
 	while(true) {
 		
 		
-		System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
+		System.out.println("게임 실행 횟수 : " + numOfGame);
 		
-		System.out.println("■■■■■■■■■■■■메뉴를 선택해주세요■■■■■■■■■■■■■■■");
+		System.out.println("■■■■■■■■■■■ 메뉴를 선택해주세요 ■■■■■■■■■■■■");
 		System.out.println(" 1. 게임을 시작합니다 (easyMode)");
 		System.out.println(" 2. 게임을 시작합니다 (hardMode)");
 		System.out.println(" 3. 게임 종료하기");
