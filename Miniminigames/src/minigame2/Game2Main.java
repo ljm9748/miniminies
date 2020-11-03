@@ -7,6 +7,7 @@ package minigame2;
   	설명 : 손님은 음료 4개 중 무작위로 주문한다 {아메리카노, 카페라떼, 카페모카, 바닐라라떼}
   		   플레이어는 주어진 재료 {물, 우유, 커피, 초코, 바닐라} 를 입력한다.
   		  만들어진 음료는 손님이 주문한 음료와 비교하여 포인트를 얻는다!
+  		  게임횟수, 승패기능 추가.
   		  
   	추가하고 싶은 기능 : Thread를 이용한 미니게임 시간 제한 기능 -> 추가 예정
   					음료를 만들고 저장하여 한 번에 제공하기 -> 세번을 플레이하는 방식으로 변경 11/03 완료
@@ -15,7 +16,7 @@ package minigame2;
   					
   	생각 : 변수, 주석이 왜 중요하다고 강사님께서 말씀하셨는지 알겠다. 코드도 어렵지만 고쳐도 고쳐도 맘에들지 않는다.
   		 contains 를 활용해서 어떻게 삼항연산자를 줄일수있을까 고민했다. 강사님께서 말씀하신 문제를 먼저 알아내고 그것을 보고 "패턴찾기" 방법을 사용하면
-  		 수학에 약한 나지만 얼추 규칙은 보였던 것 같다. 오늘시작할 ver0.3은 팀원들과 파일을 합쳐 |승패기능추가|상점연동|메인메뉴가기|등 다양한 작업을 해볼것이다. 
+  		 수학에 약한 나지만 얼추 규칙은 보였던 것 같다. 오늘시작할 ver0.3은 팀원들과 파일을 합쳐 |승패기능추가(완료)|상점연동|메인메뉴가기|등 다양한 작업을 해볼것이다. 
   		  
  */
 import java.util.Scanner;
@@ -30,9 +31,24 @@ public class Game2Main {
 		// 메뉴 선택을 위한 select 변수설정
 		int select;
 		
+		// 게임 실행 횟수
+		int numOfGame = 0;
+		
+		
+		// 게임 승패 기록 횟수
+		Player easyWinLose = new Player();
+		HardMode hardWinLose = new HardMode();
+		
 		
 		// 프로그램 유지를 위한 루프
 	while(true) {
+		
+		System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
+		System.out.print("easy모드 Win : " + easyWinLose.getWin() +" \t ");
+		System.out.println("easy모드 Lose : " + easyWinLose.getLose() +" \t ");
+		System.out.print("hard모드 Win : "+hardWinLose.getWin()+" \t "); 
+		System.out.println("hard모드 Lose : "+hardWinLose.getLose());
+		
 		System.out.println("*****메뉴를 선택해주세요*****");
 		System.out.println(" 1. 게임을 시작합니다 (easyMode)");
 		System.out.println(" 2. 게임을 시작합니다 (hardMode)");
@@ -60,12 +76,14 @@ public class Game2Main {
 		
 		// 게임 시작 
 		case 1:
+			++numOfGame;
 			Player easy = new Player();
 			easy.playerMakeDrink();
 			break;
 			
 		case 2:
-			hardMode hard = new hardMode();
+			++numOfGame;
+			HardMode hard = new HardMode();
 			hard.playerMakeDrink();
 			break;
 			
