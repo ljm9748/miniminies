@@ -1,14 +1,16 @@
 package store;
 
 public class Seller {
-	final int LIFE_PRICE = 100;
+
 	private int numOfLife; 			 		// 라이프의 보유 개수
 	private int myPoint;				 	// 보유 포인트 // 잔액 불러오기
 	private int myMoney;					// 보유 금액	
-	private int givePoint; 				 	// getPoint의 수	
-	final int RANDOMBOX_PRICE = 50; 	 			// 상수 처리 - 랜덤박스의 가격, 변경이 불가능
+	private int givePoint; 				 	// 
 	private int numOfRandomBox;				// 랜덤박스 수량
 	private int getPoint; 				 	// getPoint의 수
+	final int LIFE_PRICE = 100;
+	final int RANDOMBOX_PRICE = 50; 	 			// 상수 처리 - 랜덤박스의 가격, 변경이 불가능
+	
 	
 	// getter/setter
 	public int getNumOfLife() {
