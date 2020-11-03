@@ -3,6 +3,8 @@ package game01;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import store.Seller;
+
 public class MiniGameMain {
 
 	public static void main(String[] args) {
@@ -39,7 +41,8 @@ public class MiniGameMain {
 			
 			switch(menu) {
 			//게임 시작
-			case Menu.START : 
+			case Menu.START :
+				
 				System.out.println("준비... 시작!!");
 				
 				MiniGame gs = new MiniGame();

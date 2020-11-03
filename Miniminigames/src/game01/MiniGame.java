@@ -1,9 +1,16 @@
 package game01;
 
 import java.util.Scanner;
+import memberInfo.MemberInfoManager;
 
 public class MiniGame {
+
+	//매니저를 불러오는 코드
+	MemberInfoManager members = MemberInfoManager.getManager();
 	
+	//남은 기회
+	int chance = 3;
+
 	//미니게임 1
 	boolean miniGame01() {
 			//영화 명대사 문제를 저장하는 배열
@@ -72,7 +79,16 @@ public class MiniGame {
 				
 				return true;			
 			}else {
-				System.out.println("땡!!");
+				System.out.println("땡!! 잘 좀 하라구~");
+				
+				//기회 차감에 대한 코드
+				chance--;
+				
+				if(chance == 0) {
+					System.out.println("넌 세 번이나 되는 기회를 놓쳤어 ㅋㅋ");
+				}else {
+					System.out.println(chance + "번 남았어~");
+				}
 				
 				return false;
 			}
@@ -148,6 +164,15 @@ public class MiniGame {
 			}else {
 				System.out.println("땡!! 다시 처음부터 해 ㅎㅎ");
 				
+				//기회 차감에 대한 코드
+				chance--;
+				
+				if(chance == 0) {
+					System.out.println("넌 세 번이나 되는 기회를 놓쳤어 ㅋㅋ");
+				}else {
+					System.out.println(chance + "번 남았어~");
+				}
+				
 				return false;
 			}
 		}
@@ -168,7 +193,7 @@ public class MiniGame {
 			cccA[1] = 2;
 			cccA[2] = 3;
 			
-			//사용자에게 문제에 대한 정답 입력을 요구
+			//사용자에게 문제에 대한 정답 입력을 요구!!
 			Scanner sc = new Scanner(System.in);
 			
 			System.out.println("참참참!!");
@@ -183,15 +208,28 @@ public class MiniGame {
 			//사용자가 입력한 값과 정답이 일치하는지 비교
 			if(!(cccA[index] == (sc.nextInt()))) {
 				System.out.println(ccc[index]);
+				
 				return true;			
 			}else {
 				System.out.println(ccc[index]);
 				System.out.println("땡!! 아쉽지만 처음부터 해 ㅎㅎ");
+				
+				//기회 차감에 대한 코드
+				chance--;
+				
+				if(chance == 0) {
+					System.out.println("넌 세 번이나 되는 기회를 놓쳤어 ㅋㅋ");
+				}else {
+					System.out.println(chance + "번 남았어~");
+				}
+				
 				return false;
 			}
 		}
 	
 	void miniGameManager() {
+		members.useLife();
+		
 		for(int i = 0; i < 3; i++) {
 			if(!miniGame01()) continue;
 			
@@ -200,11 +238,21 @@ public class MiniGame {
 			if(!miniGame03()) continue;
 			
 			System.out.println("Congratulation!! You Win!!");
+			System.out.println("++ 100Point");
+			
+			members.updatePoint(100);
+			members.updateScore(1, 0);
+			
 			System.out.println("메인으로 돌아갑니다~");
+			
 			return;
 		}
 		System.out.println("HAHAHA!! You Lose!!");
+		
+		members.updateScore(1, 1);
+		
 		System.out.println("메인으로 돌아갑니다~");
+		
 		return;
 	}
 	
