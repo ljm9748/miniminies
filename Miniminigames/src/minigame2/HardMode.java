@@ -34,7 +34,7 @@ public class HardMode {
 		return lose;
 	}
 
-	void playerMakeDrink() {
+	public void playerMakeDrink() {
 		
 	// 계속 실행되도록 반복문 
 	while(game2Continue) {

@@ -5,15 +5,22 @@ import java.util.Scanner;
 
 import game01.MiniGame;
 import memberInfo.MemberInfoManager;
+import minigame2.HardMode;
 import minigame2.Player;
-import minigame2.nomalLevel;
+import minigame3.BadInputException;
+import minigame3.Level1CCGame;
+import minigame3.Level2CCGame;
+import minigame3.Level3CCGame;
+
 
 public class MenuManager implements Util {
 	
 	MemberInfoManager member = MemberInfoManager.getManager();
 	
 	
+	// 로그인후 메인 메뉴
 	public void run() {
+		
 		while(true) {
 			System.out.println("■■■■■■■■■■■■■■■■■ Mini Mini Games START ■■■■■■■■■■■■■■■■■\n");
 			System.out.println("\t\t\t"+"메뉴를 선택해주세요\n"); 
@@ -251,12 +258,10 @@ public class MenuManager implements Util {
 					System.out.println("2. Exit");
 					System.out.println("-> ");
 					
-					Scanner sc = new Scanner(System.in);
-					
 					int menu = 0;
 					
 					try {
-						menu = sc.nextInt();
+						menu = SC.nextInt();
 					if(!(menu > 0 && menu <3)) {
 						System.out.println("메뉴 선택이 올바르지 않습니다");
 						System.out.println("다시 선택하세요");
@@ -290,10 +295,26 @@ public class MenuManager implements Util {
 	// 게임2 실행 
 	public void gameTwo() {
 		// 메뉴 선택을 위한 select 변수설정
-			int select;
+				int select;
+				
+				// 게임 실행 횟수
+				int numOfGame = 0;
+				
+				
+				// 게임 승패 기록 횟수
+				Player easyWinLose = new Player();
+				HardMode hardWinLose = new HardMode();
+				
 				
 				// 프로그램 유지를 위한 루프
 			while(true) {
+				
+				System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
+				System.out.print("easy모드 Win : " + easyWinLose.getWin() +" \t ");
+				System.out.println("easy모드 Lose : " + easyWinLose.getLose() +" \t ");
+				System.out.print("hard모드 Win : "+hardWinLose.getWin()+" \t "); 
+				System.out.println("hard모드 Lose : "+hardWinLose.getLose());
+				
 				System.out.println("*****메뉴를 선택해주세요*****");
 				System.out.println(" 1. 게임을 시작합니다 (easyMode)");
 				System.out.println(" 2. 게임을 시작합니다 (hardMode)");
@@ -321,13 +342,15 @@ public class MenuManager implements Util {
 				
 				// 게임 시작 
 				case 1:
+					++numOfGame;
 					Player easy = new Player();
 					easy.playerMakeDrink();
 					break;
 					
 				case 2:
-					nomalLevel nomal = new nomalLevel();
-					nomal.nomalGame();
+					++numOfGame;
+					HardMode hard = new HardMode();
+					hard.playerMakeDrink();
 					break;
 					
 				// 게임 종료	
@@ -337,13 +360,47 @@ public class MenuManager implements Util {
 					
 				
 				}
-				
 			}
 			
 	}
 	
 	// 게임3 실행
 	public void gameThree() {
+		
+		int select=0;
+		while(true) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("게임 난이도를 선택하세요.");
+		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★");
+		try {
+		select=sc.nextInt();
+			if(!(select>0 && select<4)) {
+				BadInputException e = new BadInputException(String.valueOf(select));
+				throw e;
+			}
+		} catch(InputMismatchException | BadInputException e) {
+			System.out.println("숫자만 입력하세요.");
+			sc.nextLine();
+			continue;
+		}
+			switch(select) {
+			case 1 :	Level1CCGame lv1 = new Level1CCGame();
+						lv1.explainGame();
+						break;
+					
+			case 2 :  	Level2CCGame lv2 = new Level2CCGame();
+						lv2.explainGame();
+						break;
+				
+			case 3 :	Level3CCGame lv3 = new Level3CCGame();
+						lv3.explainGame();
+						break;
+			
+		}
+	}
+		
+		
 		
 	}
 	
