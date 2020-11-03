@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import miniminigame.MenuManager;
 
 public class MemberInfoManager implements Util{
 	
@@ -145,11 +146,17 @@ public class MemberInfoManager implements Util{
 		members.get(membernum).setPoint(tmppoint);
 	}
 	
+
+	public void showpoint() {
+		System.out.println("회원님의 현재 포인트: "+ members.get(membernum).getPoint());
+	}
+	
 	public void updateScore(int gamenum, int winLose) {//이기면 0 지면 1
 		int nowscore=members.get(membernum).getScore(gamenum, winLose);
 		if(winLose==0) nowscore += 1;
 		else nowscore -=1;
 		members.get(membernum).setScore(gamenum-1, winLose, nowscore);
+
 	}
 	
 	public void changeName( ) {
@@ -162,28 +169,33 @@ public class MemberInfoManager implements Util{
 		System.out.println("비밀번호 변경을 위해 기존 비밀번호를 입력해 주세요: ");
 		String pwBefore= SC.nextLine();
 		if(members.get(membernum).getPassword() == pwBefore) {
+			System.out.println("새로운 비밀번호를 입력해주세요: ");
 			String pwAfter= SC.nextLine();
 			members.get(membernum).setPassword(pwAfter);
+			
 		}
 	}
 	public void useLife() {
 		int tmpnow= members.get(membernum).getLife();
 		if(tmpnow<1) {
-			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
+			System.out.println("하트가 부족합니다 상점에서 더 충전하여  사용해 주세요!");
 			return;
 		}
 		members.get(membernum).setLife(tmpnow-1);
+		System.out.println(members.get(membernum).getLife());
 		
 	}
+
 	
-	public void getLife() {
+	public void giveLife() {
 		int tmpnow= members.get(membernum).getLife();
-		if(tmpnow<=3) {
+		if(tmpnow>=3) {
 			System.out.println("이미 하트의 개수가 최대이기때문에 구매가 불가능합니다.");
 			return;
 		}
 		members.get(membernum).setLife(tmpnow+1);
 	}
+
 	public void showAllInfo() {
 		for (int i = 0; i < members.size(); i++) {
 			members.get(i).showInfo();
@@ -193,30 +205,46 @@ public class MemberInfoManager implements Util{
 	//기능
 	public void resetLife() {
 		//정각마다 라이프 늘려주는기능 나중에 구현
+		int tmpnow= members.get(membernum).getLife();
+		if(tmpnow>=3) {
+			System.out.println("이미 하트의 개수가 최대이기때문에 증가가 불가합니다.");
+			return;
+		}
+		members.get(membernum).setLife(tmpnow+1);
+		System.out.println("하트하나 추가!");
 	}
 	
 	
-	public void login(String id, String password) {
+	public boolean login() {
+		
+		System.out.println("아이디와 비밀번호를 입력해주세용");
+		String id = getStrInput("ID:");
+		String password = getStrInput("Password:");
 		
 		int tmpidx= searchId(id);
+		
 		if(tmpidx == -1) {
 			System.out.println("해당 아이디로 가입된 회원정보가 없습니다. 초기화면으로 돌아갑니다.");
-			return;
+			return false;
 		}
-		else if(members.get(tmpidx).getPassword() == password) {
-			membernum= tmpidx;
+		if(members.get(tmpidx).getPassword().equals(password)) {
+			membernum = tmpidx;
 			System.out.println("로그인에 성공했습니다.");
-			return;
-		}
+			return true;
+			
+		}else {
 		System.out.println("아이디와 비밀번호가 올바르지 않습니다. 초기화면으로 돌아갑니다.");
-		return;
+		return false;
+		}
 	}
 
-	//멤버정보
-	public void showMemInfo() {
-		
-		
-		
+
+	private String getStrInput(String msg) {
+		System.out.println(msg);
+		return SC.nextLine();
 	}
+
+
+
 
 }

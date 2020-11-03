@@ -3,13 +3,16 @@ package game01;
 import java.util.Scanner;
 import memberInfo.MemberInfoManager;
 
+import memberInfo.MemberInfoManager;
+
 public class MiniGame {
 
 	//매니저를 불러오는 코드
-//	MemberInfoManager members = MemberInfoManager.getManager();
-	
+	MemberInfoManager members = MemberInfoManager.getManager();
+
 	//남은 기회
 	int chance = 3;
+
 
 	//미니게임 1
 	boolean miniGame01() {
@@ -227,8 +230,11 @@ public class MiniGame {
 			}
 		}
 	
-	void miniGameManager() {
-//		members.useLife();
+
+	public void miniGameManager() {
+
+		members.useLife();
+
 		
 		for(int i = 0; i < 3; i++) {
 			if(!miniGame01()) continue;
@@ -240,8 +246,8 @@ public class MiniGame {
 			System.out.println("Congratulation!! You Win!!");
 			System.out.println("++ 100Point");
 			
-//			members.updatePoint(100);
-//			members.updateScore(1, 0);
+			members.updatePoint(100);
+			members.updateScore(1, 0);
 			
 			System.out.println("메인으로 돌아갑니다~");
 			
@@ -249,7 +255,7 @@ public class MiniGame {
 		}
 		System.out.println("HAHAHA!! You Lose!!");
 		
-//		members.updateScore(1, 1);
+		members.updateScore(1, 1);
 		
 		System.out.println("메인으로 돌아갑니다~");
 		

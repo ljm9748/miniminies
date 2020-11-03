@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 import memberInfo.MemberInfoManager;
 
-public class Level3CCGame {
+public class Level3CCGame extends CCGame {
 	
 	MemberInfoManager members = MemberInfoManager.getManager();
-
+	@Override
 	public void explainGame() {
 		int select=0;
 		while(true) {

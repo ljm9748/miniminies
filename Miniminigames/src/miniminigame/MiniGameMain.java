@@ -15,6 +15,7 @@ public class MiniGameMain implements Util, Menu {
 		
 		
 		MemberInfoManager member = MemberInfoManager.getManager();
+		
 		MenuManager gmanager =  new MenuManager();
 		
 		String MINI[] = {
@@ -29,41 +30,12 @@ public class MiniGameMain implements Util, Menu {
 		for (int i = 0; i < MINI.length; i++) {
 		      // 메세지를 출력
 		      System.out.println(MINI[i]);
-		} 
+		}
 		
-		member.addInfo();
-		member.save();
+		// 로그인 or 회원가입
+		gmanager.login();
+		gmanager.run();
 
-		while(true) {
-			System.out.println("■■■■■■■■■■■■■■■■■ Mini Mini Games START ■■■■■■■■■■■■■■■■■\n");
-			System.out.println("\t\t\t"+"메뉴를 선택해주세요\n"); 
-			System.out.println("\t\t\t"+Menu.GAMES +". 게임하기\n"); 
-			System.out.println("\t\t\t"+Menu.MYPAGE+". 마이페이지\n"); 
-			System.out.println("\t\t\t"+Menu.STORE+". 상점\n"); 
-			System.out.println("\t\t\t"+Menu.RANKING+". 랭킹보기\n");
-			System.out.println("\t\t\t"+Menu.EXIT+". 종료하기\n"); 
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-		break;
-		}
-		
-		
-		int choice = 0;
-		
-		try {
-			choice = SC.nextInt();
-			if(!(choice > 0 && choice < 5)) {
-				BadInputException e = new BadInputException(String.valueOf(choice));
-				throw e;
-			}
-		} catch (InputMismatchException | BadInputException e) {
-			System.out.println("잘못입력했습니다.");
-			SC.nextLine();
-		} catch (Exception e1) {
-			System.out.println("메뉴를 잘못 입력했습니다. 다시시도 해주세요.");
-			SC.nextLine();
-		}
-		
-		
 		// 게임 선택지
 		switch(choice) {
 		case Menu.GAMES:
@@ -141,11 +113,15 @@ public class MiniGameMain implements Util, Menu {
 			
 			switch(choice3) {
 			
-			case Menu.LIFE:
+			case Menu.BUY_LIFE:
 				break;
-			case Menu.RANDOMBOX:
+			case Menu.BUY_RANDOMBOX:
 				break;
-			case Menu.POINT:
+			case Menu.BUY_POINT:
+				break;
+			case Menu.SHOW_SELLER:
+				break;
+			case Menu.SHOW_BUYER:
 				break;
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
@@ -188,5 +164,7 @@ public class MiniGameMain implements Util, Menu {
 			}
 		}
 
+
 	}
 
+}

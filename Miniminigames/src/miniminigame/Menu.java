@@ -2,7 +2,8 @@ package miniminigame;
 
 public interface Menu {
 	
-	int JOIN = 1;
+	int JOIN = 1,
+		LOGIN = 2;
 	
 	
 	int GAMES = 1,
@@ -18,11 +19,16 @@ public interface Menu {
 	int EDIT = 1,
 		DELET =2;
 	
-	int LIFE =1,
-		RANDOMBOX =2,
-		POINT=3;
+	// 20.11.03 store menu 수정
+	int BUY_LIFE = 1;
+	int BUY_RANDOMBOX = 2;
+	int BUY_POINT = 3;
+	int SHOW_SELLER = 4;
+	int SHOW_BUYER = 5;
 	
 	int GAME_RANK =1,
 		TOTAL_RANK =2;
+	
+
 
 }
