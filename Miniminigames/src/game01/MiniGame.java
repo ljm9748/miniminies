@@ -4,16 +4,13 @@ import java.util.Scanner;
 import memberInfo.MemberInfoManager;
 
 public class MiniGame {
-	
-<<<<<<< Updated upstream
-=======
+
 	//매니저를 불러오는 코드
 	MemberInfoManager members = MemberInfoManager.getManager();
 	
 	//남은 기회
 	int chance = 3;
-	
->>>>>>> Stashed changes
+
 	//미니게임 1
 	boolean miniGame01() {
 			//영화 명대사 문제를 저장하는 배열
