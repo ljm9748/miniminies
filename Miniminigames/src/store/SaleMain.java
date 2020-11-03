@@ -9,7 +9,8 @@ public class SaleMain {
 
 	public static void main(String[] args) {
 
-		Seller seller = new Seller(0);
+		Seller seller = new Seller();
+		Buyer buyer = new Buyer();
 		
 		while (true) {
 
@@ -18,6 +19,7 @@ public class SaleMain {
 			System.out.println("2. 랜덤박스 구매");
 			System.out.println("3. 포인트 충전");
 			System.out.println("4. 판매자의 현재 판매 지표");
+			System.out.println("5. 구매자의 현재 구매 지표");
 
 			int inputNum = 0;
 			int select = 0;
@@ -37,6 +39,9 @@ public class SaleMain {
 			switch (select) {
 
 			case 1: // 라이프 구매
+				System.out.println("사용자 이름을 입력해주세요.");
+				String inputId = sc.nextLine();
+				sc.nextLine();
 				System.out.println("보유하고 있는 포인트를 입력해주세요.");
 
 				try {
@@ -59,7 +64,7 @@ public class SaleMain {
 				// myPoint(보유 포인트), numLife(보유 라이프), price(라이프 가격)
 
 				// LifeBuyer 타입의 참조변수 선언과 초기화
-				LifeBuyer lifebuyer = new LifeBuyer(inputNum, 0); // 인스턴스 생성
+				LifeBuyer lifebuyer = new LifeBuyer(inputId, inputNum, 0); // 인스턴스 생성
 				// 현재잔액 포인트, 라이프 개수
 
 				// 라이프 구매: seller 1에게 원하는 값 지급
@@ -92,6 +97,9 @@ public class SaleMain {
 				// 보유 금액을 연동하고 싶습니다.
 
 			case 2: // 랜덤박스 구매
+				System.out.println("사용자 이름을 입력해주세요.");
+				inputId = null;
+				sc.nextLine();
 				System.out.println("보유하고 있는 포인트를 입력해주세요.");
 				try {
 					inputNum = sc.nextInt();
@@ -114,7 +122,7 @@ public class SaleMain {
 				// point, givePoint, price
 
 				// RandomBoxBuyer 타입의 참조변수 선언과 초기화
-				RandomBoxBuyer randomboxbuyer = new RandomBoxBuyer(inputNum, 0); // 보유 포인트 값 가져오기
+				RandomBoxBuyer randomboxbuyer = new RandomBoxBuyer(inputId, inputNum, 0); // 보유 포인트 값 가져오기
 				// myPoint(보유 포인트), getPoint(랜덤박스를 통해 얻은 포인트)
 
 				// 랜덤박스 구매: randomboxseller에게 원하는 값 지급
@@ -141,6 +149,11 @@ public class SaleMain {
 				break;
 
 			case 3: // 포인트 구매
+				System.out.println("사용자 이름을 입력해주세요.");
+				inputId = null;
+				inputId = sc.nextLine();
+				sc.nextLine();
+						
 				System.out.println("보유하고 있는 돈을 입력해주세요.");
 				try {
 					inputNum = sc.nextInt();
@@ -165,7 +178,7 @@ public class SaleMain {
 					// getPoint, myMoney
 
 					// RandomBoxBuyer 타입의 참조변수 선언과 초기화
-					PointBuyer pointbuyer = new PointBuyer(inputNum, 0, 0); // 포인트 가져오기
+					PointBuyer pointbuyer = new PointBuyer(inputId ,inputNum, 0, 0); // 포인트 가져오기
 					// myMoney(보유 금액), myPoint, givePoint
 
 					// 포인트 구매: pointseller에게 원하는 값 지급
@@ -199,6 +212,8 @@ public class SaleMain {
 				
 			case 4:
 				seller.showSellerResult();
+			case 5:
+				buyer.showBuyerResult();
 
 			} // switch
 		} // while

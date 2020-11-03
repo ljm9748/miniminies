@@ -14,6 +14,17 @@ public class Buyer {
 	private int myMoney;	
 	private int getPoint;	 // 랜덤박스로 얻은 포인트
 	//private int numOfRandomBox; // 랜덤박스 수량
+	
+	// 구매자의 아이디
+	private String id;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	// getter/setter
 	public int getMyPoint() {
@@ -67,14 +78,20 @@ public class Buyer {
 	
 	
 	// 생성자	
-	public Buyer(int myPoint, int numOfLife) {
+	Buyer(){
+		
+	}
+	
+	Buyer(String id, int myPoint, int numOfLife) {
+		this.id = id;
 		this.myPoint = myPoint;
 		this.numOfLife = numOfLife;
 	
 	}
 	
 	
-	public Buyer(int myMoney, int myPoint , int getPoint) {
+	Buyer(String id, int myMoney, int myPoint , int getPoint) {
+		this.id = id;
 		this.myMoney = myMoney;
 		this.myPoint = myPoint; 					
 		this.getPoint = getPoint;
@@ -113,6 +130,7 @@ public class Buyer {
 //	라이프 구매 출력 메소드
 	void showBuyLifeResult() {
 		// 지급한 포인트 금액 출력
+		System.out.println("*****" + id + "의 라이프 구매 내역*****");
 		System.out.println("남은 포인트는 " + myPoint + "p 입니다.");
 		System.out.println("현재 보유 라이프 개수는 " + numOfLife + "개 입니다.");
 	}
@@ -120,6 +138,7 @@ public class Buyer {
 //	랜덤박스 구매 출력 메소드
 	void showBuyRandomBoxResult() {
 		// 지급한 포인트 금액 출력
+		System.out.println("*****" + id + "의 랜덤박스 구매 내역*****");
 		System.out.println("랜덤박스 결과는 " + givePoint + "p 입니다.");
 		System.out.println("남은 포인트는 " + myPoint +"p 입니다.");
 		
@@ -128,10 +147,19 @@ public class Buyer {
 //	포인트 구매 출력 메소드
 	void showBuyPointResult() {
 		// 지급한 포인트 금액 출력
+		System.out.println("*****" + id + "의 포인트 구매 내역*****");
 		System.out.println("구매한 포인트는 " + getPoint + "p 입니다.");
 		System.out.println("남은 포인트는 " + myPoint + "p 입니다.");
 		System.out.println("남은 금액은 " + myMoney + "원 입니다.");
 		
+	}
+	
+//	구매자의 현재 정보 출력 메소드
+	void showBuyerResult() {
+		System.out.println("*****" + id + "의 구매 내역*****");
+		System.out.println("현재 라이프의 개수는 " + numOfLife + "개 입니다.");		
+		System.out.println("현재 포인트는 " + myPoint + "p 입니다.");
+		System.out.println("현재 보유 금액은 " + myMoney + " 원 입니다.");
 	}
 	
 }

@@ -67,7 +67,10 @@ public class Seller {
 		return RANDOMBOX_PRICE;
 	}
 
-
+	Seller(){
+		
+	}
+	
 	// 생성자
 	Seller(int myPoint) {
 		this.myPoint = myPoint;		

@@ -3,12 +3,12 @@ package store;
 public class LifeBuyer extends Buyer {
 
 	// 생성자
-	public LifeBuyer(int myPoint, int numOfLife) {
-		super(myPoint, numOfLife);
+	public LifeBuyer(String id, int myPoint, int numOfLife) {
+		super(id, myPoint, numOfLife);
 	}
 
 	LifeBuyer(LifeBuyer lifebuyer) {
-		this(lifebuyer.getMyPoint(), lifebuyer.getNumOfLife());
+		this(lifebuyer.getId(), lifebuyer.getMyPoint(), lifebuyer.getNumOfLife());
 	}
 
 	// 기능: 라이프 구매, 현재 상태값(금액, 라이프의 개수)을 출력
