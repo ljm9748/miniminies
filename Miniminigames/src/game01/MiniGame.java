@@ -9,10 +9,6 @@ public class MiniGame {
 
 	//매니저를 불러오는 코드
 	MemberInfoManager members = MemberInfoManager.getManager();
-	
-
-	MemberInfoManager member = MemberInfoManager.getManager();
-	
 
 	//남은 기회
 	int chance = 3;
@@ -238,6 +234,7 @@ public class MiniGame {
 	public void miniGameManager() {
 
 		members.useLife();
+
 		
 		for(int i = 0; i < 3; i++) {
 			if(!miniGame01()) continue;
