@@ -38,7 +38,7 @@ public class Player {
 		choiceMenu.csOrder();
 		
 		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-		System.out.println("\t\t 남은 기회 : "+game2Life       );
+		System.out.println("\t         남은 기회 : "+game2Life       );
 		System.out.println("--------------------------------------");
 		System.out.println("[[[[[[[[[[[[[[재료저장고]]]]]]]]]]]]]]]]]");
 		System.out.println("┏------------------------------------┓ ");
