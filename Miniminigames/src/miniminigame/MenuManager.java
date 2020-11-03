@@ -349,8 +349,8 @@ public class MenuManager implements Util {
 			while(true) {
 				
 				System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
-				System.out.print("easy모드 Win : " + easyWinLose.getWin() +" \t ");
-				System.out.println("easy모드 Lose : " + easyWinLose.getLose() +" \t ");
+				System.out.print("easy모드 Win : " + ((HardMode) easyWinLose).getWin() +" \t ");
+				System.out.println("easy모드 Lose : " + ((HardMode) easyWinLose).getLose() +" \t ");
 				System.out.print("hard모드 Win : "+hardWinLose.getWin()+" \t "); 
 				System.out.println("hard모드 Lose : "+hardWinLose.getLose());
 				
