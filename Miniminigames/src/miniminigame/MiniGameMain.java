@@ -13,9 +13,6 @@ public class MiniGameMain implements Util, Menu {
 	public static void main(String[] args) throws IOException {
 		
 		
-		
-		MemberInfoManager member = MemberInfoManager.getManager();
-		
 		MenuManager gmanager =  new MenuManager();
 		
 		String MINI[] = {

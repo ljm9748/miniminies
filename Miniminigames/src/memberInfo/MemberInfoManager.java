@@ -104,12 +104,14 @@ public class MemberInfoManager implements Util{
 		
 		
 	}
+	
 	public void deleteInfo() {//회원탈퇴
 		members.remove(membernum);
 		System.out.println("회원탈퇴되셨습니다. 프로그램을 종료합니다.");
 		save();
 		System.exit(0);
 	}
+	
 	private int searchId(String id) {//아이디의 인덱스 찾기
 		int index= -1;
 		
@@ -153,25 +155,46 @@ public class MemberInfoManager implements Util{
 		members.get(membernum).setScore(gamenum-1, winLose, nowscore);
 	}
 	
+	
 	public void changeName( ) {
 		System.out.println("바꾸실 이름을 써주세요.");
 		String newname = SC.nextLine();
 		members.get(membernum).setName(newname);
+		save();
+		System.out.println("이름바꾸기완료!");
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+		showInfoUser();
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 	}
 	
+	//public void showInfo(){
+		
+	//}
+	
+	
+
 	public void changePassword() {
+		
+		while(true) {
 		System.out.println("비밀번호 변경을 위해 기존 비밀번호를 입력해 주세요: ");
 		String pwBefore= SC.nextLine();
-		if(members.get(membernum).getPassword() == pwBefore) {
+		if(members.get(membernum).getPassword().equals(pwBefore)) {
 			System.out.println("새로운 비밀번호를 입력해주세요: ");
-			String pwAfter= SC.nextLine();
+			String pwAfter = SC.nextLine();
 			members.get(membernum).setPassword(pwAfter);
+			save();
+			System.out.println("비밀번호 바꾸기 완료! 처음으로 돌아갑니다.");
+			return;
+		}else {
+			System.out.println("비밀번호를 틀렸습니다. 다시 입력해주세요");
 			
+		 	}
 		}
 	}
+	
 	public void useLife() {
 		int tmpnow= members.get(membernum).getLife();
-		if(tmpnow<1) {
+		if(tmpnow < 1) {
 			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
 			return;
 		}
@@ -187,10 +210,15 @@ public class MemberInfoManager implements Util{
 		}
 		members.get(membernum).setLife(tmpnow+1);
 	}
+	
 	public void showAllInfo() {
 		for (int i = 0; i < members.size(); i++) {
 			members.get(i).showInfo();
 		}
+	}
+	
+	public void showInfoUser() {
+			members.get(membernum).showInfo();
 	}
 	
 	//기능
@@ -213,7 +241,7 @@ public class MemberInfoManager implements Util{
 		}
 		if(members.get(tmpidx).getPassword().equals(password)) {
 			membernum = tmpidx;
-			System.out.println("로그인에 성공했습니다.");
+			System.out.println(id+"님이 로그인에 성공했습니다.");
 			return true;
 			
 		}else {
@@ -226,13 +254,8 @@ public class MemberInfoManager implements Util{
 		System.out.println(msg);
 		return SC.nextLine();
 	}
+	
 
 
-	//개인멤버정보
-	public void showMemInfo() {
-		
-		
-		
-	}
 
 }
