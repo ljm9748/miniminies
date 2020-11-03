@@ -18,9 +18,9 @@ public class LifeSeller {
 		
 		// 생성자의 오버로딩
 		LifeSeller(int point, int numLife, int price){
-			LIFE_PRICE=price;
-			numOfLife = numLife;
-			myPoint = point;
+			this.myPoint = myPoint;
+			this.numOfLife = numOfLife;
+			LIFE_PRICE = price;			
 		}
 		
 		LifeSeller(LifeSeller seller){		

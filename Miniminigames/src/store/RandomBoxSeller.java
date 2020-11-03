@@ -2,7 +2,7 @@ package store;
 
 public class RandomBoxSeller {
 
-	// 클래스에는 변수와 메소드를 정의
+			// 클래스에는 변수와 메소드를 정의
 			// 성격이 비슷한 변수, 메소드를 정의한다.		
 			
 			final int RANDOMBOX_PRICE; 	 			// 상수 처리 - 랜덤박스의 가격, 변경이 불가능
@@ -17,10 +17,10 @@ public class RandomBoxSeller {
 			}
 			
 			// 생성자의 오버로딩
-			RandomBoxSeller(int point, int getPoint, int price){
-				RANDOMBOX_PRICE = price;
+			RandomBoxSeller(int myPoint, int getPoint, int RANDOMBOX_PRICE){
+				this.RANDOMBOX_PRICE = RANDOMBOX_PRICE;
 				this.getPoint = getPoint;
-				myPoint = point;
+				this.myPoint = myPoint;
 			}
 			
 			RandomBoxSeller(RandomBoxSeller randomboxseller){		
