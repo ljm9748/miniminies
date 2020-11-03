@@ -144,6 +144,7 @@ public class MemberInfoManager implements Util{
 		members.get(membernum).setPoint(tmppoint);
 	}
 	
+	
 	public int updateScore() {
 		int changedScore=0;
 		return changedScore;

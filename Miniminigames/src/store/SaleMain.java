@@ -1,9 +1,13 @@
 package store;
 
 import java.util.InputMismatchException;
+import memberInfo.MemberInfoManager;
 import java.util.Scanner;
 
 public class SaleMain {
+	
+	
+	MemberInfoManager members = MemberInfoManager.getManager();
 
 	static Scanner sc = new Scanner(System.in);
 
@@ -37,8 +41,8 @@ public class SaleMain {
 			}
 
 			switch (select) {
-
-			case 1: // 라이프 구매
+//			라이프 구매
+			case 1: 
 				System.out.println("사용자 이름을 입력해주세요.");
 				String inputId = sc.nextLine();
 				sc.nextLine();
@@ -96,9 +100,10 @@ public class SaleMain {
 				}
 				// 보유 금액을 연동하고 싶습니다.
 
-			case 2: // 랜덤박스 구매
+//			랜덤박스 구매
+			case 2: 
 				System.out.println("사용자 이름을 입력해주세요.");
-				inputId = null;
+				inputId = sc.nextLine();
 				sc.nextLine();
 				System.out.println("보유하고 있는 포인트를 입력해주세요.");
 				try {
@@ -148,7 +153,8 @@ public class SaleMain {
 
 				break;
 
-			case 3: // 포인트 구매
+//			포인트 구매	
+			case 3: 
 				System.out.println("사용자 이름을 입력해주세요.");
 				inputId = null;
 				inputId = sc.nextLine();
