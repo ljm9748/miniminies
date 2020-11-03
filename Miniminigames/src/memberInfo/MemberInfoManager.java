@@ -245,6 +245,9 @@ public class MemberInfoManager implements Util{
 	}
 
 
+	
+
+
 
 
 }

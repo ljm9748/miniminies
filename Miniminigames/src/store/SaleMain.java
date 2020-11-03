@@ -84,7 +84,7 @@ public class SaleMain {
 					System.out.println("구매할 라이프의 개수를 입력하세요.");
 					givePoint = sc.nextInt();
 					lifebuyer.buyLife(lifeseller, givePoint * 100);
-					members.getLife();
+					
 
 					if (lifebuyer.getMyPoint() < 0) {
 						System.out.println("한도를 초과했습니다. 메뉴로 돌아갑니다..");

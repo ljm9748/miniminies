@@ -91,7 +91,7 @@ public class Buyer {
 	void buyLife(LifeSeller lifeseller, int point) {
 		// 구매할 사과의 개수를 구한다.
 		int numLife = lifeseller.saleLife(point);
-		members.getLife();
+		members.giveLife();
 		// 나의 라이프의 개수 증가
 		numOfLife += numLife;		
 		// 나의 보유 포인트를 감소
