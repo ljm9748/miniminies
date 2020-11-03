@@ -12,7 +12,7 @@ public class Customer {
 		// 배열의 index로 사용할 cnt
 		int cnt = 0;
 		// String타입의 배열 메뉴리스트를 생성함.
-		String[] menuList = {"아메리카노", "카페라떼", "카페모카", "바닐라라떼"};
+		String[] menuList = {"아이스아메리카노", "아이스카페라떼", "카페모카", "바닐라라떼"};
 		// cnt는  0, 1, 2, 3 의 값을 가짐.
 		cnt = (int) (Math.random()*4);
 		// 메뉴리스트의 0~3번지 중 1개의 값을 스트링 타입 mc에 저장 후 값을 반환 = (메뉴를 정했다)

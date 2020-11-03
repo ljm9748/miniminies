@@ -2,7 +2,7 @@ package minigame2;
 
 import java.util.Scanner;
 
-public class HardMode {
+public class HardMode extends Player{
 	
 	/*
 	 하드모드는 3번 연속 진행되고 한 번이라도 틀릴시 바로 탈락함.
@@ -10,7 +10,7 @@ public class HardMode {
 	 */
 	
 	// game2Life가 0이되면 game2Continue를 false로 변경해 게임이 종료되도록 함.(라이프개념)
-	boolean game2Continue = true;
+	private boolean game2Continue = true;
 	
 	// 기본 nomalMode는 Life는 3으로 설정
 	// 모두 맞춰야 점수를 받기때문에 한 번만 실패해도 탈락
@@ -21,7 +21,7 @@ public class HardMode {
 	private int victory = 0;
 	
 	// contains를 활용하여 예외처리 함.
-		String drinkBase = "물 우유 커피 바닐라 초코 없음";
+	private String drinkBase = "물 우유 커피 바닐라 초코 얼음";
 		
 	// 게임 랭킹에 사용 될 승,패
 	private static int win = 0;
@@ -58,11 +58,11 @@ public class HardMode {
 		System.out.println(" 한  번  틀  리  면  게  임  오  버  입  니  다" );
 		System.out.println("---------------------------------");
 		System.out.println(" ┌-----준비된 재료 리스트를 확인하세요----┐");
-		System.out.println(" | 물 | 우유 | 커피 | 바닐라 | 초코 | 없음|");
+		System.out.println(" | 물 | 우유 | 커피 | 바닐라 | 초코 | 얼음|");
 		System.out.println(" └-------------------------------┘");
 		System.out.println("************************************");
 		
-		System.out.println("첫 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[없음])");
+		System.out.println("첫 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var1 = sc.nextLine();
 		System.out.println("첫 번째로 넣을 재료는 = " + var1);
 		
@@ -83,7 +83,7 @@ public class HardMode {
 		}
 			
 
-		System.out.println("두 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[없음])");
+		System.out.println("두 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var2 = sc.nextLine();
 		System.out.println("두 번째로 넣을 재료는 = " + var2);
 		
@@ -102,7 +102,7 @@ public class HardMode {
 		}
 		
 		
-		System.out.println("세 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[없음])");
+		System.out.println("세 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var3 = sc.nextLine();
 		System.out.println("세 번째로 넣을 재료는 = " +var3);
 		
