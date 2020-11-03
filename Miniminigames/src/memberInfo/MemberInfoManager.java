@@ -146,11 +146,17 @@ public class MemberInfoManager implements Util{
 		members.get(membernum).setPoint(tmppoint);
 	}
 	
+
+	public void showpoint() {
+		System.out.println("회원님의 현재 포인트: "+ members.get(membernum).getPoint());
+	}
+	
 	public void updateScore(int gamenum, int winLose) {//이기면 0 지면 1
 		int nowscore=members.get(membernum).getScore(gamenum, winLose);
 		if(winLose==0) nowscore += 1;
 		else nowscore -=1;
 		members.get(membernum).setScore(gamenum-1, winLose, nowscore);
+
 	}
 	
 	public void changeName( ) {
@@ -179,6 +185,7 @@ public class MemberInfoManager implements Util{
 		System.out.println(members.get(membernum).getLife());
 		
 	}
+
 	
 	public void giveLife() {
 		int tmpnow= members.get(membernum).getLife();
@@ -188,6 +195,7 @@ public class MemberInfoManager implements Util{
 		}
 		members.get(membernum).setLife(tmpnow+1);
 	}
+
 	public void showAllInfo() {
 		for (int i = 0; i < members.size(); i++) {
 			members.get(i).showInfo();
