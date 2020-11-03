@@ -19,7 +19,7 @@ public class Player {
 	
 
 	//플레이어는 음료를 만든다
-	void playerMakeDrink() {
+	public void playerMakeDrink() {
 		
 		// 계속 실행되도록 반복문 
 		while(game2Continue) {

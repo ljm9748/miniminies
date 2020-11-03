@@ -123,6 +123,7 @@ public class MemberInfoManager implements Util{
 		return index;
 	}
 
+
 	private boolean isMember(String id, String name) {//가입여부 확인
 		//중복아이디 찾기
 		int tmpidx= this.searchId(id);
@@ -148,9 +149,13 @@ public class MemberInfoManager implements Util{
 		int changedScore=0;
 		return changedScore;
 	}
-	public void changeName(String newname) {
+	
+	public void changeName( ) {
+		System.out.println("바꾸실 이름을 써주세요.");
+		String newname = SC.nextLine();
 		members.get(membernum).setName(newname);
 	}
+	
 	public void changePassword() {
 		System.out.println("비밀번호 변경을 위해 기존 비밀번호를 입력해 주세요: ");
 		String pwBefore= SC.nextLine();
@@ -165,19 +170,29 @@ public class MemberInfoManager implements Util{
 	public void resetLife() {
 		//정각마다 라이프 늘려주는기능 나중에 구현
 	}
+	
+	
 	public void login(String id, String password) {
+		
 		int tmpidx= searchId(id);
 		if(tmpidx == -1) {
 			System.out.println("해당 아이디로 가입된 회원정보가 없습니다. 초기화면으로 돌아갑니다.");
 			return;
 		}
-		if(members.get(tmpidx).getPassword() == password) {
+		else if(members.get(tmpidx).getPassword() == password) {
 			membernum= tmpidx;
 			System.out.println("로그인에 성공했습니다.");
 			return;
 		}
 		System.out.println("아이디와 비밀번호가 올바르지 않습니다. 초기화면으로 돌아갑니다.");
 		return;
+	}
+
+	//멤버정보
+	public void showMemInfo() {
+		
+		
+		
 	}
 
 }
