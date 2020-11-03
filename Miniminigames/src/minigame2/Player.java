@@ -25,7 +25,7 @@ public class Player {
 	
 
 	//플레이어는 음료를 만든다
-	void playerMakeDrink() {
+	public void playerMakeDrink() {
 		
 	
 		
