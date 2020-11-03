@@ -21,9 +21,13 @@ package minigame2;
  */
 import java.util.Scanner;
 
+import memberInfo.MemberInfoManager;
+
 public class Game2Main {
 
+
 	public static void main(String[] args) {
+		
 		
 		// 메인메뉴 선택을 하기위한 스캐너
 		Scanner sc = new Scanner(System.in);
@@ -38,15 +42,11 @@ public class Game2Main {
 		Player easyWinLose = new Player();
 		HardMode hardWinLose = new HardMode();
 		
-		
 		// 프로그램 유지를 위한 루프
 	while(true) {
 		
+		
 		System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
-		System.out.print("easy모드 Win : " + easyWinLose.getWin() +" \t ");
-		System.out.println("easy모드 Lose : " + easyWinLose.getLose() +" \t ");
-		System.out.print("hard모드 Win : "+hardWinLose.getWin()+" \t "); 
-		System.out.println("hard모드 Lose : "+hardWinLose.getLose());
 		
 		System.out.println("**********메뉴를 선택해주세요**********");
 		System.out.println(" 1. 게임을 시작합니다 (easyMode)");

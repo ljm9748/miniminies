@@ -23,6 +23,7 @@ public class HardMode extends Player{
 	// contains를 활용하여 예외처리 함.
 	private String drinkBase = "물 우유 커피 바닐라 초코 얼음";
 		
+
 	// 게임 랭킹에 사용 될 승,패
 	private static int win = 0;
 	private static int lose = 0;
@@ -35,14 +36,17 @@ public class HardMode extends Player{
 	}
 
 	public void playerMakeDrink() {
+
+
 		
 	// 계속 실행되도록 반복문 
 	while(game2Continue) {
 		
 		// 만약 victory == 3이면 포인트를 얻는다!
 		if(victory == 3) {
-			++win;
-			System.out.println("대 성공~!! point+200"); // 포인트 처리해야함.
+			manager.updateScore(2, 0);
+			System.out.println("대 성공~!! 포인트 100+ 획득^^"); 
+			manager.updatePoint(100);// 포인트 200점 추가
 			break;
 		}
 			
@@ -71,7 +75,7 @@ public class HardMode extends Player{
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
 			--game2Life;
-			++lose;
+			manager.updateScore(2, 1);
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T");
 			
 		// 이 과정에서 game2Life가 < 3이면 그대로 게임오버.	
@@ -91,7 +95,7 @@ public class HardMode extends Player{
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
 			--game2Life;
-			++lose;
+			manager.updateScore(2, 1);
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T");
 			
 			if(game2Life < 3) {
@@ -110,7 +114,7 @@ public class HardMode extends Player{
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
 			--game2Life;
-			++lose;
+			manager.updateScore(2, 1);
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T");
 			
 			if(game2Life < 3) {
@@ -139,7 +143,7 @@ public class HardMode extends Player{
 			System.out.println("잘 마셨습니다~ ^^ 성공 횟수 : " + victory); 			
 		} else {
 			--game2Life;
-			++lose;
+			manager.updateScore(2, 1);
 			System.out.println("더럽게 맛 없네 다신 안와!!!!!!!!");
 			
 			if(game2Life < 3) {
