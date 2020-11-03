@@ -169,16 +169,17 @@ public class MemberInfoManager implements Util{
 	public void useLife() {
 		int tmpnow= members.get(membernum).getLife();
 		if(tmpnow<1) {
-			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
+			System.out.println("하트가 부족합니다 상점에서 더 충전하여  사용해 주세요!");
 			return;
 		}
 		members.get(membernum).setLife(tmpnow-1);
+		System.out.println(members.get(membernum).getLife());
 		
 	}
 	
-	public void getLife() {
+	public void giveLife() {
 		int tmpnow= members.get(membernum).getLife();
-		if(tmpnow<=3) {
+		if(tmpnow>=3) {
 			System.out.println("이미 하트의 개수가 최대이기때문에 구매가 불가능합니다.");
 			return;
 		}
@@ -193,6 +194,13 @@ public class MemberInfoManager implements Util{
 	//기능
 	public void resetLife() {
 		//정각마다 라이프 늘려주는기능 나중에 구현
+		int tmpnow= members.get(membernum).getLife();
+		if(tmpnow>=3) {
+			System.out.println("이미 하트의 개수가 최대이기때문에 증가가 불가합니다.");
+			return;
+		}
+		members.get(membernum).setLife(tmpnow+1);
+		System.out.println("하트하나 추가!");
 	}
 	
 	
@@ -212,11 +220,6 @@ public class MemberInfoManager implements Util{
 		return;
 	}
 
-	//멤버정보
-	public void showMemInfo() {
-		
-		
-		
-	}
+
 
 }
