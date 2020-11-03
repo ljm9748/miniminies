@@ -13,18 +13,18 @@ public class LifeSeller {
 		
 		
 		LifeSeller(){ // 기본 생성자
-			this(0, 20, 100); // 생성자 FruitSeller를 가리킴. // 라이프 보유 개수 무제한..?
+			this(0,  100); // 생성자 FruitSeller를 가리킴. // 라이프 보유 개수 무제한..?
 		}
 		
 		// 생성자의 오버로딩
-		LifeSeller(int point, int numLife, int price){
+		LifeSeller(int point, int price){
 			this.myPoint = myPoint;
-			this.numOfLife = numOfLife;
+			//this.numOfLife = numOfLife;
 			LIFE_PRICE = price;			
 		}
 		
-		LifeSeller(LifeSeller seller){		
-			this(seller.myPoint, seller.numOfLife, seller.LIFE_PRICE);
+		LifeSeller(LifeSeller lifeseller){		
+			this(lifeseller.myPoint,  lifeseller.LIFE_PRICE);
 		}
 		
 		
@@ -41,14 +41,16 @@ public class LifeSeller {
 			
 			 		
 			
-			// 반환할 사과의 개수를 구한다.
+			// 반환할 라이프의 개수를 구한다.
 			numLife = point/LIFE_PRICE; 		// 받은 돈/사과의 가격
 			// 수익금 증가
 			myPoint = myPoint + point;
-			// 사과 보유 개수 감소
+			// 라이프 보유 개수 감소
 			numOfLife = numOfLife - numLife;
 			// money로 환전
 			myMoney = myPoint;
+			
+			
 			
 			return numLife;
 		}

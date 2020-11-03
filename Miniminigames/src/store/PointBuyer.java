@@ -17,11 +17,22 @@ public class PointBuyer {
 				// 나의 포인트의 수를 증가
 				// 나의 보유 돈을 감소
 				
+				public int getMyMoney() {
+					return myMoney;
+				}
+
+				public void setMyMoney(int myMoney) {
+					this.myMoney = myMoney;
+				}
+				
+				
 				// 생성자 정의 -> 변수의 초기화 목적
 				public PointBuyer() {
 					this(300, 0, 0); // 현재 보유한 돈, 현재 잔액 포인트 ,  라이프 개수 불러오기
 				}
 				
+				
+
 				public PointBuyer(int myMoney, int myPoint , int getPoint) {
 					this.myMoney = myMoney;
 					this.myPoint = myPoint; 					
