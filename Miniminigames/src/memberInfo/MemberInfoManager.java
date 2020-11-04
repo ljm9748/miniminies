@@ -218,11 +218,16 @@ public class MemberInfoManager implements Util{
 		if(tmpnow < 1) {
 			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
 
+
+		if(tmpnow<1) {
+			System.out.println("하트가 부족합니다 상점에서 더 충전하여  사용해 주세요!");
+
+
 			return;
 		}
 		members.get(membernum).setLife(tmpnow-1);
 		System.out.println(members.get(membernum).getLife());
-		
+		}
 	}
 
 	
@@ -234,6 +239,7 @@ public class MemberInfoManager implements Util{
 		}
 		members.get(membernum).setLife(tmpnow+1);
 	}
+
 
 	public void showAllInfo() {
 		for (int i = 0; i < members.size(); i++) {
@@ -286,6 +292,12 @@ public class MemberInfoManager implements Util{
 		System.out.println(msg);
 		return SC.nextLine();
 	}
-	
+
+
+	public void showMemInfo() {
+		for (int i = 0; i < members.size(); i++) {
+			members.get(membernum).showInfo();
+		}
+	}
 
 }

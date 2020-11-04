@@ -14,6 +14,8 @@ public class MiniGameMain implements Util, Menu {
 		
 		
 		MenuManager gmanager =  new MenuManager();
+		MemberInfoManager member = MemberInfoManager.getManager();
+
 		
 		String MINI[] = {
 				"■■   ■■  ■■■  ■■   ■  ■■■  ■■■■■    ■     ■■   ■■  ■■■■■  ",
