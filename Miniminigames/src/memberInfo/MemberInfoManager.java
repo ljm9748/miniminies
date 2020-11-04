@@ -155,9 +155,10 @@ public class MemberInfoManager implements Util{
 	
 	public void updateScore(int gamenum, int winLose) {//이기면 0 지면 1
 		
-		int nowscore=members.get(membernum).getScore(gamenum-1, winLose);
+		int nowscore=members.get(membernum).getScore(gamenum, winLose);
 		nowscore +=1;
-		members.get(membernum).setScore(gamenum-1, winLose, nowscore);
+		System.out.println(gamenum-1);
+		members.get(membernum).setScore(gamenum, winLose, nowscore);
 
 	}
 	
@@ -279,6 +280,7 @@ public class MemberInfoManager implements Util{
 		if(members.get(tmpidx).getPassword().equals(password)) {
 			membernum = tmpidx;
 			System.out.println(id+"님이 로그인에 성공했습니다.");
+			System.out.println(membernum);
 			return true;
 			
 		}else {
