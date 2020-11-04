@@ -180,6 +180,17 @@ public class MemberInfoManager implements Util{
 		int lose = members.get(membernum).getScore(gamenum-1, 1);
 		return (float)win/(win+lose)*100;
 	}
+	public int showWinning(int gamenum) {
+		
+		int win= members.get(membernum).getScore(gamenum-1, 0);
+		return win;
+	}
+	
+	public int showLosing(int gamenum) {
+	
+	int lose = members.get(membernum).getScore(gamenum-1, 1);
+	return lose;
+	}
 	
 
 	public void changePassword() {
