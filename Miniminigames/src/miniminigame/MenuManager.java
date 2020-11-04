@@ -75,7 +75,7 @@ public class MenuManager implements Util {
 		
 		try {
 			choice = SC.nextInt();
-			if(!(choice > 0 && choice < 6)) {
+			if(!(choice >= 0 && choice < 6)) {
 				BadInputException e = new BadInputException(String.valueOf(choice));
 				throw e;
 			}
@@ -135,6 +135,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
+				member.save();
 				System.exit(0);
 			}
 			
@@ -186,6 +187,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
+				member.save();
 				System.exit(0);
 			}
 		
@@ -230,6 +232,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
+				member.save();
 				System.exit(0);
 			}
 			
@@ -273,6 +276,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
+				member.save();
 				System.exit(0);
 			}
 			
