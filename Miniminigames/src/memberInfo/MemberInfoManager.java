@@ -174,6 +174,12 @@ public class MemberInfoManager implements Util{
 		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 	}
 	
+	public float showWinningRate(int gamenum) {
+		
+		int win= members.get(membernum).getScore(gamenum-1, 0);
+		int lose = members.get(membernum).getScore(gamenum-1, 1);
+		return (float)win/(win+lose)*100;
+	}
 	
 
 	public void changePassword() {
