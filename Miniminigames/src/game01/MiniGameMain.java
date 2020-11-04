@@ -29,8 +29,10 @@ public class MiniGameMain {
 			
 			try {
 				menu = sc.nextInt();
+
 			if(!(menu > 0 && menu <3)) {
 				
+
 				System.out.println("메뉴 선택이 올바르지 않습니다");
 				System.out.println("다시 선택하세요");
 				sc.nextLine();
@@ -46,7 +48,6 @@ public class MiniGameMain {
 			switch(menu) {
 			//게임 시작
 			case Menu.START :
-				
 				System.out.println("준비... 시작!!");
 				
 				MiniGame gs = new MiniGame();

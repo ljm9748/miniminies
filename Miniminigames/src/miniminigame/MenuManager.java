@@ -240,7 +240,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
-				tfl.startAddLife();
+				tfl.stopAddLife();
 				member.save();
 				System.exit(0);
 			}

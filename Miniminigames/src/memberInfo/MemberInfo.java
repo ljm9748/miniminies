@@ -24,8 +24,14 @@ public class MemberInfo implements Serializable{
 		this.score = new int[3][2]; 
 
 	}
-
 	
+	
+	public MemberInfo(String name, int[][] score) {
+		this.name = name;
+		this.score = score;
+	}
+	
+
 	public String getName() {
 		return name;
 	}
@@ -107,7 +113,7 @@ public class MemberInfo implements Serializable{
 	public void showWin() {
 		for (int i = 0; i < score.length; i++) {
 			//이후에 게임명 리스트화해서 게임명으로 변환하기
-			System.out.printf(id+"%d번게임 이긴횟수: %d회, %d번게임 진횟수: %d회", i+1, score[i][0], i+1, score[i][1]);
+			System.out.printf(id+"님의 %d번게임 이긴횟수: %d회, %d번게임 진횟수: %d회", i+1, score[i][0], i+1, score[i][1]);
 			System.out.println();
 		}
 	}

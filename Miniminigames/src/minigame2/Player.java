@@ -2,6 +2,7 @@ package minigame2;
 
 import java.util.Scanner;
 import memberInfo.MemberInfoManager;
+import minigame3.Over;
 
 public class Player extends Cafe{
 
