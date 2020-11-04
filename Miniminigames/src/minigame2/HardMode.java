@@ -126,20 +126,18 @@ public class HardMode extends Player{
 			continue;
 		}
 		
-		// 음료 제공 (비교 및 판단하기)
 		
-		// 플레이어가 입력한 var1, var2, var3이 recipe에 들어가 음료명(drink) 로 반환됨. 
+		// 음료 제공 (비교 및 판단하기)
+		// 1. 플레이어가 입력한 var1, var2, var3이 recipe에 들어가 음료명(drink) 로 반환됨. 
 		MakeDrink playerMake = new MakeDrink();
 		playerMake.recipe(var1, var2, var3);
 		
-		// 플레이어가 만든 음료 = recipe에 입력되어 반환된 음료이름 
-		String pDrink = playerMake.getDrink();
 		
-		// 고객이 주문한 음료 = csOrder 에서 선택된 메뉴 (return의 값 : menu)
-		String cDrink = choiceMenu.lastChoice();
+		String pDrink = playerMake.getDrink(); //2-1 플레이어가 만든 음료 = recipe에 입력되어 반환된 음료이름 
+		String cDrink = choiceMenu.getChoiceMenu(); //2-2 고객이 주문한 음료 = csOrder 에서 선택된 메뉴 (return의 값 : menu)
 		
 		
-		// 고객이 주문한음료 .equals 플레이어가 만든음료
+		// 3. 고객이 주문한 음료 플레이어가 만든 음료 .equals 로 비교(성공or실패) 
 		if(cDrink.equals(pDrink)) {
 			++victory;
 			System.out.println("잘 마셨습니다~ ^^ 성공 횟수 : " + victory); 			
@@ -154,7 +152,7 @@ public class HardMode extends Player{
 			continue;
 			}
 			
-		}
+		 }
 		
 		}
 	

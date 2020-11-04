@@ -36,6 +36,7 @@ public class MiniGameMain {
 			}catch(InputMismatchException e) {
 				System.out.println("메뉴 선택이 올바르지 않습니다");
 				System.out.println("다시 선택하세요");
+				
 				continue;	
 			}
 			

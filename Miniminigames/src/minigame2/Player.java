@@ -115,7 +115,7 @@ public class Player {
 		String pDrink = playerMake.getDrink();
 		
 		// 고객이 주문한 음료
-		String cDrink = choiceMenu.lastChoice();
+		String cDrink = choiceMenu.getChoiceMenu();
 		
 		// 고객이 주문한음료 .equals 플레이거가 만든음료  
 		if(cDrink.equals(pDrink)) {

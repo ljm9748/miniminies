@@ -174,6 +174,12 @@ public class MemberInfoManager implements Util{
 		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 	}
 	
+	public float showWinningRate(int gamenum) {
+		
+		int win= members.get(membernum).getScore(gamenum-1, 0);
+		int lose = members.get(membernum).getScore(gamenum-1, 1);
+		return (float)win/(win+lose)*100;
+	}
 	
 
 	public void changePassword() {
@@ -201,8 +207,10 @@ public class MemberInfoManager implements Util{
 		if(tmpnow < 1) {
 			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
 
+
 		if(tmpnow<1) {
 			System.out.println("하트가 부족합니다 상점에서 더 충전하여  사용해 주세요!");
+
 
 			return;
 		}
@@ -220,8 +228,6 @@ public class MemberInfoManager implements Util{
 		}
 		members.get(membernum).setLife(tmpnow+1);
 	}
-
-	
 
 
 	public void showAllInfo() {
@@ -282,4 +288,5 @@ public class MemberInfoManager implements Util{
 			members.get(membernum).showInfo();
 		}
 	}
+
 }

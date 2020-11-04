@@ -7,7 +7,7 @@ import memberInfo.MemberInfoManager;
 
 public class CCGMain {
 	
-	MemberInfoManager members = MemberInfoManager.getManager();
+//	MemberInfoManager members = MemberInfoManager.getManager();
 	
 	
 	public static void main(String[] args) {
