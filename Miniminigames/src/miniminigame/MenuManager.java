@@ -164,7 +164,6 @@ public class MenuManager implements Util {
 			
 			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 			
-			member.showInfoScore();
 			
 			System.out.println(Menu.EDIT+". 회원정보 수정 (이름,비밀번호)");
 			System.out.println(Menu.DELET+". 회원탈퇴하기");
@@ -213,46 +212,46 @@ public class MenuManager implements Util {
 			store();
 			
 
-			System.out.println("■■■■■■■ 상점입장 ■■■■■■■");
-			System.out.println(Menu.BUY_LIFE+". 라이프구매");
-			System.out.println(Menu.BUY_RANDOMBOX+". 랜덤박스구매");
-			System.out.println(Menu.BUY_POINT+". 포인트충전구매");
-			System.out.println("4.처음으로 되돌아가기");
-			System.out.println("게임종료하려면 0을 누르세요");
-			
-			try {
-				choice3 = SC.nextInt();
-				if(!(choice3 < 5)) {
-					BadInputException e = new BadInputException(String.valueOf(choice3));
-					throw e;
-				}
-			} catch (InputMismatchException | BadInputException e) {
-				System.out.println("잘못입력했습니다.");
-				SC.nextLine();
-				continue;
-			} catch (Exception e1) {
-				System.out.println("메뉴를 잘못 입력했습니다. 다시시도 해주세요.");
-				SC.nextLine();
-				continue;
-			}
-			
-			switch(choice3) {
-			
-			case Menu.BUY_LIFE:
-				break;
-			case Menu.BUY_RANDOMBOX:
-				break;
-			case Menu.BUY_POINT:
-				break;
-				
-			case 4:
-				run();
-			case Menu.EXIT:
-				System.out.println("시스템을 종료합니다.");
-				tfl.startAddLife();
-				member.save();
-				System.exit(0);
-			}
+//			System.out.println("■■■■■■■ 상점입장 ■■■■■■■");
+//			System.out.println(Menu.BUY_LIFE+". 라이프구매");
+//			System.out.println(Menu.BUY_RANDOMBOX+". 랜덤박스구매");
+//			System.out.println(Menu.BUY_POINT+". 포인트충전구매");
+//			System.out.println("4.처음으로 되돌아가기");
+//			System.out.println("게임종료하려면 0을 누르세요");
+//			
+//			try {
+//				choice3 = SC.nextInt();
+//				if(!(choice3 < 5)) {
+//					BadInputException e = new BadInputException(String.valueOf(choice3));
+//					throw e;
+//				}
+//			} catch (InputMismatchException | BadInputException e) {
+//				System.out.println("잘못입력했습니다.");
+//				SC.nextLine();
+//				continue;
+//			} catch (Exception e1) {
+//				System.out.println("메뉴를 잘못 입력했습니다. 다시시도 해주세요.");
+//				SC.nextLine();
+//				continue;
+//			}
+//			
+//			switch(choice3) {
+//			
+//			case Menu.BUY_LIFE:
+//				break;
+//			case Menu.BUY_RANDOMBOX:
+//				break;
+//			case Menu.BUY_POINT:
+//				break;
+//				
+//			case 4:
+//				run();
+//			case Menu.EXIT:
+//				System.out.println("시스템을 종료합니다.");
+//				tfl.startAddLife();
+//				member.save();
+//				System.exit(0);
+//			}
 			
 
 		
@@ -434,7 +433,7 @@ public class MenuManager implements Util {
 		while(true) {
 			
 		System.out.println("게임 난이도를 선택하세요.");
-		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★");
+		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★ \n 4.go back");
 		try {
 		select= SC.nextInt();
 			if(!(select>0 && select<4)) {
@@ -458,6 +457,9 @@ public class MenuManager implements Util {
 			case 3 :	Level3CCGame lv3 = new Level3CCGame();
 						lv3.explainGame();
 						break;
+						
+			case 4:		System.out.println("게임을 종료합니다~ 띠로링~");
+						run();
 			
 			}
 		}
@@ -560,18 +562,20 @@ public class MenuManager implements Util {
 //		랜덤박스 구매
 		case Menu.BUY_RANDOMBOX: 
 			
-			System.out.println("보유하고 있는 포인트를 입력해주세요.");
+			member.showpoint();
 			
-			try {
-				inputNum = SC.nextInt();
-				if (inputNum < 0) {
-
-				}
-			} catch (InputMismatchException e1) {
-				System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
-				SC.nextLine();
-				continue;
-			}
+//			System.out.println("보유하고 있는 포인트를 입력해주세요.");
+//			
+//			try {
+//				inputNum = SC.nextInt();
+//				if (inputNum < 0) {
+//
+//				}
+//			} catch (InputMismatchException e1) {
+//				System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
+//				SC.nextLine();
+//				continue;
+//			}
 
 			// RandomBoxSeller 타입의 참조변수 선언
 			RandomBoxSeller randomboxseller = null;
@@ -588,15 +592,15 @@ public class MenuManager implements Util {
 
 			// 랜덤박스 구매: randomboxseller에게 원하는 값 지급
 			int givePoint = 0;
-			System.out.println("100p를 결제하세요. (랜덤박스는 1회당 1개씩 구매 가능합니다.)");
+			System.out.println("50p를 결제하세요. (랜덤박스는 1회당 1개씩 구매 가능합니다.)");
 			//
 			givePoint = SC.nextInt();
 
-			if (givePoint % 100 == 0 ) {
+			if (givePoint % 50 == 0 && givePoint > 50) {
 				randomboxbuyer.buyRandomBox(randomboxseller, givePoint);
 			
 			} else {
-				System.out.println("100원 단위로 입력해주세요. \n메뉴로 돌아갑니다.");
+				System.out.println("잔액이 부족하거나 50원 단위로 입력되지 않았습니다. 옳바르게 입력해주. \n메뉴로 돌아갑니다.");
 
 			}
 
@@ -683,6 +687,7 @@ public class MenuManager implements Util {
 		case Menu.EXIT:
 			System.out.println("시스템을 종료합니다.");
 			member.save();
+			System.exit(0);
 
 		} // switch
 	} // while

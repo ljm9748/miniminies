@@ -104,7 +104,7 @@ public class Seller {
 	int saleRandomBox(int point) {
 		
 		// 반환할  랜덤 포인트의 개수를 구한다.				
-		getPoint = (int)(Math.random()*20)*10; 		// 랜덤으로 포인트 지급 -> (1~20)*10 -> 10~200 지급
+		getPoint = (int)(Math.random()*3+1)*100; 		// 랜덤으로 포인트 지급 -> (1~20)*10 -> 10~200 지급
 		// 수익금 증가
 		myPoint = myPoint + point;
 		// money로 환전
