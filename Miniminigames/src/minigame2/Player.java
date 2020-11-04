@@ -145,8 +145,6 @@ public class Player extends Cafe{
 
 	@Override
 	public void recipe() {
-		// TODO Auto-generated method stub
-		
 	}
 }
 
