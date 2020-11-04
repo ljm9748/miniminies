@@ -99,7 +99,7 @@ public class SaleMain {
 					}
 					
 				}
-				// 보유 금액을 연동하고 싶습니다.
+				
 
 //			랜덤박스 구매
 			case Menu.BUY_RANDOMBOX: 

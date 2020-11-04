@@ -16,14 +16,13 @@ package minigame2;
   		  
  */
 import java.util.Scanner;
-
 import memberInfo.MemberInfoManager;
+import minigame3.Over;
 
 public class Game2Main {
 
 
 	public static void main(String[] args) {
-		
 		
 		// 메인메뉴 선택을 하기위한 스캐너
 		Scanner sc = new Scanner(System.in);
@@ -38,7 +37,6 @@ public class Game2Main {
 		
 		// 프로그램 유지를 위한 루프
 	while(true) {
-		
 		
 		System.out.println("게임 실행 횟수 : " + numOfGame);
 		
@@ -71,12 +69,14 @@ public class Game2Main {
 		// 게임 시작 
 		case 1:
 			++numOfGame;
+			
 			Player easy = new Player();
 			easy.playerMakeDrink();
 			break;
 			
 		case 2:
 			++numOfGame;
+			
 			HardMode hard = new HardMode();
 			hard.playerMakeDrink();
 			break;
