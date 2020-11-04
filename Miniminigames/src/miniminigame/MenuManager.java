@@ -415,7 +415,6 @@ public class MenuManager implements Util {
 	
 	
 		
-		
 	public void store() {
 		
 		Seller seller = new Seller();
