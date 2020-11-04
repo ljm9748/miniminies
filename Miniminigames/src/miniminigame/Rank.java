@@ -1,16 +1,16 @@
 package miniminigame;
 
+import java.util.List;
+
 import memberInfo.MemberInfoManager;
 
-public class Rank implements Comparable{
+public class Rank {
 	
 	MemberInfoManager member = MemberInfoManager.getManager();
+
 	
-	List<RankData> rank;
 	
-	public void rankEachGame() {
-		
-	}
+	
 	
 	
 	

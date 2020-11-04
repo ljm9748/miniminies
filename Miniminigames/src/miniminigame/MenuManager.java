@@ -329,8 +329,7 @@ public class MenuManager implements Util {
 					//게임 종료
 					case 2 :
 						System.out.println("게임을 종료합니다");
-						
-						System.exit(0);
+						run();
 					}			
 				}
 				
@@ -395,7 +394,7 @@ public class MenuManager implements Util {
 				// 게임 종료	
 				case 3:
 					System.out.println("게임을 종료합니다~ 띠로링~");
-					System.exit(0);
+					run();
 					
 				
 				}

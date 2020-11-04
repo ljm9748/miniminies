@@ -156,6 +156,7 @@ public class MemberInfoManager implements Util{
 	}
 	
 	
+	
 	public void changeName( ) {
 		System.out.println("바꾸실 이름을 써주세요.");
 		String newname = SC.nextLine();
@@ -166,10 +167,6 @@ public class MemberInfoManager implements Util{
 		showInfoUser();
 		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 	}
-	
-	//public void showInfo(){
-		
-	//}
 	
 	
 
