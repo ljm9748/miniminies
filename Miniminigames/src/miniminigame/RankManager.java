@@ -1,24 +1,29 @@
 package miniminigame;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import memberInfo.MemberInfo;
 import memberInfo.MemberInfoManager;
 
 public class RankManager {
 	
-	MemberInfoManager member = MemberInfoManager.getManager();
+	MemberInfoManager manager = MemberInfoManager.getManager();
 	
-	// sort한거 저장하는 배열
-	MemberInfo [] rank;
+	// sort한거 저장
+	 ArrayList game1Rank = new ArrayList();
+	 ArrayList game2Rank = new ArrayList();
+	 ArrayList game3Rank = new ArrayList();
 	
+	 ArrayList totalRank = new ArrayList();
+	
+	 game1Rank.add
 	
 	// 유저별 점수 얻어서 rank 구하기
 	public void sortScore() {
 		
-		for(int i=0; i < score.length; i++) {
-			for(int j=0; j < score.length; j++) {
-				if(score[i]<score[j]) {
+		for(int i=0; i < manager.getMembers().size(); i++) {
+			for(int j=0; j < manager.getMembers().size(); j++) {
+				if(score[i] < score[j]) {
 					rank[i]++;
 				}
 			}
