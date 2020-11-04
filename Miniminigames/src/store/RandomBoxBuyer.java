@@ -18,6 +18,7 @@ public class RandomBoxBuyer extends Buyer {
 	// 나의 포인트의 수를 증가
 	// 나의 보유 포인트를 감소
 	@Override
+	public
 	void showBuyRandomBoxResult() {		
 		super.showBuyRandomBoxResult();
 	}

@@ -68,7 +68,7 @@ public class Buyer {
 	
 	
 	// 생성자	
-	Buyer(){
+	public Buyer(){
 		
 	}
 	
@@ -88,7 +88,7 @@ public class Buyer {
 	}
 	
 //	라이프 구매
-	void buyLife(LifeSeller lifeseller, int point) {
+	public void buyLife(LifeSeller lifeseller, int point) {
 		// 구매할 사과의 개수를 구한다.
 		int numLife = lifeseller.saleLife(point);
 		members.giveLife();
@@ -99,7 +99,7 @@ public class Buyer {
 	}
 	
 //	랜덤박스 구매
-	void buyRandomBox(RandomBoxSeller randomboxseller, int point) {
+	public void buyRandomBox(RandomBoxSeller randomboxseller, int point) {
 		
 		getPoint = randomboxseller.saleRandomBox(point);
 		members.updatePoint(getPoint);
@@ -110,7 +110,7 @@ public class Buyer {
 	}
 	
 //	포인트 구매
-	void buyPoint(PointSeller pointseller, int money) {
+	public void buyPoint(PointSeller pointseller, int money) {
 		// 구매할 포인트의 개수를 구한다.
 		getPoint = pointseller.salePoint(money);
 		members.updatePoint(getPoint);
@@ -148,7 +148,7 @@ public class Buyer {
 	}
 	
 //	구매자의 현재 정보 출력 메소드
-	void showBuyerResult() {
+	public void showBuyerResult() {
 		
 		System.out.println("현재 라이프의 개수는 " + numOfLife + "개 입니다.");		
 		System.out.println("현재 포인트는 " + myPoint + "p 입니다.");

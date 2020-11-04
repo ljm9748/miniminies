@@ -31,9 +31,11 @@ public class MiniGameMain implements Util, Menu {
 		      System.out.println(MINI[i]);
 		}
 		member.showAllInfo();
+		
 		// 로그인 or 회원가입
 		gmanager.login();
 		gmanager.run();
+		
 
 	}
 }

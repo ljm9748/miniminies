@@ -18,6 +18,7 @@ public class PointBuyer extends Buyer {
 	// 나의 포인트의 수를 증가
 	// 나의 보유 돈을 감소
 	@Override
+	public
 	void showBuyPointResult() {
 		super.showBuyPointResult();
 	}
