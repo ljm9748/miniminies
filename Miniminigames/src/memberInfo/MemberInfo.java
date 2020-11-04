@@ -86,7 +86,7 @@ public class MemberInfo implements Serializable{
 
 
 	public void setScore(int game, int winLose, int changedScore) {
-		this.score[game][winLose] = changedScore;
+		this.score[game-1][winLose] = changedScore;
 	}
 
 

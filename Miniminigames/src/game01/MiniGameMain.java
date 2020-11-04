@@ -30,12 +30,15 @@ public class MiniGameMain {
 			try {
 				menu = sc.nextInt();
 			if(!(menu > 0 && menu <3)) {
+				
 				System.out.println("메뉴 선택이 올바르지 않습니다");
 				System.out.println("다시 선택하세요");
+				sc.nextLine();
 			}
 			}catch(InputMismatchException e) {
 				System.out.println("메뉴 선택이 올바르지 않습니다");
 				System.out.println("다시 선택하세요");
+				sc.nextLine();
 				
 				continue;	
 			}
