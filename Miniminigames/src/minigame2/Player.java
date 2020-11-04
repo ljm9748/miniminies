@@ -8,12 +8,13 @@ public class Player extends Cafe{
 
 	/*
 	 플레이어 : 1. 주문을 확인함
+
 	  	     2. 음료를 만듬	
 	  	     3. 손님에게 제공 (비교판단??)
 	 */
+	
 	MemberInfoManager manager = MemberInfoManager.getManager();
 	
-	 
 	// game2Life가 0이되면 game2Continue를 false로 변경해 게임이 종료되도록 함.(라이프개념)
 	private boolean game2Continue = true;
 	
@@ -138,7 +139,7 @@ public class Player extends Cafe{
 			}
 		}
 		
-		} // 반복문 끝
+		}
 		
 	}
 
