@@ -1,6 +1,7 @@
 package minigame2;
 
 import java.util.Scanner;
+import minigame3.Over;
 
 public class HardMode extends Player{
 	

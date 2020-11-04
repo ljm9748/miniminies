@@ -1,4 +1,5 @@
 package minigame2;
+import minigame3.Over;
 
 class CountDownThread extends Thread {
 	Over o;
