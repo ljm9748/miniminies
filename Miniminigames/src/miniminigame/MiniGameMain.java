@@ -3,8 +3,10 @@ package miniminigame;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Timer;
 
 import memberInfo.MemberInfoManager;
+import memberInfo.TimerForLife;
 
 import java.io.IOException;
 
@@ -15,7 +17,7 @@ public class MiniGameMain implements Util, Menu {
 		
 		MenuManager gmanager =  new MenuManager();
 		MemberInfoManager member = MemberInfoManager.getManager();
-
+		TimerForLife tfl = TimerForLife.getTimer();
 		
 		String MINI[] = {
 				"■■   ■■  ■■■  ■■   ■  ■■■  ■■■■■    ■     ■■   ■■  ■■■■■  ",
@@ -34,6 +36,9 @@ public class MiniGameMain implements Util, Menu {
 		
 		// 로그인 or 회원가입
 		gmanager.login();
+		tfl.startAddLife();
+
+	      
 		gmanager.run();
 		
 

@@ -61,11 +61,9 @@ public class SaleMain {
 					continue;
 				}
 				// LifeSeller 타입의 참조변수 선언
-				LifeSeller lifeseller = null;
-				// LifeSeller의 객체 생성
-				// 객체의 생성은 클래스에 정의된 멤버(변수, 메서드)들을 메모리에 등록하는 것.
+				LifeSeller lifeseller = null;				
 
-				// 셀러1
+				// lifeseller
 				lifeseller = new LifeSeller(0); // 객체 생성 후 객체의 주소값을 반환
 				// myPoint(보유 포인트), numLife(보유 라이프), price(라이프 가격)
 
@@ -73,9 +71,8 @@ public class SaleMain {
 				LifeBuyer lifebuyer = new LifeBuyer( inputNum, 0); // 인스턴스 생성
 				// 현재잔액 포인트, 라이프 개수
 
-				// 라이프 구매: seller 1에게 원하는 값 지급
-				// 예외처리
-				
+				// 라이프 구매: lifeseller에게 원하는 값 지급
+				// 예외처리				
 				if (inputNum < 100) {
 					System.out.println("잔액이 부족합니다. 포인트를 충전 후 다시 구매해주세요. 메뉴로 돌아갑니다.");
 					continue;
@@ -102,7 +99,7 @@ public class SaleMain {
 					}
 					
 				}
-				// 보유 금액을 연동하고 싶습니다.
+				
 
 //			랜덤박스 구매
 			case Menu.BUY_RANDOMBOX: 
@@ -185,7 +182,7 @@ public class SaleMain {
 					pointseller = new PointSeller(0, 0); // 객체 생성 후 객체의 주소값을 반환
 					// getPoint, myMoney
 
-					// RandomBoxBuyer 타입의 참조변수 선언과 초기화
+					// PointBuyer 타입의 참조변수 선언과 초기화					
 					PointBuyer pointbuyer = new PointBuyer(inputNum, 0, 0); // 포인트 가져오기
 					// myMoney(보유 금액), myPoint, givePoint
 

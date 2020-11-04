@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import game01.MiniGame;
 import memberInfo.MemberInfoManager;
+import memberInfo.TimerForLife;
 import minigame2.HardMode;
 import minigame2.Player;
 import minigame3.BadInputException;
@@ -24,7 +25,9 @@ import store.Buyer;
 public class MenuManager implements Util {
 	
 	MemberInfoManager member = MemberInfoManager.getManager();
+	TimerForLife tfl = TimerForLife.getTimer();
 	
+
 	// 로그인 메뉴
 	public void login() {
 		
@@ -62,6 +65,7 @@ public class MenuManager implements Util {
 			}
 		}
 	}
+	
 	
 	
 	
@@ -143,6 +147,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
+				tfl.startAddLife();
 				member.save();
 				System.exit(0);
 			}
@@ -197,6 +202,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
+				tfl.startAddLife();
 				member.save();
 				System.exit(0);
 			}
@@ -206,7 +212,51 @@ public class MenuManager implements Util {
 			
 			store();
 			
+<<<<<<< HEAD
 
+=======
+			System.out.println("■■■■■■■ 상점입장 ■■■■■■■");
+			System.out.println(Menu.BUY_LIFE+". 라이프구매");
+			System.out.println(Menu.BUY_RANDOMBOX+". 랜덤박스구매");
+			System.out.println(Menu.BUY_POINT+". 포인트충전구매");
+			System.out.println("4.처음으로 되돌아가기");
+			System.out.println("게임종료하려면 0을 누르세요");
+			
+			try {
+				choice3 = SC.nextInt();
+				if(!(choice3 < 5)) {
+					BadInputException e = new BadInputException(String.valueOf(choice3));
+					throw e;
+				}
+			} catch (InputMismatchException | BadInputException e) {
+				System.out.println("잘못입력했습니다.");
+				SC.nextLine();
+				continue;
+			} catch (Exception e1) {
+				System.out.println("메뉴를 잘못 입력했습니다. 다시시도 해주세요.");
+				SC.nextLine();
+				continue;
+			}
+			
+			switch(choice3) {
+			
+			case Menu.BUY_LIFE:
+				break;
+			case Menu.BUY_RANDOMBOX:
+				break;
+			case Menu.BUY_POINT:
+				break;
+				
+			case 4:
+				run();
+			case Menu.EXIT:
+				System.out.println("시스템을 종료합니다.");
+				tfl.startAddLife();
+				member.save();
+				System.exit(0);
+			}
+			
+>>>>>>> branch 'master' of https://github.com/ljm9748/miniminies.git
 		
 		// 랭킹보기 선택지 (따로구현)
 		case Menu.RANKING:
@@ -246,12 +296,15 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
+				tfl.startAddLife();
 				member.save();
 				System.exit(0);
 			}
 			
 		// 종료하기
 		case Menu.EXIT:
+			tfl.startAddLife();
+			member.save();
 			System.out.println("시스템을 종료합니다.");
 			return;
 		
@@ -322,9 +375,7 @@ public class MenuManager implements Util {
 				// 프로그램 유지를 위한 루프
 			while(true) {
 				
-				System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
-			
-				
+
 				System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
 				
 				System.out.println("■■■■■■■■■■■■메뉴를 선택해주세요■■■■■■■■■■■■■■■");
@@ -338,7 +389,7 @@ public class MenuManager implements Util {
 					// ++ 숫자가 아닌 입력  & 범위 이상의 숫자 예외처리 해야함.
 					select = SC.nextInt();
 					SC.nextLine();
-					
+				
 					// 메뉴 번호외 숫자를 입력했을때 예외처리
 					if(!(select>0 && select<4)) {
 					System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
@@ -355,12 +406,14 @@ public class MenuManager implements Util {
 				
 				// 게임 시작 
 				case 1:
+					member.useLife();
 					++numOfGame;
 					Player easy = new Player();
 					easy.playerMakeDrink();
 					break;
 					
 				case 2:
+					member.useLife();
 					++numOfGame;
 					HardMode hard = new HardMode();
 					hard.playerMakeDrink();

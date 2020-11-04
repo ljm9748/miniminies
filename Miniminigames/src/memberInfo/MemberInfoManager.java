@@ -10,10 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import miniminigame.MenuManager;
 
+
 public class MemberInfoManager implements Util{
 	
 	int membernum;
-	
+
 	
 	List<MemberInfo> members;
 	private MemberInfoManager() {
@@ -64,7 +65,6 @@ public class MemberInfoManager implements Util{
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("members.ser"));
 			out.writeObject(members);
 			out.close();
-			System.out.println("저장완료");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("저장과정에 오류가 발생했습니다. 다시 시도해 주세요");
@@ -216,8 +216,6 @@ public class MemberInfoManager implements Util{
 	public void useLife() {
 		int tmpnow= members.get(membernum).getLife();
 
-		if(tmpnow < 1) {
-			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
 
 
 		if(tmpnow<1) {
@@ -226,9 +224,10 @@ public class MemberInfoManager implements Util{
 
 			return;
 		}
+		
 		members.get(membernum).setLife(tmpnow-1);
 		System.out.println(members.get(membernum).getLife());
-		}
+		
 	}
 
 	
@@ -263,11 +262,11 @@ public class MemberInfoManager implements Util{
 		//정각마다 라이프 늘려주는기능 나중에 구현
 		int tmpnow= members.get(membernum).getLife();
 		if(tmpnow>=3) {
-			System.out.println("이미 하트의 개수가 최대이기때문에 증가가 불가합니다.");
+			//System.out.println("이미 하트의 개수가 최대이기때문에 증가가 불가합니다.");
 			return;
 		}
 		members.get(membernum).setLife(tmpnow+1);
-		System.out.println("하트하나 추가!");
+		System.out.println("접속 시간이 10분 경과되어 하트하나가 추가되었습니다!");
 	}
 	
 	
@@ -291,7 +290,6 @@ public class MemberInfoManager implements Util{
 		if(members.get(tmpidx).getPassword().equals(password)) {
 			membernum = tmpidx;
 			System.out.println(id+"님이 로그인에 성공했습니다.");
-			System.out.println(membernum);
 			return true;
 			
 		}else {
