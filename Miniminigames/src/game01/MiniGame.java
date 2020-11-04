@@ -3,8 +3,6 @@ package game01;
 import java.util.Scanner;
 import memberInfo.MemberInfoManager;
 
-import memberInfo.MemberInfoManager;
-
 public class MiniGame {
 
 	//매니저를 불러오는 코드
