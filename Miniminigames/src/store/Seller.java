@@ -89,7 +89,7 @@ public class Seller {
 	int saleLife(int point) {
 		
 		// 반환할 라이프의 개수를 구한다.
-		numLife = point/LIFE_PRICE; 		// 받은 돈/사과의 가격
+		numLife = point/LIFE_PRICE; 		// 받은 돈/라이프의 가격
 		// 수익금 증가
 		myPoint =myPoint + point;
 		// 라이프 보유 개수 감소

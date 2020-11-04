@@ -154,9 +154,9 @@ public class MemberInfoManager implements Util{
 	}
 	
 	public void updateScore(int gamenum, int winLose) {//이기면 0 지면 1
-		int nowscore=members.get(membernum).getScore(gamenum, winLose);
-		if(winLose==0) nowscore += 1;
-		else nowscore -=1;
+		
+		int nowscore=members.get(membernum).getScore(gamenum-1, winLose);
+		nowscore +=1;
 		members.get(membernum).setScore(gamenum-1, winLose, nowscore);
 
 	}
@@ -298,6 +298,11 @@ public class MemberInfoManager implements Util{
 		for (int i = 0; i < members.size(); i++) {
 			members.get(membernum).showInfo();
 		}
+	}
+
+
+	public List<MemberInfo> getMembers() {
+		return members;
 	}
 
 }
