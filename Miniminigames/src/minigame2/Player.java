@@ -119,7 +119,7 @@ public class Player extends Cafe{
 		
 		// 고객이 주문한음료 .equals 플레이거가 만든음료  
 		if(cDrink.equals(pDrink)) {
-			manager.updateScore(2, 1);
+			manager.updateScore(2, 0);
 			System.out.println("잘 마셨습니다~ ^^ 포인트 +50 획득");
 			manager.updatePoint(50);
 			break;
