@@ -6,6 +6,7 @@ import java.util.Scanner;
 import game01.MiniGame;
 import memberInfo.MemberInfoManager;
 import memberInfo.TimerForLife;
+import memberInfo.Rank;
 import minigame2.HardMode;
 import minigame2.Player;
 import minigame3.BadInputException;
@@ -18,6 +19,7 @@ public class MenuManager implements Util {
 	
 	MemberInfoManager member = MemberInfoManager.getManager();
 	TimerForLife tfl = TimerForLife.getTimer();
+	Rank rank = new Rank();
 	
 
 	// 로그인 메뉴
@@ -139,7 +141,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
-				tfl.startAddLife();
+				tfl.stopAddLife();
 				member.save();
 				System.exit(0);
 			}
@@ -192,7 +194,7 @@ public class MenuManager implements Util {
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
-				tfl.startAddLife();
+				tfl.stopAddLife();
 				member.save();
 				System.exit(0);
 			}
@@ -275,22 +277,27 @@ public class MenuManager implements Util {
 			switch(choice4) {
 			
 			case Menu.GAME_RANK:
-				
+				rank.sortScore();
+				rank.askgame();
+				run();
 				break;
 			case Menu.TOTAL_RANK:
+				rank.sortScore();
+				rank.showRank(4);
+				run();
 				break;
 			case 3:
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
-				tfl.startAddLife();
+				tfl.stopAddLife();
 				member.save();
 				System.exit(0);
 			}
 			
 		// 종료하기
 		case Menu.EXIT:
-			tfl.startAddLife();
+			tfl.stopAddLife();
 			member.save();
 			System.out.println("시스템을 종료합니다.");
 			return;
@@ -423,10 +430,10 @@ public class MenuManager implements Util {
 		while(true) {
 			
 		System.out.println("게임 난이도를 선택하세요.");
-		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★");
+		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★\n4.게임종료");
 		try {
 		select= SC.nextInt();
-			if(!(select>0 && select<4)) {
+			if(!(select>0 && select<5)) {
 				BadInputException e = new BadInputException(String.valueOf(select));
 				throw e;
 			}
@@ -447,6 +454,9 @@ public class MenuManager implements Util {
 			case 3 :	Level3CCGame lv3 = new Level3CCGame();
 						lv3.explainGame();
 						break;
+						
+			case 4 :	System.out.println("게임을 종료합니다.");
+						run();	
 			
 			}
 		}

@@ -260,7 +260,7 @@ public class MemberInfoManager implements Util{
 			return;
 		}
 		members.get(membernum).setLife(tmpnow+1);
-		System.out.println("접속 시간이 10분 경과되어 하트하나가 추가되었습니다!");
+		System.out.println("접속 시간이 3분 경과되어 하트하나가 추가되었습니다!");
 	}
 	
 
