@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import memberInfo.MemberInfoManager;
 
-public class Player {
+public class Player extends Cafe{
 
 	/*
 	 플레이어 : 1. 주문을 확인함
@@ -140,6 +140,11 @@ public class Player {
 		
 		} // 반복문 끝
 		
+	}
+
+
+	@Override
+	public void recipe() {
 	}
 }
 

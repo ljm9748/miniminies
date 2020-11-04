@@ -2,7 +2,7 @@ package minigame2;
 
 import java.util.Scanner;
 
-public class MakeDrink {
+public class MakeDrink extends Cafe{
 	
 	// 입력을 받기위한 스캐너
 	Scanner sc = new Scanner(System.in);
@@ -77,6 +77,18 @@ public class MakeDrink {
 	// getter
 	public String getDrink() {
 		return drink;
+	}
+
+	@Override
+	public void recipe() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playerMakeDrink() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
