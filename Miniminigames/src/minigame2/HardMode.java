@@ -23,18 +23,6 @@ public class HardMode extends Player{
 	// contains를 활용하여 예외처리 함.
 	private String drinkBase = "물 우유 커피 바닐라 초코 얼음";
 		
-
-	// 게임 랭킹에 사용 될 승,패
-	private static int win = 0;
-	private static int lose = 0;
-	
-	public int getWin() {
-		return win;
-	}
-	public int getLose() {
-		return lose;
-	}
-
 	public void playerMakeDrink() {
 
 
