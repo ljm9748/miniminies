@@ -31,6 +31,11 @@ public class MemberInfoManager implements Util{
 	}
 	
 
+	public List<MemberInfo> getMembers() {
+		return members;
+	}
+
+
 	//메서드
 	//로드, 저장
 	private void load() {//파일에서 인스턴스 로드
@@ -266,13 +271,10 @@ public class MemberInfoManager implements Util{
 			return;
 		}
 		members.get(membernum).setLife(tmpnow+1);
-		System.out.println("접속 시간이 10분 경과되어 하트하나가 추가되었습니다!");
+		System.out.println("접속 시간이 3분 경과되어 하트하나가 추가되었습니다!");
 	}
 	
-	
-	public List<MemberInfo> getMembers() {
-		return members;
-	}
+
 
 
 	public boolean login() {
@@ -310,6 +312,9 @@ public class MemberInfoManager implements Util{
 			members.get(membernum).showInfo();
 		}
 	}
+
+
+
 
 
 //	public List<MemberInfo> getMembers() {
