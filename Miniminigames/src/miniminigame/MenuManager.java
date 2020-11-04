@@ -212,9 +212,7 @@ public class MenuManager implements Util {
 			
 			store();
 			
-<<<<<<< HEAD
 
-=======
 			System.out.println("■■■■■■■ 상점입장 ■■■■■■■");
 			System.out.println(Menu.BUY_LIFE+". 라이프구매");
 			System.out.println(Menu.BUY_RANDOMBOX+". 랜덤박스구매");
@@ -256,7 +254,7 @@ public class MenuManager implements Util {
 				System.exit(0);
 			}
 			
->>>>>>> branch 'master' of https://github.com/ljm9748/miniminies.git
+
 		
 		// 랭킹보기 선택지 (따로구현)
 		case Menu.RANKING:
@@ -594,7 +592,7 @@ public class MenuManager implements Util {
 			//
 			givePoint = SC.nextInt();
 
-			if (givePoint % 100 == 0) {
+			if (givePoint % 100 == 0 ) {
 				randomboxbuyer.buyRandomBox(randomboxseller, givePoint);
 			
 			} else {

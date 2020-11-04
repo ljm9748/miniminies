@@ -136,11 +136,11 @@ public class SaleMain {
 				//
 				givePoint = sc.nextInt();
 
-				if (givePoint % 100 == 0) {
+				if (givePoint % 100 == 0 && givePoint>100) {
 					randomboxbuyer.buyRandomBox(randomboxseller, givePoint);
 				
 				} else {
-					System.out.println("100원 단위로 입력해주세요. \n메뉴로 돌아갑니다.");
+					System.out.println("포인트가 부족하거나 100원 단위로 입력되지 않았습니다. \n메뉴로 돌아갑니다.");
 
 				}
 
@@ -192,14 +192,14 @@ public class SaleMain {
 					inputPoint = giveMoney/10;
 
 					System.out.println("결제할 금액을 입력해주세요. (포인트는 10p당 100원 입니다.)");
-					giveMoney = sc.nextInt();
+					
 
 					// 100원 단위로 입력할 수 있도록 안내
-					if (giveMoney % 100 == 0) {
+					if (giveMoney % 100 == 0 && giveMoney>100) {
 						pointbuyer.buyPoint(pointseller, giveMoney);
 						members.updatePoint(giveMoney/10);
 					} else {
-						System.out.println("100원 단위로 입력해주세요. \n메뉴로 돌아갑니다.");
+						System.out.println("잔액이 부족하거나 100원 단위로 입력해주세요. \n메뉴로 돌아갑니다.");
 					}
 
 					// 보유한 돈<충전하고자 하는 금액일 경우
