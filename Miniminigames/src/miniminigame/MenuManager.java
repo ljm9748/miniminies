@@ -509,18 +509,19 @@ public class MenuManager implements Util {
 //				라이프 구매
 				case Menu.BUY_LIFE: 				
 					
-					System.out.println("보유하고 있는 포인트를 입력해주세요.");
+					System.out.println("현재 player가 보유하고 있는 포인트 입니다. \n >> ");
+					member.showpoint();
 
-					try {
-						inputNum = SC.nextInt();
-						if (inputNum < 0) {
-
-						}
-					} catch (InputMismatchException e1) {
-						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
-						SC.nextLine();
-						continue;
-					}
+//					try {
+//						inputNum = SC.nextInt();
+//						if (inputNum < 0) {
+//
+//						}
+//					} catch (InputMismatchException e1) {
+//						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
+//						SC.nextLine();
+//						continue;
+//					}
 					// LifeSeller 타입의 참조변수 선언
 					LifeSeller lifeseller = null;				
 
@@ -565,18 +566,20 @@ public class MenuManager implements Util {
 //				랜덤박스 구매
 				case Menu.BUY_RANDOMBOX: 
 					
-					System.out.println("보유하고 있는 포인트를 입력해주세요.");
+					System.out.println("현재 player가 보유하고 있는 포인트 입니다. \n >> ");
 					
-					try {
-						inputNum = SC.nextInt();
-						if (inputNum < 0) {
-
-						}
-					} catch (InputMismatchException e1) {
-						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
-						SC.nextLine();
-						continue;
-					}
+					member.showpoint();
+					
+//					try {
+//						inputNum = SC.nextInt();
+//						if (inputNum < 0) {
+//
+//						}
+//					} catch (InputMismatchException e1) {
+//						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
+//						SC.nextLine();
+//						continue;
+//					}
 
 					// RandomBoxSeller 타입의 참조변수 선언
 					RandomBoxSeller randomboxseller = null;
@@ -593,15 +596,15 @@ public class MenuManager implements Util {
 
 					// 랜덤박스 구매: randomboxseller에게 원하는 값 지급
 					int givePoint = 0;
-					System.out.println("100p를 결제하세요. (랜덤박스는 1회당 1개씩 구매 가능합니다.)");
+					System.out.println("50p를 결제하세요. (랜덤박스는 1회당 1개씩 구매 가능합니다.)");
 					//
 					givePoint = SC.nextInt();
 
-					if (givePoint % 100 == 0 && givePoint>100) {
+					if (givePoint == 50) {
 						randomboxbuyer.buyRandomBox(randomboxseller, givePoint);
 					
 					} else {
-						System.out.println("포인트가 부족하거나 100원 단위로 입력되지 않았습니다. \n메뉴로 돌아갑니다.");
+						System.out.println("포인트가 잘못 입력되었습니다. \n메뉴로 돌아갑니다.");
 
 					}
 
@@ -617,6 +620,8 @@ public class MenuManager implements Util {
 
 					//포인트 구매	
 				case Menu.BUY_POINT: 
+					
+					
 					
 					SC.nextLine();
 							
@@ -643,16 +648,21 @@ public class MenuManager implements Util {
 						pointseller = new PointSeller(0, 0); // 객체 생성 후 객체의 주소값을 반환
 						// getPoint, myMoney
 
+						
+						
 						// PointBuyer 타입의 참조변수 선언과 초기화					
 						PointBuyer pointbuyer = new PointBuyer(inputNum, 0, 0); // 포인트 가져오기
 						// myMoney(보유 금액), myPoint, givePoint
 
 						// 포인트 구매: pointseller에게 원하는 값 지급
-						int giveMoney = 0;
+						System.out.println("결제할 금액을 입력해주세요. (100p = 100원 입니다.)");
+						
+						int giveMoney = SC.nextInt(); // 20. 11. 05 수정
 						int inputPoint = 0;
-						inputPoint = giveMoney/10;
+						// 20.11.05 수인 - point==money로 수정
+						inputPoint = giveMoney;
 
-						System.out.println("결제할 금액을 입력해주세요. (포인트는 10p당 100원 입니다.)");
+						
 						
 
 						// 100원 단위로 입력할 수 있도록 안내
