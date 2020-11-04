@@ -6,7 +6,7 @@ import memberInfo.MemberInfoManager;
 
 public class Lv3Start {
 	
-	//승패
+	
 	MemberInfoManager members = MemberInfoManager.getManager();
 	
 	
