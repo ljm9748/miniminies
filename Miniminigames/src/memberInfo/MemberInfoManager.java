@@ -263,10 +263,7 @@ public class MemberInfoManager implements Util{
 		System.out.println("접속 시간이 10분 경과되어 하트하나가 추가되었습니다!");
 	}
 	
-	
-	public List<MemberInfo> getMembers() {
-		return members;
-	}
+
 
 
 	public boolean login() {
