@@ -31,6 +31,11 @@ public class MemberInfoManager implements Util{
 	}
 	
 
+	public List<MemberInfo> getMembers() {
+		return members;
+	}
+
+
 	//메서드
 	//로드, 저장
 	private void load() {//파일에서 인스턴스 로드
@@ -307,6 +312,9 @@ public class MemberInfoManager implements Util{
 			members.get(membernum).showInfo();
 		}
 	}
+
+
+
 
 
 //	public List<MemberInfo> getMembers() {
