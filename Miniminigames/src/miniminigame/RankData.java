@@ -1,64 +1,36 @@
 package miniminigame;
 
+import java.util.List;
+
+import memberInfo.MemberInfo;
+import memberInfo.MemberInfoManager;
+
 public class RankData {
 	
-	private int numOfGame;
-	private String user;
-	private int numOfWin;
-	private float winningRate = (float)(numOfWin / numOfGame)*100;
+	MemberInfoManager member = MemberInfoManager.getManager();
 	
-
-	public RankData(int numOfGame, String user, int numOfWin, float winningRate) {
-		this.numOfGame = numOfGame;
-		this.user = user;
-		this.numOfWin = numOfWin;
-		this.winningRate = winningRate;
-	}
-
-	public int getNnumOfGame() {
-		return numOfGame;
-	}
-
-
-	public void setNumOfGame(int numOfGame) {
-		this.numOfGame = numOfGame;
-	}
-
-
-	public String getUser() {
-		return user;
-	}
-
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-
-	public int getNumOfWin() {
-		return numOfWin;
-	}
-
-
-	public void setNumOfWin(int numOfWin) {
-		this.numOfWin = numOfWin;
+	float winRate = (float)(winLose/gamenum))*100;
+	
+	public void sortScore() {
+		for(int i=0; i<score.length; i++) {
+			for(int j=0; j < score.length; j++) {
+				if(score[i]<score[j]) {
+					rank[i]++;
+				}
+			}
+		}
+		
+	
 	}
 	
-	public float getWinningRate() {
-		return winningRate;
-	}
-
-
-	public void setWinningRate(float winningRate) {
-		this.winningRate = winningRate;
-	}
-
-
-	public void showAllGameWin () {
-		System.out.println("이름: " + user + "총 플레이한 게임 횟수: "+numOfGame+ "게임이긴횟수: " + numOfWin);
-		System.out.println("승률: " + winningRate + "%");
+	// 게임별 랭킹 보기
+	public void showEachGameRank() {
+		
 	}
 	
-	
+	// 포인트 합산한 랭킹보기 
+	public void showTotalRank() {
+		
+	}
 	
 }

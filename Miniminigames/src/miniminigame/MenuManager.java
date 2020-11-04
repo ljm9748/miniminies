@@ -144,9 +144,11 @@ public class MenuManager implements Util {
 			
 			int choice2 = 0 ;
 			
-			System.out.println("■■■■■■■ 마이페이지 ■■■■■■■");
+			System.out.println("■■■■■■■■■■■■■ 마이페이지 ■■■■■■■■■■■■■");
 			
-			member.showMemInfo();
+			member.showInfoUser();
+			
+			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 			
 			System.out.println(Menu.EDIT+". 회원정보 수정 (이름,비밀번호)");
 			System.out.println(Menu.DELET+". 회원탈퇴하기");
@@ -174,9 +176,11 @@ public class MenuManager implements Util {
 			case Menu.EDIT:
 				member.changeName();
 				member.changePassword();
+				run(); 
 				break;
 			case Menu.DELET:
 				member.deleteInfo();
+				run();
 				break;
 			case 3:	
 				run();
@@ -260,6 +264,7 @@ public class MenuManager implements Util {
 			switch(choice4) {
 			
 			case Menu.GAME_RANK:
+				
 				break;
 			case Menu.TOTAL_RANK:
 				break;
@@ -324,8 +329,7 @@ public class MenuManager implements Util {
 					//게임 종료
 					case 2 :
 						System.out.println("게임을 종료합니다");
-						
-						System.exit(0);
+						run();
 					}			
 				}
 				
@@ -340,19 +344,19 @@ public class MenuManager implements Util {
 				int numOfGame = 0;
 				
 				
-				
-				
-				
 				// 프로그램 유지를 위한 루프
 			while(true) {
 				
 				System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
+			
 				
-				System.out.println("**********메뉴를 선택해주세요**********");
+				System.out.println("오래하면 엄마한테 혼납니다.게임 실행 횟수 : " + numOfGame);
+				
+				System.out.println("■■■■■■■■■■■■메뉴를 선택해주세요■■■■■■■■■■■■■■■");
 				System.out.println(" 1. 게임을 시작합니다 (easyMode)");
 				System.out.println(" 2. 게임을 시작합니다 (hardMode)");
 				System.out.println(" 3. 게임 종료하기");
-				System.out.println("*********************************");
+				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 					
 				try {
 					// 입력받은 int 타입의 정수를 select에 넣음
@@ -390,12 +394,11 @@ public class MenuManager implements Util {
 				// 게임 종료	
 				case 3:
 					System.out.println("게임을 종료합니다~ 띠로링~");
-					System.exit(0);
+					run();
 					
 				
 				}
 			}
-			
 	}
 	
 	// 게임3 실행
@@ -403,19 +406,18 @@ public class MenuManager implements Util {
 		
 		int select=0;
 		while(true) {
-
-		Scanner sc = new Scanner(System.in);
+			
 		System.out.println("게임 난이도를 선택하세요.");
 		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★");
 		try {
-		select=sc.nextInt();
+		select= SC.nextInt();
 			if(!(select>0 && select<4)) {
 				BadInputException e = new BadInputException(String.valueOf(select));
 				throw e;
 			}
 		} catch(InputMismatchException | BadInputException e) {
 			System.out.println("숫자만 입력하세요.");
-			sc.nextLine();
+			SC.nextLine();
 			continue;
 		}
 			switch(select) {
@@ -431,11 +433,8 @@ public class MenuManager implements Util {
 						lv3.explainGame();
 						break;
 			
+			}
 		}
-	}
-		
-		
-		
 	}
 	
 	
