@@ -4,27 +4,50 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import miniminigame.MenuManager;
+
 public class TimerForLife {
 	
+	boolean stop =false;
 	MemberInfoManager members = MemberInfoManager.getManager();
-	
-	 public static void main(String[] args) {
-	      ScheduledJob job = new ScheduledJob();
-	      Timer jobScheduler = new Timer();
-	     
-	      jobScheduler.scheduleAtFixedRate(job, 100, 300000);
-	      try {
-	         Thread.sleep(20000);
-	      } catch(InterruptedException ex) {
-	         //
-	      }
-	   }
+	//인스턴스 생성
+	private static TimerForLife tfl = new TimerForLife();
+	//getter
+	public static TimerForLife getTimer() {
+		return tfl;
 	}
 
-	class ScheduledJob extends TimerTask {
+	ScheduledJob job = new ScheduledJob();
+    Timer jobScheduler = new Timer();
+		public void startAddLife() {
+			
+		     
+		      jobScheduler.scheduleAtFixedRate(job, 100, 3000);
+		      /*
+		      try {
+		         Thread.sleep(20000);
+		      } catch(InterruptedException ex) {
+		         //
+		      }
+		      jobScheduler.cancel();
+		      */
+		}
+		public void stopAddLife() {
+			jobScheduler.cancel();
+			//System.exit(0);
+		}
+
+	
+
+	}
+
+class ScheduledJob extends TimerTask {
+	TimerForLife tfl = TimerForLife.getTimer();
 	MemberInfoManager members = MemberInfoManager.getManager();
 	   public void run() {
+		  
 	      members.resetLife();
+	      
 	   }
 
-}
+	}
