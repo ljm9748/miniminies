@@ -242,15 +242,16 @@ public class MiniGame {
 			System.out.println("++ 100Point");
 			
 			members.updatePoint(100);
-			members.updateScore(1, 0);
+			members.updateScore(1,0);
 			
 			System.out.println("메인으로 돌아갑니다~");
 			
 			return;
 		}
 		System.out.println("HAHAHA!! You Lose!!");
+
 		
-		members.updateScore(1, 1);
+		members.updateScore(1,1);
 		
 		System.out.println("메인으로 돌아갑니다~");
 		

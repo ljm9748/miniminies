@@ -9,7 +9,7 @@ public class Seller {
 	private int numOfRandomBox;				// 랜덤박스 수량
 	private int getPoint; 				 	// getPoint의 수
 	final int LIFE_PRICE = 100;
-	final int RANDOMBOX_PRICE = 50; 	 			// 상수 처리 - 랜덤박스의 가격, 변경이 불가능
+	final int RANDOMBOX_PRICE = 50; 	 	// 상수 처리 - 랜덤박스의 가격, 변경이 불가능
 	
 	
 	// getter/setter
@@ -89,7 +89,7 @@ public class Seller {
 	int saleLife(int point) {
 		
 		// 반환할 라이프의 개수를 구한다.
-		numLife = point/LIFE_PRICE; 		// 받은 돈/사과의 가격
+		numLife = point/LIFE_PRICE; 		// 받은 돈/라이프의 가격
 		// 수익금 증가
 		myPoint =myPoint + point;
 		// 라이프 보유 개수 감소
