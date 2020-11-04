@@ -13,7 +13,6 @@ public class MiniGame {
 	//남은 기회
 	int chance = 3;
 
-
 	//미니게임 1
 	boolean miniGame01() {
 			//영화 명대사 문제를 저장하는 배열
@@ -232,10 +231,8 @@ public class MiniGame {
 	
 
 	public void miniGameManager() {
-
 		members.useLife();
 
-		
 		for(int i = 0; i < 3; i++) {
 			if(!miniGame01()) continue;
 			
