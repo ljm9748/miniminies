@@ -212,6 +212,48 @@ public class MenuManager implements Util {
 			store();
 			
 
+//			System.out.println("■■■■■■■ 상점입장 ■■■■■■■");
+//			System.out.println(Menu.BUY_LIFE+". 라이프구매");
+//			System.out.println(Menu.BUY_RANDOMBOX+". 랜덤박스구매");
+//			System.out.println(Menu.BUY_POINT+". 포인트충전구매");
+//			System.out.println("4.처음으로 되돌아가기");
+//			System.out.println("게임종료하려면 0을 누르세요");
+//			
+//			try {
+//				choice3 = SC.nextInt();
+//				if(!(choice3 < 5)) {
+//					BadInputException e = new BadInputException(String.valueOf(choice3));
+//					throw e;
+//				}
+//			} catch (InputMismatchException | BadInputException e) {
+//				System.out.println("잘못입력했습니다.");
+//				SC.nextLine();
+//				continue;
+//			} catch (Exception e1) {
+//				System.out.println("메뉴를 잘못 입력했습니다. 다시시도 해주세요.");
+//				SC.nextLine();
+//				continue;
+//			}
+//			
+//			switch(choice3) {
+//			
+//			case Menu.BUY_LIFE:
+//				break;
+//			case Menu.BUY_RANDOMBOX:
+//				break;
+//			case Menu.BUY_POINT:
+//				break;
+//				
+//			case 4:
+//				run();
+//			case Menu.EXIT:
+//				System.out.println("시스템을 종료합니다.");
+//				tfl.startAddLife();
+//				member.save();
+//				System.exit(0);
+//			}
+			
+
 		
 		// 랭킹보기 선택지 (따로구현)
 		case Menu.RANKING:
@@ -550,15 +592,15 @@ public class MenuManager implements Util {
 
 			// 랜덤박스 구매: randomboxseller에게 원하는 값 지급
 			int givePoint = 0;
-			System.out.println("100p를 결제하세요. (랜덤박스는 1회당 1개씩 구매 가능합니다.)");
+			System.out.println("50p를 결제하세요. (랜덤박스는 1회당 1개씩 구매 가능합니다.)");
 			//
 			givePoint = SC.nextInt();
 
-			if (givePoint % 100 == 0) {
+			if (givePoint % 50 == 0 && givePoint > 50) {
 				randomboxbuyer.buyRandomBox(randomboxseller, givePoint);
 			
 			} else {
-				System.out.println("100원 단위로 입력해주세요. \n메뉴로 돌아갑니다.");
+				System.out.println("잔액이 부족하거나 50원 단위로 입력되지 않았습니다. 옳바르게 입력해주. \n메뉴로 돌아갑니다.");
 
 			}
 
