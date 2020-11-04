@@ -3,11 +3,12 @@ package minigame3;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import memberInfo.MemberInfoManager;
-public class Level2CCGame {
+public class Level2CCGame extends CCGame{
 	
 	MemberInfoManager members = MemberInfoManager.getManager();
 	
-	public void explainGame() {
+	@Override
+	public void explainGame()  {
 		int select=0;
 		while(true) {
 		Scanner sc = new Scanner(System.in);

@@ -6,9 +6,10 @@ import java.util.Scanner;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
-public class Level1CCGame  {
+public class Level1CCGame  extends CCGame{
 	MemberInfoManager members = MemberInfoManager.getManager();
-
+	
+	@Override
 	public void explainGame() {
 		
 		int select=0;

@@ -21,14 +21,13 @@ public class Player {
 	private int game2Life = 5;
 	
 	// contains를 활용하여 예외처리 함.
-	String drinkBase = "물 우유 커피 바닐라 초코 얼음";
+	private String drinkBase = "물 우유 커피 바닐라 초코 얼음";
 	
 
 	//플레이어는 음료를 만든다
 	public void playerMakeDrink() {
 		
 	
-		
 		// 계속 실행되도록 반복문 
 		while(game2Continue) {
 		// 재료를 입력받을 스캐너
@@ -38,13 +37,14 @@ public class Player {
 		Customer choiceMenu = new Customer();
 		choiceMenu.csOrder();
 		
-		System.out.println("************************************");
-		System.out.println("                  남은 기회 : "+game2Life       );
-		System.out.println("---------------------------------");
-		System.out.println(" ┌-----준비된 재료 리스트를 확인하세요----┐");
-		System.out.println(" | 물 | 우유 | 커피 | 바닐라 | 초코 | 얼음|");
-		System.out.println(" └-------------------------------┘");
-		System.out.println("************************************");
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+		System.out.println("\t         남은 기회 : "+game2Life       );
+		System.out.println("--------------------------------------");
+		System.out.println("[[[[[[[[[[[[[[재료저장고]]]]]]]]]]]]]]]]]");
+		System.out.println("┏------------------------------------┓ ");
+		System.out.println("┃  물  | 우유  | 커피  | 바닐라  | 초코 | 얼음   ┃ ");
+		System.out.println("┗------------------------------------┛ ");
+		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 		
 	
 		System.out.println("첫 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
