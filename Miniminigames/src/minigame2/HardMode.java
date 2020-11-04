@@ -22,28 +22,22 @@ public class HardMode extends Player{
 	
 	// contains를 활용하여 예외처리 함.
 	private String drinkBase = "물 우유 커피 바닐라 초코 얼음";
-		
-
-	// 게임 랭킹에 사용 될 승,패
-	private static int win = 0;
-	private static int lose = 0;
 	
-	public int getWin() {
-		return win;
-	}
-	public int getLose() {
-		return lose;
-	}
-
+	//카운트 다운 시작 15초
+	Over o = new Over();
+	CountDownThread cdt = new CountDownThread(o);
+		
 	public void playerMakeDrink() {
 
-
+		cdt.start();
 		
 	// 계속 실행되도록 반복문 
 	while(game2Continue) {
 		
 		// 만약 victory == 3이면 포인트를 얻는다!
 		if(victory == 3) {
+			o.gameOverCheck = true;
+			o.timeOverCheck = true;
 			manager.updateScore(2, 0);
 			System.out.println("대 성공~!! 포인트 100+ 획득^^"); 
 			manager.updatePoint(100);// 포인트 200점 추가
@@ -76,6 +70,8 @@ public class HardMode extends Player{
 		if(drinkBase.contains(var1)){
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
+			o.gameOverCheck = true;
+			o.timeOverCheck = true;
 			--game2Life;
 			manager.updateScore(2, 1);
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T");
@@ -96,6 +92,8 @@ public class HardMode extends Player{
 		if(drinkBase.contains(var2)){
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
+			o.gameOverCheck = true;
+			o.timeOverCheck = true;
 			--game2Life;
 			manager.updateScore(2, 1);
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T");
@@ -115,6 +113,8 @@ public class HardMode extends Player{
 		if(drinkBase.contains(var3)){
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
+			o.gameOverCheck = true;
+			o.timeOverCheck = true;
 			--game2Life;
 			manager.updateScore(2, 1);
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T");
@@ -139,14 +139,20 @@ public class HardMode extends Player{
 		
 		// 3. 고객이 주문한 음료 플레이어가 만든 음료 .equals 로 비교(성공or실패) 
 		if(cDrink.equals(pDrink)) {
+			o.gameOverCheck = true;
+			o.timeOverCheck = true;
 			++victory;
 			System.out.println("잘 마셨습니다~ ^^ 성공 횟수 : " + victory); 			
 		} else {
+			o.gameOverCheck = true;
+			o.timeOverCheck = true;
 			--game2Life;
 			manager.updateScore(2, 1);
 			System.out.println("더럽게 맛 없네 다신 안와!!!!!!!!");
 			
 			if(game2Life < 3) {
+				o.gameOverCheck = true;
+				o.timeOverCheck = true;
 				game2Continue = false;
 				System.out.println("Game Over~~!");
 			continue;
