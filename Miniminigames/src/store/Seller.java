@@ -9,7 +9,7 @@ public class Seller {
 	private int numOfRandomBox;				// 랜덤박스 수량
 	private int getPoint; 				 	// getPoint의 수
 	final int LIFE_PRICE = 100;
-	final int RANDOMBOX_PRICE = 50; 	 			// 상수 처리 - 랜덤박스의 가격, 변경이 불가능
+	final int RANDOMBOX_PRICE = 50; 	 	// 상수 처리 - 랜덤박스의 가격, 변경이 불가능
 	
 	
 	// getter/setter
