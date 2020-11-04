@@ -413,10 +413,10 @@ public class MenuManager implements Util {
 		while(true) {
 			
 		System.out.println("게임 난이도를 선택하세요.");
-		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★");
+		System.out.println("1.easy  ★ \n2.normal★★ \n3.hard  ★★★\n4.게임종료하기");
 		try {
 		select= SC.nextInt();
-			if(!(select>0 && select<4)) {
+			if(!(select>0 && select<5)) {
 				BadInputException e = new BadInputException(String.valueOf(select));
 				throw e;
 			}
@@ -437,6 +437,8 @@ public class MenuManager implements Util {
 			case 3 :	Level3CCGame lv3 = new Level3CCGame();
 						lv3.explainGame();
 						break;
+			case 4 :	System.out.println("게임을 종료합니다");
+						run();		
 			
 			}
 		}

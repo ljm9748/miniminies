@@ -18,7 +18,7 @@ public class Level2CCGame extends CCGame{
 		System.out.println("            예를 들어, 12-3= 라는 문제가 나오면 '9'를 입력하시면 됩니다. ");
 		System.out.println("        총 5문제 중에 4문제를 맞추면 통과! 2문제 이상을 틀리면 탈락합니다!   ");
 		System.out.println("============================================================");
-		System.out.println("메인메뉴로 돌아간다-1 시작한다-2");
+		System.out.println("1.게임 시작 \n2.난이도 선택으로 돌아가기");
 		
 		try {
 			select= sc.nextInt();
@@ -33,9 +33,7 @@ public class Level2CCGame extends CCGame{
 			}
 		
 		switch(select) {
-		case 1 : return;
-		case 2 : 
-				members.useLife();
+		case 1 : members.useLife();
 				System.out.println("게임을 시작합니다.");
 				Over o = new Over();
 				Lv2Start lv2 = new Lv2Start(o);
@@ -43,6 +41,8 @@ public class Level2CCGame extends CCGame{
 				cdt = new CountDownThread(o);
 				cdt.start();
 				lv2.playGame();
+		case 2 : return;
+
 			
 				
 		}
