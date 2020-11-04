@@ -265,6 +265,11 @@ public class MemberInfoManager implements Util{
 	}
 	
 	
+	public List<MemberInfo> getMembers() {
+		return members;
+	}
+
+
 	public boolean login() {
 		
 		System.out.println("아이디와 비밀번호를 입력해주세용");
