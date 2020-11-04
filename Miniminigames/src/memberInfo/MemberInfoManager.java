@@ -197,18 +197,18 @@ public class MemberInfoManager implements Util{
 	
 	public void useLife() {
 		int tmpnow= members.get(membernum).getLife();
-<<<<<<< HEAD
+
 		if(tmpnow < 1) {
 			System.out.println("하트가 부족합니다 상점에서 더 충전하여 사용해 주세요!");
-=======
+
 		if(tmpnow<1) {
 			System.out.println("하트가 부족합니다 상점에서 더 충전하여  사용해 주세요!");
->>>>>>> branch 'master' of https://github.com/ljm9748/miniminies.git
+
 			return;
 		}
 		members.get(membernum).setLife(tmpnow-1);
 		System.out.println(members.get(membernum).getLife());
-		
+		}
 	}
 
 	
@@ -220,11 +220,10 @@ public class MemberInfoManager implements Util{
 		}
 		members.get(membernum).setLife(tmpnow+1);
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> branch 'master' of https://github.com/ljm9748/miniminies.git
+	
+
+
 	public void showAllInfo() {
 		for (int i = 0; i < members.size(); i++) {
 			members.get(i).showInfo();
@@ -276,15 +275,11 @@ public class MemberInfoManager implements Util{
 		System.out.println(msg);
 		return SC.nextLine();
 	}
-	
 
 
-<<<<<<< HEAD
-=======
-	
-
-
-
->>>>>>> branch 'master' of https://github.com/ljm9748/miniminies.git
-
+	public void showMemInfo() {
+		for (int i = 0; i < members.size(); i++) {
+			members.get(membernum).showInfo();
+		}
+	}
 }

@@ -6,7 +6,7 @@ import memberInfo.MemberInfoManager;
 
 public class Rank {
 	
-	MemberInfoManager member = MemberInfoManager.getManager();
+	public int compare()
 
 	
 	

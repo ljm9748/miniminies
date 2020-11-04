@@ -195,9 +195,9 @@ public class MenuManager implements Util {
 			int choice3 = 0;
 			
 			System.out.println("■■■■■■■ 상점입장 ■■■■■■■");
-			System.out.println(Menu.LIFE+". 라이프구매");
-			System.out.println(Menu.RANDOMBOX+". 랜덤박스구매");
-			System.out.println(Menu.POINT+". 포인트충전구매");
+			System.out.println(Menu.BUY_LIFE+". 라이프구매");
+			System.out.println(Menu.BUY_RANDOMBOX+". 랜덤박스구매");
+			System.out.println(Menu.BUY_POINT+". 포인트충전구매");
 			System.out.println("4.처음으로 되돌아가기");
 			System.out.println("게임종료하려면 0을 누르세요");
 			
@@ -219,12 +219,13 @@ public class MenuManager implements Util {
 			
 			switch(choice3) {
 			
-			case Menu.LIFE:
+			case Menu.BUY_LIFE:
 				break;
-			case Menu.RANDOMBOX:
+			case Menu.BUY_RANDOMBOX:
 				break;
-			case Menu.POINT:
+			case Menu.BUY_POINT:
 				break;
+				
 			case 4:
 				run();
 			case Menu.EXIT:
