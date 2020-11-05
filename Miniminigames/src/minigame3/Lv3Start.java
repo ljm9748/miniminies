@@ -44,7 +44,13 @@ public class Lv3Start {
 			else if (i!=3&&i%2!=0){ 
 				System.out.println((10*A+B)+"-"+(10*C+D)+"=");
 			}
-			answer = sc.nextInt();
+			
+			try {
+				answer = sc.nextInt();
+				} catch (Exception e){ 
+				System.out.println("잘못 입력하셨습니다^^다음 문제로 넘어갑니다");
+				sc.nextLine();
+				} 
 			
 			//정답여부 확인
 			if(i==3&&(10*A+B)+(10*C+D)==answer) {

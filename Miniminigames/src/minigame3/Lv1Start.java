@@ -29,8 +29,12 @@ public class Lv1Start {
 			int C = (int) (Math.random() * 10);
 			System.out.println((i + 1) + "번째 문제 입니다.");
 			System.out.println(10 * A + B + "+" + C + "=");
-
+			try {
 			answer = sc.nextInt();
+			} catch (Exception e){ 
+			System.out.println("잘못 입력하셨습니다^^다음 문제로 넘어갑니다");
+			sc.nextLine();
+			} 
 			
 			if (10 * A + B + C == answer) {
 				System.out.println("정답");
@@ -45,7 +49,8 @@ public class Lv1Start {
 
 			}
 	
-			if (o.timeOverCheck) {
+			if (o.timeOverCheck) { 	
+
 				break;
 			}
 		}
