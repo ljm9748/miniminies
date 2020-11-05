@@ -18,7 +18,7 @@ public class LifeBuyer extends Buyer {
 	// 나의 라이프의 개수를 증가
 	// 나의 보유 포인트를 감소
 	@Override
-	void showBuyLifeResult() {
+	public void showBuyLifeResult() {
 		super.showBuyLifeResult();
 	}
 

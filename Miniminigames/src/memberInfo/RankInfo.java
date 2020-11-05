@@ -1,40 +1,62 @@
-package miniminigame;
+package memberInfo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import memberInfo.MemberInfo;
 import memberInfo.MemberInfoManager;
 
-public class RankManager {
+public class RankInfo implements Comparable<RankInfo>{
 	
 	MemberInfoManager manager = MemberInfoManager.getManager();
 	
-	// 게임별 승패 불러오
+	private int nowscore;
+	private String name;
 	
+	
+	public RankInfo(int nowscore, String name) {
+		this.nowscore = nowscore;
+		this.name = name;
+	}
+	
+	
+	@Override
+	public int compareTo(RankInfo rankInfo) {
+		if(this.nowscore == rankInfo.nowscore) {
+			return 0;
+		}else if (this.nowscore < rankInfo.nowscore) {
+			return -1;
+		}else
+			return 1;
+			}
+	
+
+}
+
+ public static
 	
 	// sort한거 저장
-	 ArrayList game1Rank = new ArrayList();
-	 ArrayList game2Rank = new ArrayList();
-	 ArrayList game3Rank = new ArrayList();
-	
-	 ArrayList totalRank = new ArrayList();
-	 
-	 
-	 private void addRank(MemberInfo rank) {
-
-	 }
-	
-	 // game1 sort
+	// game1 data sort
 	public void sortGame1() {
+		List<RankInfo> game1Rank = new ArrayList<RankInfo>() {
+			game1Rank.add(getscore(1.0));
+		};
+		
+		
 		
 	}
-	// game2 sort
+	// game2 data sort
 	public void sortGame2() {
+		List<RankInfo> game2Rank = new ArrayList<>() {{
+			
+		}};
 		
 	}
-	// game3 sort
+	// game3 data sort
 	public void sortGame3() {
-		
+		 List<RankInfo> game3Rank = new ArrayList<>(){{
+			 
+		 }};
 	}
 	
 	
@@ -44,16 +66,21 @@ public class RankManager {
 	}
 	
 	
-	// 출력
-	public void showTotalRank() {
+	
+	
+public void showEachGameRank() {
 		
-		
-		
+		int[] new_grade = new int[score.length]; 
+		for(int i=0; i < score.length; i++) { 
+			new_grade[rank[i]-1] = score[i];
+			} 
+		for(int i=0; i< score.length; i++) { 
+			System.out.println((i+1) + "등 : " + name + updateScore[i]); 
+			}
 	}
 	
 	
-	
-	 
+
 	
 //  유저별 점수 얻어서 rank 구하기 (점수로 정렬)
 //	public void sortScore() {

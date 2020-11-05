@@ -155,8 +155,8 @@ public class MemberInfoManager implements Util{
 	
 	public void updateScore(int gamenum, int winLose) {//이기면 0 지면 1
 		
-		int nowscore=members.get(membernum).getScore(gamenum, winLose);
-		nowscore +=1;
+		int nowscore = members.get(membernum).getScore(gamenum, winLose);
+		nowscore += 1;
 		System.out.println(gamenum-1);
 		members.get(membernum).setScore(gamenum, winLose, nowscore);
 
@@ -251,6 +251,12 @@ public class MemberInfoManager implements Util{
 			members.get(membernum).showInfo();
 	}
 	
+	public void showInfoScore() {
+		for (int i = 0; i < members.size(); i++) {
+		members.get(membernum).showWin();
+		}
+	}
+	
 	//기능
 	public void resetLife() {
 		//정각마다 라이프 늘려주는기능 나중에 구현
@@ -306,8 +312,8 @@ public class MemberInfoManager implements Util{
 	}
 
 
-	public List<MemberInfo> getMembers() {
-		return members;
-	}
+//	public List<MemberInfo> getMembers() {
+//		return members;
+//	}
 
 }
