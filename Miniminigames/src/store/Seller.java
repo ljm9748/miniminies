@@ -121,7 +121,7 @@ public class Seller {
 		
 		
 		// 반환할  랜덤 포인트의 개수를 구한다.				
-		givePoint = money/10; 		// point=돈/10 ex) 100p = 1000원
+		givePoint = money; 		// point=돈
 		// 수익금 증가					
 		myMoney = myMoney + money;
 		// 포인트를 결제한 횟수
