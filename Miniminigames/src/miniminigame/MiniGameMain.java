@@ -32,15 +32,17 @@ public class MiniGameMain implements Util, Menu {
 		      // 메세지를 출력
 		      System.out.println(MINI[i]);
 		}
-		member.showAllInfo();
+		
 		
 		// 로그인 or 회원가입
 		gmanager.login();
 		tfl.startAddLife();
-
-	      
+		
+		// 메인화면
 		gmanager.run();
 		
 
 	}
 }
+
+
