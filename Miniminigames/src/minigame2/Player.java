@@ -25,7 +25,10 @@ public class Player extends Cafe{
 	//카운트 다운 시작 15초
 	Over o = new Over();
 	CountDownThread cdt = new CountDownThread(o);
-			
+	
+	//카운트다운내 미입력시 카운트아웃을 판단해줄 변수
+	int good = 0;
+	int bad = 0;
 	
 	//플레이어는 음료를 만든다
 	public void playerMakeDrink() {
@@ -59,8 +62,11 @@ public class Player extends Cafe{
 		
 		// contains를 활용해서 해당하는 재료(drinkBase)가 아니면 else로 빠지게 함.
 		if(drinkBase.contains(var1)){
-			System.out.println("재료를 넣었습니다^0^");
+			good++;
+			System.out.println("재료를 넣었습니다^0^");	
+			
 		} else {
+			++bad;
 			--game2Life;
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T 남은목숨 : "+ game2Life);
 			
@@ -70,32 +76,36 @@ public class Player extends Cafe{
 				o.timeOverCheck = true;
 				manager.updateScore(2, 1);
 				game2Continue = false;
-				System.out.println("Game Over~~!");
-			}
+				System.out.println("Game Over~~!");	
+			} 
 			continue;
 		}
-			
-
+		
+		
 		System.out.println("두 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var2 = sc.nextLine();
 		System.out.println("두 번째로 넣을 재료는 = " + var2);
 		
 		if(drinkBase.contains(var2)){
+			++good;
 			System.out.println("재료를 넣었습니다^0^");
+			
 		} else {
-		
+			++bad;
 			--game2Life;
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T 남은목숨 : "+ game2Life);
 			
-			if(game2Life==0) {
+		 if(game2Life==0) {
 				o.gameOverCheck = true;
 				o.timeOverCheck = true;
 				manager.updateScore(2, 1);
 				game2Continue = false;
 				System.out.println("Game Over~~!");
-			}
+				
+			} 
 			continue;
 		}
+		
 		
 		
 		System.out.println("세 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
@@ -103,8 +113,10 @@ public class Player extends Cafe{
 		System.out.println("세 번째로 넣을 재료는 = " +var3);
 		
 		if(drinkBase.contains(var3)){
+			++good;
 			System.out.println("재료를 넣었습니다^0^");
 		} else {
+			++bad;
 			--game2Life;
 			System.out.println("정해진 재료만 넣을 수 있습니다 T.T 남은목숨 : "+ game2Life);
 			
@@ -114,10 +126,11 @@ public class Player extends Cafe{
 				manager.updateScore(2, 1);
 				game2Continue = false;
 				System.out.println("Game Over~~!");
-			}
+			} 
 			continue;
 		}
-	
+		
+		
 		// 음료 제공 (비교 및 판단하기)
 		// 플레이어가 입력한 var1, var2, var3이 MakeDrink.recipe 에 들어가 음료명(drink)로 반환됨. 
 		MakeDrink playerMake = new MakeDrink();
@@ -157,7 +170,7 @@ public class Player extends Cafe{
 		}
 		
 		} // 반복문 끝
-	
+		
 	}
 
 
