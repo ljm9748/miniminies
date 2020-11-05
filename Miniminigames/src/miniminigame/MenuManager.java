@@ -1,9 +1,14 @@
 package miniminigame;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 import game01.MiniGame;
+import game04.Electric;
+import game04.Fire;
+import game04.Grass;
+import game04.PoketMonster;
+import game04.Water;
+import game04.SelectMenu;
 import memberInfo.MemberInfoManager;
 import memberInfo.TimerForLife;
 import memberInfo.Rank;
@@ -114,7 +119,8 @@ public class MenuManager implements Util {
 			System.out.println(Menu.GAME_ONE+". 게임 1");
 			System.out.println(Menu.GAME_TWO+". 게임 2");
 			System.out.println(Menu.GAME_THREE+". 게임 3");
-			System.out.println("4.처음으로 되돌아가기");
+			System.out.println(Menu.GAME_FOUR+". 게임 4");
+			System.out.println("5.처음으로 되돌아가기");
 			System.out.println("게임종료하려면 0을 누르세요");
 			
 			
@@ -145,7 +151,10 @@ public class MenuManager implements Util {
 			case Menu.GAME_THREE:	
 				gameThree();
 				break;
-			case 4:	
+			case Menu.GAME_FOUR:	
+				gameFour();
+				break;
+			case 5:	
 				run();
 			case Menu.EXIT:
 				System.out.println("시스템을 종료합니다.");
@@ -365,8 +374,9 @@ public class MenuManager implements Util {
 					}			
 				}
 				
-				
 	}
+	
+	
 	// 게임2 실행 
 	public void gameTwo() {
 		// 메뉴 선택을 위한 select 변수설정
@@ -472,6 +482,81 @@ public class MenuManager implements Util {
 		}
 	}
 	
+	
+	
+	public void gameFour() {
+		
+		MemberInfoManager members = MemberInfoManager.getManager();
+		SelectMenu select = new SelectMenu();
+		
+		PoketMonster returnValue = null;
+		
+		boolean play=true;
+		
+		while(play) {
+		System.out.println("=====포켓몬 키우기=====");
+		System.out.println("|| 포켓몬을 선택하세요 ||");
+		System.out.println("===== " + Menu.ELECTRIC + ". 피카츄 =====");
+		System.out.println("===== " + Menu.FIRE + ". 파이리 =====");
+		System.out.println("===== " + Menu.WATER + ". 꼬부기 =====");
+		System.out.println("===== " + Menu.GRASS + ". 이상해씨 =====");
+		System.out.println("-> ");
+			
+		int choice = 0;
+		
+		try {
+			choice = SC.nextInt();
+		if(!(choice > 0 && choice < 5)) {
+			System.out.println("메뉴 선택이 올바르지 않습니다");
+			System.out.println("다시 선택하세요");
+			continue;
+		}
+		}catch(InputMismatchException e) {
+			System.out.println("메뉴 선택이 올바르지 않습니다");
+			System.out.println("다시 선택하세요");
+			continue;
+		}
+		
+		switch(choice) {
+		case Menu.ELECTRIC : 
+			returnValue = new Electric();
+			
+			select.play(returnValue);
+			
+			members.useLife();
+			
+			break;
+		case Menu.FIRE : 
+			returnValue = new Fire();
+			
+			select.play(returnValue);
+			
+			members.useLife();
+			
+			break;
+		case Menu.WATER : 
+			returnValue = new Water();
+			
+			select.play(returnValue);
+			
+			members.useLife();
+			
+			break;
+		case Menu.GRASS :
+			returnValue = new Grass();
+			
+			select.play(returnValue);
+			
+			members.useLife();
+			
+			break;			
+			}
+		}
+		play=false;
+		return ;
+
+	}
+	
 	public void store() {
 		
 
@@ -509,19 +594,18 @@ public class MenuManager implements Util {
 //				라이프 구매
 				case Menu.BUY_LIFE: 				
 					
-					System.out.println("현재 player가 보유하고 있는 포인트 입니다. \n >> ");
-					member.showpoint();
+					System.out.println("보유하고 있는 포인트를 입력해주세요.");
 
-//					try {
-//						inputNum = SC.nextInt();
-//						if (inputNum < 0) {
-//
-//						}
-//					} catch (InputMismatchException e1) {
-//						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
-//						SC.nextLine();
-//						continue;
-//					}
+					try {
+						inputNum = SC.nextInt();
+						if (inputNum < 0) {
+
+						}
+					} catch (InputMismatchException e1) {
+						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
+						SC.nextLine();
+						continue;
+					}
 					// LifeSeller 타입의 참조변수 선언
 					LifeSeller lifeseller = null;				
 
@@ -566,20 +650,18 @@ public class MenuManager implements Util {
 //				랜덤박스 구매
 				case Menu.BUY_RANDOMBOX: 
 					
-					System.out.println("현재 player가 보유하고 있는 포인트 입니다. \n >> ");
+					System.out.println("보유하고 있는 포인트를 입력해주세요.");
 					
-					member.showpoint();
-					
-//					try {
-//						inputNum = SC.nextInt();
-//						if (inputNum < 0) {
-//
-//						}
-//					} catch (InputMismatchException e1) {
-//						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
-//						SC.nextLine();
-//						continue;
-//					}
+					try {
+						inputNum = SC.nextInt();
+						if (inputNum < 0) {
+
+						}
+					} catch (InputMismatchException e1) {
+						System.out.println("메뉴 입력이 잘못되었습니다. 다시 선택해주세요.");
+						SC.nextLine();
+						continue;
+					}
 
 					// RandomBoxSeller 타입의 참조변수 선언
 					RandomBoxSeller randomboxseller = null;
@@ -596,15 +678,15 @@ public class MenuManager implements Util {
 
 					// 랜덤박스 구매: randomboxseller에게 원하는 값 지급
 					int givePoint = 0;
-					System.out.println("50p를 결제하세요. (랜덤박스는 1회당 1개씩 구매 가능합니다.)");
+					System.out.println("100p를 결제하세요. (랜덤박스는 1회당 1개씩 구매 가능합니다.)");
 					//
 					givePoint = SC.nextInt();
 
-					if (givePoint == 50) {
+					if (givePoint % 100 == 0 && givePoint>100) {
 						randomboxbuyer.buyRandomBox(randomboxseller, givePoint);
 					
 					} else {
-						System.out.println("포인트가 잘못 입력되었습니다. \n메뉴로 돌아갑니다.");
+						System.out.println("포인트가 부족하거나 100원 단위로 입력되지 않았습니다. \n메뉴로 돌아갑니다.");
 
 					}
 
@@ -620,8 +702,6 @@ public class MenuManager implements Util {
 
 					//포인트 구매	
 				case Menu.BUY_POINT: 
-					
-					
 					
 					SC.nextLine();
 							
@@ -648,21 +728,16 @@ public class MenuManager implements Util {
 						pointseller = new PointSeller(0, 0); // 객체 생성 후 객체의 주소값을 반환
 						// getPoint, myMoney
 
-						
-						
 						// PointBuyer 타입의 참조변수 선언과 초기화					
 						PointBuyer pointbuyer = new PointBuyer(inputNum, 0, 0); // 포인트 가져오기
 						// myMoney(보유 금액), myPoint, givePoint
 
 						// 포인트 구매: pointseller에게 원하는 값 지급
-						System.out.println("결제할 금액을 입력해주세요. (100p = 100원 입니다.)");
-						
-						int giveMoney = SC.nextInt(); // 20. 11. 05 수정
+						int giveMoney = 0;
 						int inputPoint = 0;
-						// 20.11.05 수인 - point==money로 수정
-						inputPoint = giveMoney;
+						inputPoint = giveMoney/10;
 
-						
+						System.out.println("결제할 금액을 입력해주세요. (포인트는 10p당 100원 입니다.)");
 						
 
 						// 100원 단위로 입력할 수 있도록 안내

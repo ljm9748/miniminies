@@ -14,7 +14,8 @@ public interface Menu {
 	
 	int GAME_ONE =1,
 		GAME_TWO =2,
-		GAME_THREE =3;
+		GAME_THREE =3,
+		GAME_FOUR=4;
 	
 	int EDIT = 1,
 		DELET =2;
@@ -28,5 +29,10 @@ public interface Menu {
 	
 	int GAME_RANK =1,
 		TOTAL_RANK =2;
+	
+	int ELECTRIC = 1;
+	int FIRE = 2;
+	int WATER = 3;
+	int GRASS = 4;
 
 }

@@ -7,6 +7,7 @@ import game04.Electric;
 import game04.Fire;
 import game04.Water;
 import game04.Grass;
+import miniminigame.MenuManager;
 
 public class SelectMenu {
 	
@@ -15,6 +16,9 @@ public class SelectMenu {
 	private boolean flag = true;
 	
 	public void play(PoketMonster p) {
+		
+		MenuManager gmanager =  new MenuManager();
+		
 		poketMon = p;
 		
 		Scanner sc = new Scanner(System.in);
@@ -64,8 +68,7 @@ public class SelectMenu {
 				break;
 			case Menu.EXIT :
 				System.out.println("게임을 종료합니다");
-
-				System.exit(0);
+				gmanager.run();
 	
 			}
 			p.levelUp();
