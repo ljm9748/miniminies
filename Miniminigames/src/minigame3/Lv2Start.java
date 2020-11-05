@@ -41,7 +41,12 @@ public class Lv2Start {
 				System.out.println(10*A+B+"-"+C+"=");
 			}
 			
-			answer = sc.nextInt();
+			try {
+				answer = sc.nextInt();
+				} catch (Exception e){ 
+				System.out.println("잘못 입력하셨습니다^^다음 문제로 넘어갑니다");
+				sc.nextLine();
+				} 
 			
 			
 			if(i%2==0&&(10*A+B+C)==answer) {
