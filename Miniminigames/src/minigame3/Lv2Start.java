@@ -48,53 +48,59 @@ public class Lv2Start {
 				sc.nextLine();
 				} 
 			
-			
-			if(i%2==0&&(10*A+B+C)==answer) {
+			if (o.timeOverCheck) { 	
+			wrong++;
+			System.out.println("정답을 맞춘 횟수 = " + correct);
+			System.out.println("틀린 횟수 = " + wrong);
+				break;
+			}
+			else if(i%2==0&&(10*A+B+C)==answer) {
 				System.out.println("정답입니다~!");
 				correct++;
-				System.out.println("정답을 맞춘 횟수 = "+correct);
+				System.out.println("정답을 맞춘 횟수 = " + correct);
+				System.out.println("틀린 횟수 = " + wrong);
 			}
 			else if (i%2!=0&&(10*A+B-C)==answer) {
 				System.out.println("정답입니다~!");
 				correct++;
-				System.out.println("정답을 맞춘 횟수 = "+correct);
+				System.out.println("정답을 맞춘 횟수 = " + correct);
+				System.out.println("틀린 횟수 = " + wrong);
 			}
 			else if (i%2==0&&(10*A+B+C)!=answer) {
 				System.out.println("틀렸습니다!!");
 				wrong++;
-				System.out.println("틀린 횟수 = "+wrong);
+				System.out.println("정답을 맞춘 횟수 = " + correct);
+				System.out.println("틀린 횟수 = " + wrong);
 			}
 			else if (i%2!=0&&(10*A+B-C)!=answer) {
 				System.out.println("틀렸습니다!!");
 				wrong++;
-				System.out.println("틀린 횟수 = "+wrong);
+				System.out.println("정답을 맞춘 횟수 = " + correct);
+				System.out.println("틀린 횟수 = " + wrong);
 			}
 			
-			
-			if (o.timeOverCheck) {
-				break;
-			}
 	
 		}	//반복문 끝남
 		
 		o.gameOverCheck=true;
 		
-		if (wrong + correct < 5&&correct<3) {
+		if (wrong + correct < 5&&correct<4) {
 			System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 			System.out.println("\n\n\t    시간초과로 탈락하셨습니다\t\n\n");
 			System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
 			members.updateScore(3, 1);
 		}
-		else if (wrong >= 3) {
+		else if (wrong >= 2) {
 			System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-			System.out.println("\n\n\t3개 이상 틀렸네요 당신은 탈락입니다\t\n\n");
+			System.out.println("\n\n\t2개 이상 틀렸네요 당신은 탈락입니다\t\n\n");
 			System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
 			members.updateScore(3, 1);
 		}
-		else if (correct >= 3) {
+		else if (correct >= 4) {
 			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 			System.out.println("\n\t\t~Clear~\t\t");
 			System.out.println("\t스피드 계산 게임 LV2을 통과하셨습니다.\t");
+			System.out.println("\t 100포인트가 지급됩니다.\t");
 			System.out.println("\t스피드 계산 게임 LV3에 도전해보세요^^.\t\n");
 			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n");
 			members.updatePoint(100);
