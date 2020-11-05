@@ -48327,6 +48327,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "JOIN",
+									"type": "",
 									"defaultValue": "1"
 								},
 								{
@@ -48336,6 +48337,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "LOGIN",
+									"type": "",
 									"defaultValue": "2"
 								},
 								{
@@ -48345,6 +48347,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "GAME_ONE",
+									"type": "",
 									"defaultValue": "1"
 								},
 								{
@@ -48354,6 +48357,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "GAME_TWO",
+									"type": "",
 									"defaultValue": "2"
 								},
 								{
@@ -48363,6 +48367,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "GAME_THREE",
+									"type": "",
 									"defaultValue": "3"
 								},
 								{
@@ -48372,6 +48377,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "EDIT",
+									"type": "",
 									"defaultValue": "1"
 								},
 								{
@@ -48381,6 +48387,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "DELET",
+									"type": "",
 									"defaultValue": "2"
 								},
 								{
@@ -48390,6 +48397,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "BUY_LIFE",
+									"type": "",
 									"defaultValue": "1"
 								},
 								{
@@ -48399,6 +48407,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "BUY_RANDOMBOX",
+									"type": "",
 									"defaultValue": "2"
 								},
 								{
@@ -48408,6 +48417,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "BUY_POINT",
+									"type": "",
 									"defaultValue": "3"
 								},
 								{
@@ -48417,6 +48427,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "SHOW_SELLER",
+									"type": "",
 									"defaultValue": "4"
 								},
 								{
@@ -48426,6 +48437,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "SHOW_BUYER",
+									"type": "",
 									"defaultValue": "5"
 								},
 								{
@@ -48435,6 +48447,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "GAME_RANK",
+									"type": "",
 									"defaultValue": "1"
 								},
 								{
@@ -48444,6 +48457,7 @@
 										"$ref": "AAAAAAF1k+RR+j66OR4="
 									},
 									"name": "TOTAL_RANK",
+									"type": "",
 									"defaultValue": "2"
 								}
 							]
@@ -48528,7 +48542,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF1k+mBJz+bGL0="
 									},
-									"name": "Scanner SC"
+									"name": "Scanner SC",
+									"type": ""
 								}
 							]
 						}
