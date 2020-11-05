@@ -73,6 +73,7 @@ public class Electric implements PoketMonster {
 			members.updateScore(4, 0);
 			
 			return false;
+			
 		}else if(HP < 0) {
 			System.out.println("피카츄가 죽었다....");
 			System.out.println("You Fail....");
