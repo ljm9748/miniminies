@@ -603,7 +603,7 @@ public class MenuManager implements Util {
 					if (givePoint == 50) {
 						randomboxbuyer.buyRandomBox(randomboxseller, givePoint);
 					
-					} else {
+					} else  {
 						System.out.println("포인트가 잘못 입력되었습니다. \n메뉴로 돌아갑니다.");
 
 					}
