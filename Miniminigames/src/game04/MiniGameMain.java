@@ -8,10 +8,12 @@ import game04.Fire;
 import game04.Water;
 import game04.Grass;
 import memberInfo.MemberInfoManager;
+import miniminigame.MenuManager;
 
 public class MiniGameMain {
 	
 	MemberInfoManager members = MemberInfoManager.getManager();
+	MenuManager gmanager =  new MenuManager();
 	SelectMenu select = new SelectMenu();
 	
 	public PoketMonster selectPoketMonster() {
@@ -28,13 +30,14 @@ public class MiniGameMain {
 		System.out.println("===== " + Menu.FIRE + ". 파이리 =====");
 		System.out.println("===== " + Menu.WATER + ". 꼬부기 =====");
 		System.out.println("===== " + Menu.GRASS + ". 이상해씨 =====");
+		System.out.println("===== " +Menu.EXIT + ". 게임 종료");
 		System.out.println("-> ");
 			
 		int choice = 0;
 		
 		try {
 			choice = sc.nextInt();
-		if(!(choice > 0 && choice < 5)) {
+		if(!(choice > 0 && choice < 6)) {
 			System.out.println("메뉴 선택이 올바르지 않습니다");
 			System.out.println("다시 선택하세요");
 			continue;
@@ -77,7 +80,11 @@ public class MiniGameMain {
 			
 			members.useLife();
 			
-			break;			
+			break;	
+		case Menu.EXIT :
+			System.out.println("게임을 종료합니다");
+			gmanager.run();
+			break;
 			}
 		}
 		play=false;

@@ -197,6 +197,7 @@ class Person {
 	int win;
 	int lose;
 	int total;
+	
 	public Person(String name, int g1win, int g1lose, int g1total, int g2win, int g2lose, int g2total, int g3win,
 			int g3lose, int g3total, int win, int lose, int total) {
 		super();
