@@ -7,7 +7,7 @@ class CountDownThread extends Thread {
 	public CountDownThread(Over o) {
 		this.o = o;
 	}
-
+	
 	@Override
 	public void run() {
 
@@ -22,6 +22,8 @@ class CountDownThread extends Thread {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			
+			
 		}
 		o.timeOverCheck=true;
 	}

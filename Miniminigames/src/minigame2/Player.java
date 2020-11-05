@@ -80,8 +80,7 @@ public class Player extends Cafe{
 			} 
 			continue;
 		}
-		
-		
+	
 		System.out.println("두 번째 재료를 입력해주세요([물],[우유],[커피],[바닐라],[초코],[얼음])");
 		String var2 = sc.nextLine();
 		System.out.println("두 번째로 넣을 재료는 = " + var2);
@@ -138,7 +137,6 @@ public class Player extends Cafe{
 		
 		// 플레이어가 만든 음료 = recipe에 입력되어 반환된 음료이름 (gtter사용)
 		String pDrink = playerMake.getDrink();
-		
 		// 고객이 주문한 음료
 		String cDrink = choiceMenu.getChoiceMenu();
 		
@@ -170,7 +168,6 @@ public class Player extends Cafe{
 		}
 		
 		} // 반복문 끝
-		
 	}
 
 
