@@ -21,7 +21,7 @@ public class MemberInfo implements Serializable{
 		
 		this.point = 0;
 		this.life = 3;
-		this.score = new int[3][2]; 
+		this.score = new int[4][2]; 
 
 	}
 	

@@ -22,7 +22,7 @@ public class TimerForLife {
 		public void startAddLife() {
 			
 		     
-		      jobScheduler.scheduleAtFixedRate(job, 3000, 3000);
+		      jobScheduler.scheduleAtFixedRate(job, 180000, 180000);
 		      /*
 		      try {
 		         Thread.sleep(20000);

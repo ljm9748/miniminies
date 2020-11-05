@@ -46,9 +46,12 @@ public class SaleMain {
 
 			switch (select) {
 //			라이프 구매
-			case Menu.BUY_LIFE: 				
+			case Menu.BUY_LIFE: 
 				
-				System.out.println("보유하고 있는 포인트를 입력해주세요.");
+				members.showpoint();
+				
+				
+				System.out.println("보유하고 있는 포인트를 입력해주세요.!!");
 
 				try {
 					inputNum = sc.nextInt();
