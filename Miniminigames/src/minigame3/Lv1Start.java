@@ -35,24 +35,31 @@ public class Lv1Start {
 			System.out.println("잘못 입력하셨습니다^^다음 문제로 넘어갑니다");
 			sc.nextLine();
 			} 
+
+			if (o.timeOverCheck) { 	
+			wrong++;
+			System.out.println("정답을 맞춘 횟수 = " + correct);
+			System.out.println("틀린 횟수 = " + wrong);
+
+				break;
+			}
 			
-			if (10 * A + B + C == answer) {
+			else if (10 * A + B + C == answer) {
 				System.out.println("정답");
 				correct++;
 				System.out.println("정답을 맞춘 횟수 = " + correct);
+				System.out.println("틀린 횟수 = " + wrong);
 			}
 
 			else {
 				System.out.println("틀렸습니다");
 				wrong++;
+				System.out.println("정답을 맞춘 횟수 = " + correct);
 				System.out.println("틀린 횟수 = " + wrong);
 
 			}
 	
-			if (o.timeOverCheck) { 	
 
-				break;
-			}
 		}
 		o.gameOverCheck=true;
 
@@ -74,6 +81,7 @@ public class Lv1Start {
 			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 			System.out.println("\n\t\t~Clear~\t\t");
 			System.out.println("\t스피드 계산 게임 LV1을 통과하셨습니다.\t");
+			System.out.println("\t 50포인트가 지급됩니다.\t");
 			System.out.println("\t스피드 계산 게임 LV2에 도전해보세요^^.\t\n");
 			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n");
 			members.updatePoint(50);
