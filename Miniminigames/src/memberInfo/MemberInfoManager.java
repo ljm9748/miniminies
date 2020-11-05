@@ -180,12 +180,7 @@ public class MemberInfoManager implements Util{
 		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 	}
 	
-	public float showWinningRate(int gamenum) {
-		
-		int win= members.get(membernum).getScore(gamenum-1, 0);
-		int lose = members.get(membernum).getScore(gamenum-1, 1);
-		return (float)win/(win+lose)*100;
-	}
+
 	public int showWinning(int gamenum) {
 		
 		int win= members.get(membernum).getScore(gamenum-1, 0);
@@ -255,12 +250,13 @@ public class MemberInfoManager implements Util{
 	public void showInfoUser() {
 			members.get(membernum).showInfo();
 	}
-	
+	/*
 	public void showInfoScore() {
 		for (int i = 0; i < members.size(); i++) {
 		members.get(membernum).showWin();
 		}
 	}
+	*/
 	
 	//기능
 	public void resetLife() {
@@ -307,11 +303,6 @@ public class MemberInfoManager implements Util{
 	}
 
 
-	public void showMemInfo() {
-		for (int i = 0; i < members.size(); i++) {
-			members.get(membernum).showInfo();
-		}
-	}
 
 
 
