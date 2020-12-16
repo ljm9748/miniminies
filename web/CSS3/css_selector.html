@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS 선택자</title>
+        <style>
+            /*선택자{
+                속성 이름: 속성 값;
+                속성 이름: 속성 값;
+            }*/
+
+            /*p{color: black}*/
+
+            /*전체 선택자: 전체 폰트의 컬러값을 지정*/
+            /*
+            * {
+                color: cadetblue;
+            }
+    */
+
+            /* 태그 선택자 */
+            h1,
+            p,
+            body {
+                /*margin: 0;
+                padding: 0;*/
+            }
+
+            h1 {
+                background-color: antiquewhite;
+
+            }
+
+            p {
+                color: coral;
+                background-color: bisque;
+            }
+
+            div {
+                height: 50px;
+            }
+
+            form {
+                border: 1px solid black;
+            }
+
+            ur {
+                border: 1px solid blue;
+            }
+
+            li {
+                border: 1px solid coral;
+            }
+
+            /*아이디 선택자: #아이디 */
+
+            #header {
+                background-color: burlywood;
+            }
+
+            #aside {
+                background-color: chocolate;
+            }
+
+            #content {
+                background-color: brown;
+            }
+
+            /*클래스 선택자: 요소에 class속성이 있는 것을 지정하는 선택자*/
+            div.color_white {
+                color: white;
+            }
+
+            .color_w {
+                color: white;
+            }
+
+            .font_size_32 {
+                font-size: 32px
+            }
+
+            .font_weight_bold {
+                font-weight: bold;
+            }
+
+            .font_itelic {
+                font-style: italic;
+            }
+
+            /*속성 선택자: 선택자[속성 이름]*/
+            input[type] {
+                background-color: crimson;
+                color: darksalmon;
+            }
+
+            /*속성 선택자: 선택자[속성 이름=값]*/
+            input[type=button] {
+                background-color: darkseagreen;
+                padding: 10px;
+                margin: 10px;
+                font-size: 32px;
+                font-weight: bold;
+
+            }
+
+            /*속성 선택자: 선택자[속성 이름$=값]: 특정 값으로 끝나는 속성*/
+            img[src$=jpg] {
+                border: 5px solid coral;
+            }
+
+            img[src$=png] {
+                border: 5px solid brown;
+            }
+
+            /*후손 선택자: 선택자 A, 선택자 B
+            A 태그 하위의 존재하는 태그를 기준으로 B 선택자로 선택*/
+            #header1 h1 {
+                background-color: black;
+                color: white;
+                font-size: 16px;
+
+            }
+
+            /*자손 선택자: 선택자 A(부모) > 선택자 B(자손)
+            선택자 A로 선택된 태그 바로 아래의 태그들 중 선택자 B로 선택*/
+            #header1>h1 {
+                border: 5px solid gray;
+                font-style: italic;
+            }
+
+            /*동위선택자: 범위를 한정해서 선택
+            선택자A+선택자B -> A선택의 태그 바로 뒤에 있는 선택자B*/
+            #div1>h1+h2 {
+                background-color: darkslateblue;
+                color: white;
+            }
+
+            #div1>h1~h2 {
+                background-color: darkolivegreen;
+            }
+
+
+            /*반응 선택자
+            :hover : 마우스 커서가 특정 태그 위로 올라갈 때 
+            :active : 마우스 버튼을 누르고 있는 상태*/
+            h1:hover {
+                background-color: coral;
+                color: white;
+                cursor: pointer;
+            }
+
+            h1:active {
+                background-color: darkslateblue;
+                color: white;
+                cursor: pointer;
+            }
+
+            /*상태 선택자
+            :checked    -> checkbox, radio
+            :focus      -> 모든 input
+            :enabled    -> 사용 가능한 input
+            :disabled   -> 사용 불가한 input
+            */
+            input:enabled {
+                border: 1px solid blue;
+                background-color: cornflowerblue;
+            }
+
+            input:disabled {
+                border: 1px solid red;
+                background-color: darkred;
+            }
+
+            input:focus {
+                background-color: darkorchid;
+                color: white;
+            }
+
+            /*박스를 선택하면 박스를 숨김*/
+            #msg {
+                padding: 20px;
+                background-color: beige;
+                display: none;
+            }
+
+            input[type=checkbox]:checked+#msg {
+                display: block;
+            }
+
+            #nav,
+            #nav>li {
+                border: 0;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            #nav {
+                margin: 20px 0;
+                overflow: hidden;
+                /*float: left 속성을 #nav안으로 한정한다.*/
+            }
+
+            #nav>li {
+                float: left;
+                padding: 0 10px
+                    /*border: 1 solid gray;*/
+            }
+
+            #nav>li:first-child {
+                background-color: beige;
+                border-radius: 10px 0 0 10px;
+            }
+
+            #nav>li:last-child {
+                background-color: beige;
+                border-radius: 0 10px 10px 0;
+            }
+
+            #nav>li:nth-child(2n) {
+                /*◈*/
+                background-color: brown;
+            }
+
+            #nav>li:nth-child(2n+1) {
+                /*◈*/
+                background-color: chocolate;
+            }
+
+
+            /*문자 선택자
+            ::first-letter
+            ::first-line*/
+            p::first-letter {
+                font-size: 300%;
+                /*16px*3*/
+
+            }
+
+            p::first-line {
+                color: dodgerblue;
+            }
+
+            p::selection {
+                background-color: black;
+                color: darkcyan;
+            }
+
+            /*링크 선택자★★★
+            :link 
+            :visited*/
+
+            a:link {
+                color: darkgreen;
+                text-decoration: none
+            }
+
+            a:visited {
+                color: darkgreen;
+                text-decoration: none;
+            }
+
+            a:hover {
+                /*◈*/
+                color: crimson;
+            }
+
+            /*a:link::after{
+                content: '(' attr(href) ')';
+            }*/
+            a:link::before {
+                content: '('attr(href) ')';
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <h2>
+            <a href="http://www.naver.com">네이버</a>
+
+
+        </h2>
+
+        <p>(서울=뉴스1) 윤슬빈 여행전문기자 = 정부가 신종 코로나바이러스 감염증(코로나19) 재확산에 따라 숙박·여행 할인 쿠폰 발급과 근로자 휴가지원 사업을 다시 잠정 중단한다. 오는 24일 0시부터 수도권 방역 대응 수준이 사회적 거리두기 2단계로 격상됨에 따른 것이다.
+        </p>
+
+
+
+        <ul id="nav">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+
+        </ul>
+
+        <!--박스를 선택하면 박스를 숨김-->
+        보이기
+        <input type="checkbox">
+        <div id="msg">
+            체크박스를 체크하면 DIV 블록이 안보입니다.
+        </div>
+
+
+        <br>
+
+
+        <input> <input disabled>
+
+
+
+        <div id="div1">
+            <h1>Header - 1</h1>
+            <h2>Header - 2</h2>
+            <h2>Header - 2</h2>
+            <h2>Header - 2</h2>
+            <h2>Header - 2</h2>
+
+        </div>
+
+
+
+
+
+        <!--<div id="header1">
+            <h1 class="title">Lorem ipsum</h1>
+            <div id="nav">
+                <h1>Navigation</h1>
+            </div>
+        </div>
+        <div id="section">
+            <h1 class="title">Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <img src="img/img3.jpg" height="100">
+        <img src="img/img4.jpg" height="100">
+        <img src="img1.png" height="100">
+
+
+
+
+        <h1>for tag -> input의 속성</h1>
+        <form>
+            <ur>
+                <li>
+                    <input type="text">
+                </li>
+                <li>
+                    <input type="button" value="Button">
+                </li>
+                <li>
+                    <input type="button" value="새로운 버튼">
+                </li>
+                <li>
+                    <input type="password">
+                </li>
+            </ur>
+
+
+        </form>
+
+
+        <div id="header" class="color_w font_size_32 font_weight_bold font_itelic">header</div>
+        <div id="aside" class="color_white ">aside</div>
+        <div id="content" class="color_whtie">content</div>
+
+
+        <h1 class="color_w">'거리두기 2단계' 여행·숙박 쿠폰, 또 중단…정부 "사용 자제해달라"(종합)</h1>
+
+        <p>(서울=뉴스1) 윤슬빈 여행전문기자 = 정부가 신종 코로나바이러스 감염증(코로나19) 재확산에 따라 숙박·여행 할인 쿠폰 발급과 근로자 휴가지원 사업을 다시 잠정 중단한다. 오는 24일 0시부터 수도권 방역 대응 수준이 사회적 거리두기 2단계로 격상됨에 따른 것이다.</p>-->
+
+
+    </body>
+
+</html>

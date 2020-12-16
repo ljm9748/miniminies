@@ -1,0 +1,282 @@
+<!DOCTYPE html> <!--HTML5 문서임을 정의 -->
+
+<html lang="ko"> <!-- html의 시작: 작성하는 언어 정의 -->
+
+    <head>
+        <!-- html 문서의 정보를 정의 -->
+        <title>Frist HTML5</title> <!-- 웹 문서의 제목 -->
+        <meta charset="utf-8"> <!-- 문서의 속성 -->
+        <style>
+            h1 {
+                background-color: cadetblue;
+                color: azure;
+            }
+
+            h2 {
+                background-color: cornflowerblue;
+                color: aliceblue;
+            }
+            
+            div {
+                background-color: burlywood;
+            }
+            
+            span{
+                background-color: darksalmon;
+            }
+            p{
+                
+                background-color: beige;
+            }
+            
+            
+        </style> <!-- 웹 문서의 요소들의 스타일 정의 -->
+        <script>
+            //alert('안녕하세요!'); /*알림창*/
+        </script> <!-- 자바 스크립트 정의 -->
+    </head>
+
+    <body>
+        <h3 id="top">INDEX</h3>
+        <ol>
+            <li><a href="http://www.naver.com">Naver</a></li>
+            <li><a href="#http://192.168.0.35/">link</a></li>
+            <li><a href="#tag-1">Heading tag</a></li>
+            <li><a href="#tag-2">P tag</a></li>
+            <li><a href="#tag-3">br tag</a></li>
+            <li><a href="#tag-4">List tag</a></li>
+            <li><a href="#tag-5">Table tag</a></li>
+            <li><a href="#tag-6">img tag</a></li>
+             <li><a href="#tag-7">img tag</a></li>
+        </ol>
+        <hr>
+        
+        <h1>form tag</h1>
+        
+        <form action="#" method="get">
+            
+            아이디 <input type="test" name="userid" value="value"><br>
+            이름 <input type="test" name="username" value="value"><br>
+            비밀번호 <input type="password" name="pw" value="value"><br>
+            프로필 사진 <input type="file" name="file" ><br>
+            ok?<input type="checkbox" name="ok" ><br>
+            
+            A <input type="radio" name="choice" value="A">
+            B <input type="radio" name="choice" value="B">
+            C <input type="radio" name="choice" value="C">
+            D <input type="radio" name="choice" value="D"> <br> 
+            
+            <input type="submit" value="서버로 전송"> <!--전송 후 내 주소로 이동-->
+                    
+        
+        
+        </form>
+        
+        
+        <hr>
+        <h1 id="tag-7"> 공간 분할 tag </h1>
+      
+        
+        <div> DIV DIV DIV DIV DIV  </div>
+        <!--block-->
+        <span> span span span </span>
+        <!--inline-->
+        
+        
+        
+        
+        
+        
+        
+        <hr>
+        <h1 id="tag-6">img tag</h1>
+        
+        <img src="img1.png"width="200" height="100"> <!--단일 태그-->
+        <img src="img2.jpg" 
+             width="200" height="100"> <!--단일 태그-->
+        <img src="img/img3.jpg" >
+        <img src="img/img4.jpg">
+         <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        <img src="test" alt="이미지 파일 입니다."> <!--이미지가 없을 경우-->
+        
+        
+        <hr>
+        <h1 id="tag-5"> Table tag</h1>
+        
+        <table border="1">
+            <tr>
+                <th colspan="2">지역별 홍차</th>
+
+            </tr>
+            <tr>
+                <th rowspan="3">중국</th>
+                <td>정산소종</td>
+            </tr>
+            <tr>
+                <!--<td></td>-->
+                <td>기문</td>
+            </tr>
+            <tr>
+                <!--<td></td>-->
+                <td>운남</td>
+            </tr>
+            <tr>
+                <th rowspan="4">인도 및 스리랑카</th>
+                <td>아삼</td>
+            </tr>
+            <tr>
+                <!--<td></td>-->
+                <td>실론</td>
+            </tr>
+            <tr>
+                <!--<td></td>-->
+                <td>다질링</td>
+            </tr>
+            <tr>
+                <!--<td></td>-->
+                <td>닐기러</td>
+            </tr>
+
+        </table>
+        
+        
+        
+        
+        
+        <hr>
+        
+        <h1> Table tag</h1>
+        
+        <table border="1">
+            <tr>
+                <td rowspan="2">1, 1</td>
+                <td>1, 2</td>
+            </tr>
+            <tr>
+                <!--<td>2, 1</td>-->
+                <td>2, 2</td>
+            </tr>
+            tr>
+                <td colspan="2">1, 1</td>
+                <!--<td>1, 2</td>-->
+            </tr>
+            <tr>
+                <td>2, 1</td>
+                <td>2, 2</td>
+            </tr>
+        </table>
+        
+        <table border="1">
+            <tr>
+                <th>태그 이름</th>
+                <th>설명</th>            
+            </tr>
+            <tr>
+                <td>table</td>
+                <td>테이블을 생성해주는 태그</td>            
+            </tr>
+            <tr>
+                <td>thead</td>
+                <td>테이블의 머리글</td>            
+            </tr>
+            <tr>
+                <td>tbody</td>
+                <td>테이블의 본문</td>            
+            </tr>
+            <tr>
+                <td>tfoot</td>
+                <td>설명</td>            
+            </tr>
+            <tr>
+                <td>tr</td>
+                <td>테이블의 행을 생성</td>            
+            </tr>
+            <tr>
+                <td>th</td>
+                <td>표의 각 열의 라벨을 표현</td>            
+            </tr>
+            <tr>
+                <td>td</td>
+                <td>행의 포함되는 열을 생성</td>            
+            </tr>
+            
+            
+        
+        </table>
+       
+        
+
+
+        <hr>
+
+        <h1 id="tag-4"> LIST tag </h1>
+        <ul>
+            <!--순서없는 리스트-->
+            <li> 카카오 </li>
+            <li> 네이버 </li>
+            <li> 페이스북 </li>
+
+        </ul>
+
+
+
+        <hr>
+
+        <ol>
+        <!--순서있는 리스트-->
+            <li> 카카오 </li>
+            <li> 네이버 </li>
+            <li> 페이스북 </li>
+        </ol>
+
+        <hr>
+        <h3 id="tag-3">홍차</h3>
+
+        <hr>
+
+        <h4>정의</h4>
+        <p>
+            동양에서는 우러난 차의 빛깔(붉은색)을 보고 홍차라고 하지만, 서양에서는 찻잎의 색깔(검은색)을 보고 흑차(Black Tea)라고 부른다. 녹차는 동서양 공통으로 綠茶-Green Tea다. 즉, 동양(특히 중국)에서 '흑차'라고 하면 보이차 종류의 후발효차를 지칭하는 명칭이다. 반대로 서양에서 '홍차', 즉 red tea는 허브의 일종인 루이보스를 우려낸 대용차를 말한다.
+
+        </p>
+
+        <h4>등급</h4>
+        <p>
+            터키나 아랍권 이슬람교 국가 사람들이 즐겨 마시는 홍차. 자세한 것은 차이 문서를 참고.
+        </p>
+        -브로큰 페코
+        <br> <br>
+        -브로큰 페코 수숑
+        <br> <br>
+        브로큰 오렌지 페코 패닝
+
+        <hr>
+        <h1 id="tag-2"> 문단 Tag </h1>
+        <h2>'빨강 머리 앤'·'작은 아씨들' 등 오디오북으로 듣는다</h2>
+        <p>
+            <!-- 단락을 나눠줌. -->
+            [이데일리 김은비 기자] 오디오북 스트리밍 서비스업체 스토리텔은 출판사 윌북과의 협업을 통해 여성 주인공의 고전소설 모음 ‘걸클래식 컬렉션’을 오디오북으로 공개한다고 20일 밝혔다.
+        </p>
+        <p>
+            ‘걸클래식 컬렉션’을 통해 ‘작은 아씨들’, ‘키다리 아저씨’, ‘작은 공주 세라’, ‘빨강머리 앤’, ‘하이디’, ‘이상한 나라의 앨리스’, ‘비밀의 화원’ 등 여성 캐릭터가 주인공인 고전 7편을 선보인다
+        </p>
+        <p>
+            여성과 남성, 장애인과 비장애인 등을 구분 짓는 차별적 표현과 고전 특유의 옛 표현은 현대적으로 바꿨다.
+        </p>
+
+        <hr> <!-- 단일 태그 - 줄을 그어줌. -->
+
+
+
+        <h1 id="tag-1"> Heading tag </h1>
+        <h1>This is heading 1</h1>
+        <h2>This is heading 2</h2>
+        <h3>This is heading 3</h3>
+        <h4>This is heading 4</h4>
+        <h5>This is heading 5</h5>
+        <h6>This is heading 6</h6>
+
+        <a href="#top">top</a>
+
+    </body>
+</html>

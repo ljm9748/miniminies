@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery keyevent</title>
+    <!--jqeury library load-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    
+    <script>
+        $(document).ready(function(){
+            
+            // 키보드 입력 이벤트 처리
+            $('textarea').keyup(function(){
+                // 현재 입력 문자열의 길이
+                var inputStrLen = $(this).val().length;                
+                if(inputStrLen>50){
+                    alert('50까지만 입력이 가능합니다.')                    
+                    var userInput = $(this).val().substr(0, 50);
+                    inputStrLen = 50;                    
+                    $(this).val();
+                }                
+                $('span').text(inputStrLen);
+            });
+            
+            // 체크박스 이벤트 처리: change 메소드 사용
+            $('#check-all').change(function(){
+                if(this.checked){
+                    $('#check-item').children().prop('checked', true);
+                } else{
+                    $('#check-item').children().prop('checked', false);
+                }
+                
+            });
+        });
+    
+    </script>
+    
+    
+</head>
+
+<body>
+    
+    개인정보활용 동의<input type="checkbox" id="agree"> <br>
+    
+    <input type="checkbox" id="check-all"> 
+    <label for="check-all">전체 선택</label>
+    <div id="check-item">
+        <input type="checkbox"> 게시물 1 <br>
+        <input type="checkbox"> 게시물 2 <br>
+        <input type="checkbox"> 게시물 3 <br>
+        <input type="checkbox"> 게시물 4 <br>
+        <input type="checkbox"> 게시물 5 <br>
+        
+    </div>
+    
+    <!--rows(줄), cols(칸)-->
+    <textarea rows="10" cols="30"></textarea><h1><span>0</span>/50</h1>
+    
+</body>
+</html>

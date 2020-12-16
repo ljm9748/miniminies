@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: 나눔고딕, "맑은 고딕", 돋움, Arial;
+	background-image: url("images/background.jpg");
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+div {
+	margin: 0px;
+	padding: 0px;
+}
+
+#description {
+	margin: 20px;
+	background-color: #f0f0f0;
+	border: 1px solid gray;
+	padding: 10px;
+	text-align: justify;
+}
+
+#youtube {
+	margin: 0px;
+	padding: 0px;
+}
+
+#shadow {
+	background-image: url("images/shadow.jpg");
+	width: 639px;
+	height: 41px;
+}
+
+#theater-panel {
+	text-align: center;
+}
+
+#content {
+	margin-top: 20px;
+	width: 900px;
+}
+
+#left {
+	float: left;
+	width: 440px;
+	text-align: left;
+}
+
+#right {
+	float: right;
+	width: 440px;
+	text-align: left;
+}
+
+div.link-item {
+	text-align: left;
+	cursor: pointer;
+	width: 420px;
+	padding: 15px;
+}
+
+div.link-item td.icon {
+	width: 48px;
+	vertical-align: top;
+}
+
+div.link-item td.title {
+	font-size: 1.1em;
+	color: #336688;
+	font-weight: bold;
+}
+
+div.link-item td.description {
+	text-align: justify;
+	color: #666666;
+}
+
+div.link-item:HOVER {
+	background-color: #efefef;
+	border: solid 1px silver;
+	padding: 14px;
+}
+
+div#title .label {
+	font-size: 2em;
+}

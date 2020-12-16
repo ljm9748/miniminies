@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE introContent PUBLIC "introContent" "content.dtd">
+<introContent>
+	<page id="exerdRoot" url="html/root.html" />
+	<page id="exerdExample" url="html/example.html" />
+	<page id="exerdStandby" url="html/standby.html" />
+</introContent> 

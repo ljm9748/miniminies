@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Bundle-SymbolicName: org.apache.cactus
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-Name: %Bundle-Name.0
+Bundle-Version: 1.7.2.v200805140145
+Bundle-ClassPath: .
+Eclipse-LazyStart: true
+Bundle-Vendor: %Bundle-Vendor.0
+
+Name: lib/commons-httpclient-2.0.2.jar
+SHA1-Digest: W1Z0xuGdGIkVRBps4qNPHOlPMbQ=
+
+Name: lib/aspectjrt-1.2.1.jar
+SHA1-Digest: 7cUu6Qk8arJ1gQkmJHGTSxB/oFw=
+
+Name: lib/junit-3.8.1.jar
+SHA1-Digest: 5oIe+gYcOFhq1c8RAYF3K+UFD2c=
+
+Name: plugin.properties
+SHA1-Digest: UaOoxdJYjr1BnBjkZc++1KbMqO4=
+
+Name: about_files/LICENSE-2.0.txt
+SHA1-Digest: K4uBUimqimHkg/tLoFiLi2xJGJA=
+
+Name: about.html
+SHA1-Digest: 2W4JernWWu6GvTIsfHgT0KwKDt8=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: about_files/cpl-v10.html
+SHA1-Digest: o0b19ceZ+HQHVX0Ops751AQVdwM=
+
+Name: lib/cactus-1.7.2.jar
+SHA1-Digest: IMw5+pHOKZE3Del2QTkvixYZLYs=
+
+Name: lib/commons-logging-1.0.4.jar
+SHA1-Digest: Mo3SzIEPZdh7X2q/W/PG9G45rFY=
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naver_login</title>
+
+    <!--웹 폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+
+    <!--기본 설정-->
+    <!--외부에서 를 로드-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        #main_wrap {
+            width: 700px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        #main_wrap>select {
+            float: right;
+        }
+
+        /*Header*/
+        header {
+            font-family: 'Black Han Sans', sans-serif;
+            text-align: center;
+            margin: 30px 0;
+
+            font-size: 80px;
+
+            color: #2DB400;
+        }
+
+        /*nav {
+            overflow: auto;
+            width: 600px;
+
+        }
+
+        nav>ul {
+            float: left;
+            overflow: auto;
+            list-style: none;
+        }
+        
+        nav>ul>li{
+            float: left;
+            height: 30px;
+            padding: 0 15px;
+            line-height: 30px;
+            text-align: left;
+        }*/
+
+        /*contents_wrap*/
+        #contents_wrap {
+            overflow: hidden;
+
+        }
+
+        /*content*/
+        #content {
+            width: 600px;
+            float: left;
+
+            padding: 10px;
+
+            list-style: none;
+        }      
+
+        #content>p>input {
+           zoom: 1.5;
+        }
+        
+        #content>p>label{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        #contnet>p>label>essential{
+            color: green;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <div id="main_wrap">
+        <select id="language">
+            <option>언어(language)</option>
+            <option value="한국어">한국어</option>
+            <option value="영어">English</option>
+        </select>
+        <header>NAVER</header>
+        <nav>
+
+        </nav>
+        <div id="contnets_wrap">
+            <div id="content">
+                <p id="1"><input type="checkbox">
+                    <label>
+                        이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), 프로모션 안내 메일 수신(선택)에 모두 동의합니다.
+                    </label>
+                </p>
+                <br>
+                <p id="2">
+                    <input type="checkbox">
+                    <label>
+                        네이버 이용약관 동의
+                    </label>
+                    <label id="essential">(필수)</label>                 
+                </p>
+                <p>
+                    여러분을 환영합니다.
+                    
+                </p>
+
+
+            </div>
+
+        </div>
+        <footer></footer>
+    </div>
+
+
+
+</body></html>

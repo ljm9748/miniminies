@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE introContent PUBLIC "introContent" "content.dtd">
+<introContent>
+	<!-- 오버뷰 페이지에 기여 -->
+	<extensionContent id="exerd-overview" style="html/universal.css"
+		name="Sample Extension" path="overview/@">
+		<group style-id="content-group" id="exerd.intro.helpgroup">
+			<link label="eXERD 환영 페이지" url="http://org.eclipse.ui.intro/showPage?id=exerdRoot"
+				id="link-exerd-root" style-id="content-link">
+				<text>eXERD의 환영 페이지로 이동합니다. 데모동영상 및 샘플을 볼 수 있습니다.</text>
+			</link>
+			<link label="eXERD 도움말"
+				url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.tomato.exerd.help/html/gettingstarted/newErdFile/newfile.html"
+				id="link-exerd-help" style-id="content-link">
+				<text>eXERD의 기본적인 사용방법을 익힙니다.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+	<!-- 샘플 페이지에 기여 -->
+	<extensionContent id="exerd-samples" style="html/universal.css"
+		name="Sample Extension" path="samples/@">
+		<group style-id="content-group" id="exerd.intro.helpgroup">
+			<link label="eXERD 샘플 ERD 파일" url="http://org.eclipse.ui.intro/showPage?id=exerdExample"
+				id="link-exerd-sample" style-id="content-link">
+				<text>eXERD의 샘플 파일들을 둘러 봅니다.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+
+	<!-- What's new 페이지에 기여 -->
+	<extensionContent id="exerd-whatsnew" style="html/universal.css"
+		path="whatsnew/@">
+		<group style-id="content-group" id="exerd.intro.helpgroup">
+			<link label="eXERD"
+				url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.tomato.exerd.help/html/releaseNotes/releaseNotes.html"
+				style-id="content-link" id="link-exerd-news">
+				<text>eXERD의 최근 또는 이전 업데이트 내역을 확인합니다.</text>
+			</link>
+		</group>
+		<!-- http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.platform.doc.user/gettingStarted/intro/overview.htm -->
+	</extensionContent>
+
+</introContent>
+

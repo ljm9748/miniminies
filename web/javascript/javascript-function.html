@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function</title>
+    <script>
+        // 하이로우 게임 
+        //: 숫자 맞추기 높다 낮다 판별해서 
+        //: 몇번째에 맞추는지 카운팅
+        //: 미션 성공의 조건은 : 10회 이전, 30초 이전에 맞추기
+
+
+
+        var number = Math.random() * 100; // 0~99.0000000
+        number = Math.floor(number);
+
+
+        var count=0;
+
+        while (true) {
+
+            console.log('Random Number :', number);
+
+            var userNumber = prompt('숫자를 입력해주세요.');
+
+            if (userNumber > number) {
+                alert(userNumber + '보다 작습니다.');
+            } else if (userNumber < number) {
+                alert(userNumber + '보다 큽니다.');
+            } else {
+                alert('정답입니다.');
+                break;
+            }
+
+            var countUp = function() {
+                count = count + 1;
+                document.querySelector("#count").innerText = count;
+            };
+
+
+
+        }
+
+
+
+
+
+
+        // 함수 정의: function 함수 이름(매개변수, ...){
+        //              데이터 처리 ... 
+        //              return 데이터;
+        //           }
+
+        function fn() {
+            alert('이름을 명시적으로 정의한 함수');
+        }
+
+        /*변수에 함수를 정의하는 방식에서는 익명함수 형태로 정의*/
+        var func = function() {
+            alert('변수 func에 정의한 함수');
+        }
+
+        // 함수 호출
+        /* fn();
+         func();
+         
+         alert(typeof(fn)+', ' + typeof(func));*/
+
+        // 매개변수가 있는 함수
+        function add(num1, num2) {
+            var result = num1 + num2;
+            return result;
+
+        }
+
+        //alert(add(10, 20));
+
+        function sumAll() {
+            var result = 0;
+            for (var i = 0; i < arguments.lengthl; i++) {
+                result += arguments[i];
+            }
+            return result;
+        }
+
+        alert(sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+
+        /*callback 함수*/
+        function callTenTimes(callback) {
+            for (var i = 0; i < 10; i++) {
+                callback();
+            }
+        }
+
+        function callTimes(callback, num) {
+
+            for (var i = 0; i < num; i++) {
+                callback();
+            }
+        }
+
+        var f1 = function() {
+            console.log('callback function call');
+        }
+
+        function f2() {
+            console.log('f2 call')
+        }
+
+        /*callTenTimes(f1);
+        callTenTimes(f2);
+        
+        callTimes(f1, 3);*/
+
+        var price1 = '1000원';
+        var price2 = '1.5$';
+
+        console.log('prive1 =>', price1);
+        console.log('prive2 =>', price2);
+
+        console.log('prive1 =>', Number(price1));
+        console.log('prive2 =>', Number(price2));
+
+        console.log('prive1 =>', parseInt(price1));
+        console.log('prive2 =>', parseInt(price2));
+
+    </script>
+</head>
+
+<body>
+    <script>
+        // setInterval(): 특정 간격마다 함수를 실행
+        /*1초마다 body에 있는 요소에 객체를 생성함.*/
+        /*var intervalId = setInterval(function(){
+            var html = '<h1>'+new Date()+'</h1>';
+            document.body.innerHTML = html;
+        }, 1000);*/
+
+        /*var jsCode = 'var num3 = 10;';
+        jsCode += 'alert(num3)';
+        
+        eval(jsCode)*/
+        ;
+
+
+        // setTimeout(): 특정 시간이 지나면 함수를 한 번 실행
+        /*setTimeout(function(){
+            clearInterval(intervalId);
+            alert(jsCode);
+            eval(jsCode);
+            
+        }, 10*1000);*/
+
+    </script>
+</body>
+
+</html>

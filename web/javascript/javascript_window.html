@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript_window_object</title>
+
+    <script>
+        // 팝업창
+        // 데이터 출력
+        var output = '';
+        for (var key in window) {
+            output += '[' + key + ']: ' + window[key] + '<br><br>';
+        }
+
+        console.log(window);
+
+        window.onload = function() {
+            //document.body.innerHTML=output; 
+            // 윈도우 생성
+            //window.open();
+            //window.open('http://www.naver.com', 'newWin', 'width=600, height=300', true);
+
+            //var child = window.open('', 'child','width=300, height=200');
+
+            //child.document.write('<h1 onclick="self.close();">From Parent Window</h1>');
+
+            // screen 객체 확인
+            console.log(screen);
+
+            // location 객체 확인
+            console.log(location);
+
+            // 문서객체로 캐스팅
+            // 버튼을 캐스팅
+            document.getElementById('go_naver_btn').onclick =
+                function() {
+
+                    // 캐스팅
+                    var userid = document.querySelector('#userid');
+                    
+                    var uid = userid.value;
+                
+                    if (uid.length < 1) {
+                        alert('아이디는 필수 입력항목 입니다.');
+                    } else{
+                        alert('사용자가 입력한 아이디는 ' + userid.value + '입니다.');
+                    };
+                    
+                    // 다시 20.11.30
+                    var alink = document.querySelector('a');
+                    alink.style.display='block';
+                    alink.style.backgroundColor='green';
+                    alink.sytle.fontSize=32;
+                    alink.style.color='lightgray';
+                    alink.sytle.fontWeight='bold';
+                    alink.style.textAlign='center';
+
+                    // confirm -> 확인하는 페이지 
+                    /*if(confirm('네이버 페이지로 이동하시겠습니까?'));{
+                       location.href='http://www.naver.com'; 
+                    } */
+                };
+            // 삭제버튼 : 이벤트 설정
+            document.querySelector('input[type=submit]').onclick = function(){
+                
+                
+                
+                // 삭제 대상
+                var remove_h1 = documnet.getElementById('header-1');
+            
+                // 삭제 대상을 포함하는 문서객체
+                var parent = document.body;
+                
+                // 삭제 대상의 위치
+               parent.removeChild(remove_h1);
+            
+            };
+            
+            
+            // navigator 객체 속성 확인
+            console.log(navigator);
+
+            // html 문서의 요소를 문서객체로 만들기
+            // id 속성값으로 문서 객체 생성:  캐스팅
+            // document.getEleementById('아이디 속성값');
+
+            var header1 = document.getElementById('header-1');
+            var header2 = document.getElementById('header-2');
+
+            header1.innerHTML = '<i>문서 객체 생성</i>';
+            header2.textContent = '<i>문서 객체 생성</i>';
+
+            // 태그 이름으로 문서 객체 생성 -> 배열로 반환
+            var divs = document.getElementsByTagName('div');
+
+            divs[0].innerHTML = 'ByTagName-0';
+            /*divs[0].style.backgroundColor='gray';
+            divs[0].style.color='white';*/
+            
+            divs[1].innerHTML = 'ByTagName-1';
+
+            // CSS의 선택자로 선택할 수 있는 메소드
+
+            var div1 = document.querySelector('div');
+            //alert(div1.innerHTML);
+
+            var divs = document.querySelector.('div');
+            alert(divs[0].innerHTML+ ': querySelectorAll');
+            
+
+            var input = document.querySelector('input[type=button]');
+
+            
+
+
+
+
+            alert(input.val);
+
+            input = document.querySelector('input[type=text]');
+            alert(input.value);
+        };
+    </script>
+    <style>
+        a{
+            display: green;
+        }
+    
+    </style>
+
+
+</head>
+
+<body>
+
+    <div id="header-1">1</div>
+    <div id="header-2">2</div>
+
+    <input type="text" value="test" id="userid"><br>
+
+    <br>
+    <input type="button" value="네이버로 이동" id="go_naver_btn">
+    <a href="http://www.naver.com">네이버로 이동</a>
+    
+    <br>
+    <br>
+    <input type="submit" value="H1-0 삭제">
+
+</body></html>

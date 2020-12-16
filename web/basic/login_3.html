@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page_3</title>
+        <style>
+            table {
+                background-color: floralwhite;
+            }
+        </style>
+    </head>
+
+    <body>
+        <hr>
+        <h4>회원가입</h4>
+        <form action="#" method="get">
+            <table border="1">
+                <ul>
+                    <tr>
+
+                        <td><label for="username">이 름</label></td>
+                        <td><input type="text" id="username" name="username"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="id">ID</label></td>
+                        <td><input type="text" id="id" name="id"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="pw">비밀번호</label></td>
+                        <td> <input type="password" id="pw" name="pw"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="pwchk">비밀번호 확인</label></td>
+                        <td><input type="password" id="pwchk" name="pwchk"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="birthday">주민등록번호</label></td>
+                        <td><input type="number" id="birthday" name="birthday">-<input type="password" name="renumber"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="job">직 업</label></td>
+                        <td>
+                            <select id="job" name="job">
+                                <option value="학생">직업명</option>
+                                <option value="학생">학생</option>
+                                <option value="의사">의사</option>
+                                <option value="변호사">변호사</option>
+                                <option value="학생">가수</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td>성 별</td>
+                        <td>
+                            <input type="radio" id="M" name="gender">
+                            <label for="M">남</label>
+                            <input type="radio" id="F" name="gender">
+                            <label for="F">여</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>취 미</td>
+                        <td>
+
+                            <input type="checkbox" id="book" name="hobby">
+                            <label for="book">독서</label>
+                            <input type="checkbox" id="drive" name="hobby">
+                            <label for="drive">드라이브</label>
+                            <input type="checkbox" id="movie" name="hobby">
+                            <label for="movie">영화</label>
+                            <input type="checkbox" id="concert" name="hobby">
+                            <label for="concert">콘서트</label>
+                            <input type="checkbox" id="shopping" name="hobby">
+                            <label for="shopping">쇼핑</label>
+                            <input type="checkbox" id="park" name="hobby">
+                            <label for="park">놀이동산</label>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td><label for="introduce">자기소개</label> </td>
+                        <td><input type="text" id="introduce" name="introduce"></td>
+                    </tr>
+                </ul>
+                <tr>
+                    <td colspan="2"><input type="submit" value="가입완료">
+                        <input type="reset" value="취 소">
+                    </td>
+
+
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>

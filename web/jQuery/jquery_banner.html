@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 이미지</title>
+    <!--jqeury library load-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  
+    
+    <script>
+        $(document).ready(function(){
+            
+            setInterval(function(){
+                $('img').first().appendTo('div');  
+            }, 4000);           
+        });
+    
+    
+    
+    </script>
+    <style>
+        img {
+            width: 150px;
+            height: 150px;
+        }
+        
+        div{
+            width:  150px;
+            height: 150px;
+            
+            border: 2px solid #ddd;
+            
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <img src="../img1.png">
+        <img src="../img2.jpg">
+        <img src="../img/cat3.jpg">
+        <img src="../img/cat4.jpg">
+    </div>
+</body></html>

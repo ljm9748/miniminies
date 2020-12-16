@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1605590882375" transient="false" version="3.0">
+<site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
+<feature id="com.tomato.exerd.feature" plugin-identifier="com.tomato.exerd.core" url="features/com.tomato.exerd.feature_3.3.7.20200914-1426/" version="3.3.7.20200914-1426">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ko" url="features/org.eclipse.babel.nls_eclipse_ko_3.4.0.v20101211020322/" version="3.4.0.v20101211020322">
+</feature>
+</site>
+</config>

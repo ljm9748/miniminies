@@ -1,0 +1,35 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: 7qo6TmmyzD0zTbCtmtuouqF6g6A=
+Created-By: 1.5.0 (IBM Corporation)
+SHA1-Digest-Manifest-Main-Attributes: JMn292eaGrfF5952kPRe8jSuAbU=
+
+Name: lib/aspectjrt-1.2.1.jar
+SHA1-Digest: Z1hqyA6kecYVB0vK9VKcPzyWK4A=
+
+Name: lib/commons-httpclient-2.0.2.jar
+SHA1-Digest: Ez1AirjNDldZYedc4pCL+OJBMus=
+
+Name: lib/junit-3.8.1.jar
+SHA1-Digest: 2oVDTkZE81/usqEzy1aQhmmPHec=
+
+Name: about_files/LICENSE-2.0.txt
+SHA1-Digest: DMnZPrY7w/ZEOj0YI/l8KoozuvM=
+
+Name: plugin.properties
+SHA1-Digest: l3PnxAujPoEsAI5I4CgKI+gfahc=
+
+Name: about.html
+SHA1-Digest: Nf9HrNmCFahdactBvy9LUH/sXTA=
+
+Name: about_files/cpl-v10.html
+SHA1-Digest: YZUV+BFnw6XLRdU0eCv1FYdy8cQ=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: SAqY+5ITAL0mkdYeijlSRhyIaZk=
+
+Name: lib/cactus-1.7.2.jar
+SHA1-Digest: Pfj3xCstUZCrTtHhpt5JLZsMvkE=
+
+Name: lib/commons-logging-1.0.4.jar
+SHA1-Digest: BTpMA57LeDyoakVfBUfnbM5mLMY=
+

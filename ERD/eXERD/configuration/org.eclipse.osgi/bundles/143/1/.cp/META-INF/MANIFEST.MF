@@ -1,0 +1,206 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.tomato.exerd.intro
+Bundle-SymbolicName: com.tomato.exerd.intro;singleton:=true
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.ui
+ .intro,org.eclipse.core.resources;bundle-version="3.4.1",org.eclipse.
+ ui.ide;bundle-version="3.4.1",com.tomato.exerd.library;bundle-version
+ =3.3.7,org.eclipse.core.expressions
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Tomato System
+Ant-Version: Apache Ant 1.10.5
+Bundle-Name: Intro
+Bundle-Version: 3.3.7.20200914-1426
+Bundle-Activator: com.tomato.exerd.intro.Activator
+Created-By: 1.8.0_60-b27 (Oracle Corporation)
+
+Name: plugin.xml
+SHA1-Digest: qeMjCbpZjWPyR5X9ri/utP+N2dY=
+
+Name: com/tomato/exerd/intro/HelloExerdAction.class
+SHA1-Digest: /bKuJhUllr2sChqs1w3maw0k8b8=
+
+Name: nl/ko/content/overview.xml
+SHA1-Digest: PxCJbUCrJuQKQQyKWREb2lu+eDc=
+
+Name: content/html/images/pos.png
+SHA1-Digest: LQFx+jzzUGyYAZwIt0/Q8E4XPes=
+
+Name: content/html/images/play.png
+SHA1-Digest: Eq5cgIEf1dH0S7J4dsBOt5wJVBI=
+
+Name: nl/ko/content/html/images/intro.gif
+SHA1-Digest: rcnY2udJZosB71vKROuWKE20kFc=
+
+Name: nl/ja/examples/study.zip
+SHA1-Digest: 7cohjHVazBqx6H7ik7IWcxlWouA=
+
+Name: nl/ja/examples/pos.zip
+SHA1-Digest: sMzmlp0iXvc3DspHXd40pc7dHy0=
+
+Name: nl/ko/content/html/images/shadow.jpg
+SHA1-Digest: qSq19kIWq9MNgoGC6gql90i2IdM=
+
+Name: nl/ko/content/html/images/exerd-help.png
+SHA1-Digest: gRy7mRfr4kyRStSjP0gFlb1yO/U=
+
+Name: build.properties
+SHA1-Digest: VL8QoMepAZ0k6fQOEiZtWnarFn4=
+
+Name: content/content.dtd
+SHA1-Digest: 744PU3MYmcAbgIuUTcWvMKtR53Q=
+
+Name: content/html/shared.css
+SHA1-Digest: 4aYFwkSf1vTD8BW5TH829R6Tzxg=
+
+Name: content/html/images/public.png
+SHA1-Digest: zHcuFbU3POmXbzDowiG46RFIEBo=
+
+Name: OSGI-INF/l10n/bundle_ja.properties
+SHA1-Digest: EXl6fo+CnEVjwXTqXUyUoeOzlkk=
+
+Name: nl/ko/content/rcp-intro.xml
+SHA1-Digest: EDAKoDW1LtG71PPLNPH4r7guwQ8=
+
+Name: nl/ko/content/html/images/back.png
+SHA1-Digest: ta+C48hLaNykeCg8L8PYCVkkdrM=
+
+Name: content/html/standby.html
+SHA1-Digest: D7/DgMeSMi5gMlSCTIYDGXtk4IE=
+
+Name: content/html/universal.css
+SHA1-Digest: WnqLuH+Lq9FGUTAL6/E8tqb26Lw=
+
+Name: com/tomato/exerd/intro/LocaleTester.class
+SHA1-Digest: W/S/RlZbrkkagNYcvii6+mjMdPI=
+
+Name: content/html/images/help.png
+SHA1-Digest: wTAXsnLjifvHQq01wK/EtegekTE=
+
+Name: nl/ko/content/html/images/news.png
+SHA1-Digest: 6C26wClzVsiEDD9cBEh3KN4Dy+4=
+
+Name: content/html/images/background.jpg
+SHA1-Digest: OTGT2WHVDenHy4l3ZpbCg6FTQ3Q=
+
+Name: nl/ko/content/html/images/pos.png
+SHA1-Digest: LQFx+jzzUGyYAZwIt0/Q8E4XPes=
+
+Name: examples/public.zip
+SHA1-Digest: 4EhcubIMzq+DUtaYWgpp43nwMIE=
+
+Name: icons/16.gif
+SHA1-Digest: z61sOh8jBLXSPgvzSsqAqFrkFcw=
+
+Name: OSGI-INF/l10n/bundle.properties
+SHA1-Digest: 8nOXUfJOfIGESVpaSVTanXYh0qE=
+
+Name: content/html/example.html
+SHA1-Digest: mYUsKJiDXcvKNcjt1wOhSWnJ580=
+
+Name: content/html/images/intro.gif
+SHA1-Digest: rcnY2udJZosB71vKROuWKE20kFc=
+
+Name: content/html/images/exerd-help.png
+SHA1-Digest: gRy7mRfr4kyRStSjP0gFlb1yO/U=
+
+Name: content/html/images/back.png
+SHA1-Digest: ta+C48hLaNykeCg8L8PYCVkkdrM=
+
+Name: content/html/root.html
+SHA1-Digest: CFOmXZKmDyUzKFKUuut4wnWcboI=
+
+Name: examples/pos.zip
+SHA1-Digest: sgk8wA731KF8SymTYLAj/Wj7QiA=
+
+Name: nl/ko/content/html/universal.css
+SHA1-Digest: WnqLuH+Lq9FGUTAL6/E8tqb26Lw=
+
+Name: content/html/images/shadow.jpg
+SHA1-Digest: qSq19kIWq9MNgoGC6gql90i2IdM=
+
+Name: nl/ko/content/html/shared.css
+SHA1-Digest: 4aYFwkSf1vTD8BW5TH829R6Tzxg=
+
+Name: content/rcp-intro.xml
+SHA1-Digest: EDAKoDW1LtG71PPLNPH4r7guwQ8=
+
+Name: nl/ko/content/content.dtd
+SHA1-Digest: 744PU3MYmcAbgIuUTcWvMKtR53Q=
+
+Name: com/tomato/exerd/intro/Activator.class
+SHA1-Digest: mQrM8kBD7hnfeTODORLVegZjy6w=
+
+Name: nl/ko/content/html/standby.html
+SHA1-Digest: VZf7wgMBm2h/gBsF3O/OwyJnb1k=
+
+Name: nl/ko/content/html/images/public.png
+SHA1-Digest: zHcuFbU3POmXbzDowiG46RFIEBo=
+
+Name: examples/study.zip
+SHA1-Digest: WjpFCQDKDtyyRuKtOLAC2Ep4Tz0=
+
+Name: icons/pos.png
+SHA1-Digest: XLRA9Ycc8SChsev8EW5VAuDYj5w=
+
+Name: nl/ko/examples/study.zip
+SHA1-Digest: FapE3ex5yWfyaqDPtVOqh8Kz/Dk=
+
+Name: nl/ko/content/html/images/example.png
+SHA1-Digest: 3xajPh9kDIhtj1+G5dtCPbEuc4U=
+
+Name: icons/public.png
+SHA1-Digest: eeNxzXIWd/iqLdBUFS68B50VzO4=
+
+Name: nl/ko/content/html/images/logo.png
+SHA1-Digest: 7AAaAg7YG9BS751OGL920e/p9AQ=
+
+Name: icons/student.gif
+SHA1-Digest: o//6pdP06JM9pYX7Ci/b40UMvAc=
+
+Name: nl/ko/examples/pos.zip
+SHA1-Digest: cLMb+r7cU/XvR6S9icWHykCC/dE=
+
+Name: content/overview.xml
+SHA1-Digest: o9adL/+tpb8rqwe2iOEDVCxolck=
+
+Name: nl/ko/content/html/images/play.png
+SHA1-Digest: Eq5cgIEf1dH0S7J4dsBOt5wJVBI=
+
+Name: nl/ko/content/html/root.html
+SHA1-Digest: g7x4oXeVXj6RPFJKySQlSwhIdvk=
+
+Name: OSGI-INF/l10n/bundle_ko.properties
+SHA1-Digest: kEdclC5sF5UZ8JP/rfemLd5JxV4=
+
+Name: nl/ko/content/html/images/student.png
+SHA1-Digest: xkKnbYs/r5guQYoagWf5J66GNfY=
+
+Name: content/html/images/example.png
+SHA1-Digest: 3xajPh9kDIhtj1+G5dtCPbEuc4U=
+
+Name: nl/ko/examples/public.zip
+SHA1-Digest: 4EhcubIMzq+DUtaYWgpp43nwMIE=
+
+Name: content/html/images/news.png
+SHA1-Digest: 6C26wClzVsiEDD9cBEh3KN4Dy+4=
+
+Name: com/tomato/exerd/intro/ShowSampleHandler.class
+SHA1-Digest: 1nmPxm1KKnC3SoF36p4NQbk5HZE=
+
+Name: content/html/images/logo.png
+SHA1-Digest: 7AAaAg7YG9BS751OGL920e/p9AQ=
+
+Name: nl/ko/content/html/images/background.jpg
+SHA1-Digest: OTGT2WHVDenHy4l3ZpbCg6FTQ3Q=
+
+Name: nl/ko/content/html/example.html
+SHA1-Digest: aHoBLXhR+nvuAxjPV/3LEOb+RI4=
+
+Name: nl/ko/content/html/images/help.png
+SHA1-Digest: wTAXsnLjifvHQq01wK/EtegekTE=
+
+Name: content/html/images/student.png
+SHA1-Digest: xkKnbYs/r5guQYoagWf5J66GNfY=
+

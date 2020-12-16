@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!ELEMENT introContent ((page | group)+ | (extensionContent | replacementContent))+ >
+<!ELEMENT page (group | link | text | head | img | include | html | title | anchor | contentProvider)*>
+<!ATTLIST page
+id           CDATA #REQUIRED
+url          CDATA #IMPLIED
+style        CDATA #IMPLIED
+alt-style    CDATA #IMPLIED
+filteredFrom (swt|html) #IMPLIED
+content      CDATA #IMPLIED
+style-id     CDATA #IMPLIED
+shared-style (true | false) "true"
+bgImage      CDATA #IMPLIED>
+
+<!ELEMENT group (group | link | text | img | include | html | anchor | contentProvider)*>
+<!ATTLIST group
+id           CDATA #REQUIRED
+label        CDATA #IMPLIED
+style-id     CDATA #IMPLIED
+filteredFrom (swt|html) #IMPLIED
+computed     (true | false) "false"
+bgImage      CDATA #IMPLIED
+expandable   (true | false) "false"
+expanded     (true | false) "false">
+
+<!ELEMENT head (#PCDATA)>
+<!ATTLIST head
+src      CDATA #REQUIRED
+encoding CDATA #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title
+id           CDATA #IMPLIED
+style-id     CDATA #IMPLIED
+filteredFrom (swt|html) #IMPLIED>
+
+<!ELEMENT link (text? , img?)>
+<!ATTLIST link
+url          CDATA #REQUIRED
+id           CDATA #IMPLIED
+label        CDATA #IMPLIED
+style-id     CDATA #IMPLIED
+filteredFrom (swt|html) #IMPLIED>
+
+<!ELEMENT text (#PCDATA)>
+<!ATTLIST text
+id           CDATA #IMPLIED
+style-id     CDATA #IMPLIED
+filteredFrom (swt|html) #IMPLIED>
+
+<!ELEMENT img EMPTY>
+<!ATTLIST img
+src          CDATA #REQUIRED
+id           CDATA #IMPLIED
+alt          CDATA #IMPLIED
+style-id     CDATA #IMPLIED
+filteredFrom (swt|html) #IMPLIED >
+
+<!ELEMENT html (img | text | EMPTY)>
+<!ATTLIST html
+id           CDATA #REQUIRED
+src          CDATA #REQUIRED
+type         (inline|embed) #IMPLIED
+style-id     CDATA #IMPLIED
+filteredFrom (swt|html) #IMPLIED
+encoding     CDATA #IMPLIED>
+
+<!ELEMENT include EMPTY>
+<!ATTLIST include
+path        CDATA #REQUIRED
+configId    CDATA #IMPLIED
+merge-style (true | false) "false" >
+
+<!ELEMENT anchor EMPTY>
+<!ATTLIST anchor
+id CDATA #REQUIRED>
+
+<!ELEMENT extensionContent (text | group | link | html | include)+>
+<!ATTLIST extensionContent
+path      CDATA #REQUIRED
+style     CDATA #IMPLIED
+alt-style CDATA #IMPLIED
+content   CDATA #IMPLIED
+id        CDATA #IMPLIED
+name      CDATA #IMPLIED>
+
+<!ELEMENT replacementContent (text | group | link | html | include)+>
+<!ATTLIST replacementContent
+path      CDATA #REQUIRED
+style     CDATA #IMPLIED
+alt-style CDATA #IMPLIED
+content   CDATA #IMPLIED>
+
+<!ELEMENT contentProvider (text?)>
+<!ATTLIST contentProvider
+id       CDATA #REQUIRED
+class    CDATA #REQUIRED
+pluginId CDATA #IMPLIED>
+
+<!ELEMENT hr EMPTY>
+<!ATTLIST hr
+id           CDATA #IMPLIED
+style-id     CDATA #IMPLIED
+filteredFrom (swt|html) #IMPLIED>

@@ -1,0 +1,165 @@
+* {
+    font-family: 'Do Hyeon', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: beige;
+}
+
+/*main_wrap*/
+#main_wrap {
+    width: 800px;
+    /*height: 800px;*/
+
+    background-color: #FFF;
+
+    margin: 20px auto;
+
+    border: 1px solid #DDD;
+    border-radius: 5px;
+
+    box-shadow: 3px 3px 5px #DDD;
+
+    padding: 10px;
+
+}
+
+/*해더*/
+header {
+    /*border: 1px solid;*/
+    /*padding: 상하 좌우;*/
+    padding: 20px 50px;
+}
+
+/*네비게이션*/
+nav {
+    border-top: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
+    overflow: hidden;
+}
+
+nav > ul {
+    float: left;
+    overflow: hidden;
+    /*점 스타일*/
+    list-style: none;
+}
+
+nav > ul > li {
+    float: left;
+    /*width: 50px;*/
+    height: 30px;
+    /*padding: 상하 좌우*/
+    padding: 0 15px;
+    /*수직방향 정렬*/
+    line-height: 30px;
+    /*가운데 정렬*/
+    text-align: center;
+}
+
+/*커서를 포인터로 변경*/
+nav > ul > li:hover {
+    cursor: pointer;
+    background-color: burlywood;
+    color: brown;
+}
+
+nav > form {
+    float: right;
+    margin-right: 10px;
+}
+
+nav > form > input[type=button] {
+    /*텍스트 입력창과 검색 버튼을 붙임.*/
+    margin-left: -1px;
+    width: 40px;
+    border-radius: 0 10px 10px 0;
+
+}
+
+nav > form > input[type=text] {
+    border-radius: 10px 0 0 10px;
+    /*padding값을 주면 좌우 여백이 생김*/
+    padding: 0 5px;
+}
+
+nav > form > input {
+    border: 1px solid #AAA;
+    margin-top: 5px;
+}
+
+/*contents_wrap*/
+#contents_wrap {
+    overflow: hidden;
+}
+
+/*content*/
+#content {
+    /*border: 1px solid;*/
+    width: 595px;
+    /*height: 300px;*/
+    float: left;
+
+    padding: 5px;
+}
+
+#content > section > article > h1 {
+    color: chocolate;
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+#content > section > article > img {
+    height: 150px;
+    margin: 10px 0;
+}
+
+#content > section > article > hr {
+    /*실선 하나만 표현*/
+    border:  0;
+    border-top: 1px solid #AAA;
+    margin: 10px 0;
+}
+
+/*aside*/
+#contents_wrap > aside {
+    /*border: 1px solid;*/
+    width: 190px;
+    float: right;
+    /*height: 100px;*/
+}
+
+#contents_wrap > aside >h4{
+    margin-top: 30px;
+}
+
+#contents_wrap > aside>ul{
+    list-style: none;
+    padding-left: 10px;
+    color: gray;
+}
+
+/*카테고리의 최근 글의 데이터*/
+#contents_wrap > aside>h4+div{
+    padding-left: 10px;    
+}
+
+/*footer*/
+footer {
+   /* border: 1px solid;*/
+    padding: 5px;
+    font-style: italic;
+    /*정렬*/
+    text-align: center;
+    color: #999; 
+    line-height: 40px;
+    background-color: #eee;
+}
+
+footer>img{
+    width: 50px;
+    /*display: block;*/
+    text-align: center;    
+}

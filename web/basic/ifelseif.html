@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        var userData = prompt('숫자를 입력해주세요.');
+        
+        
+        if(userData>0){
+            // number가 String 타입이지만 비교 연산에는 숫자 연산이 우선된다.
+            // 숫자 타입으로 변경되어 연산
+            console.log(userData+'는 양수입니다.');
+        }else if(userData<0){
+            console.log(userData+'는 음수입니다.');
+        }else if(userData==0){
+            console.log(userData+'는 0입니다.');
+        } ;
+        
+        if(userData%2==0 && userData>0 ){
+            console.log(userData+'는 짝수입니다.')
+        }else if(userData%2==1&& userData>0){
+            console.log(userData+'는 홀수입니다.')
+        } else if(userData==0){
+            
+        };
+        
+        
+        
+        //
+        if(!userData){
+            alert('숫자만 확인이 가능합니다.');
+        } else if(userData%==0){
+            alert('짝수');
+        } else{
+            alert('홀수');
+        };
+    
+    </script>
+    
+</head>
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+   
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>css_layoutpractice</title>
+    <!---->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            overflow: hidden;
+
+        }
+
+        body {
+            border: 5px solid lightgray;
+
+        }
+
+        div {
+
+            text-align: left;
+            line-height: 20px;
+        }
+    </style>
+    
+    <!--HEADER-->
+    <style>
+        /*HTML5 Example Preview*/
+        #header {
+            width: 498px;
+            height: 30px;
+            margin: 30px;
+        }
+
+        /*한빛아카데미*/
+        #header>div {
+            font-size: 10px;
+        }
+
+        #navi {
+            width: 498px;
+            height: 20px;
+
+            margin: 5px;
+
+            line-height: 20px;
+        }
+    </style>
+    
+    <!--NAVIGATION-->
+    <style>
+        /*HTML5 CSS3 JavaScript*/
+        #nav>li {
+            border: 0;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            font-size: 10px;
+            font-weight: bold;
+
+            float: left;
+            padding: 0 10px
+        }
+
+        /*검색창*/
+        #nav>div>input[type=submit] {
+            float: right;
+            line-height: 20px;
+            border-radius: 0 10px 10px 0;
+            
+        }
+        
+        #nav>div>input[type=text] {
+            float: right;
+            line-height: 20px;
+            border-radius: 10px 0 0 10px;
+            
+        }
+        
+        
+    </style>
+    
+    <!--CONTENT-->
+    <style>
+        /*content*/
+        #content {
+            /*왼쪽: 350, 오른쪽: 150*/
+            width: 348px;
+            height: 900px;
+            float: left;
+            
+        }
+
+        /*HTML5 개요와 활용*/
+        #content>h3 {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        /*2020년 11월 24일*/
+        #content>div {
+            font-size: 5px;
+            margin: 10px;
+        }
+
+        /*img*/
+        #content>img {
+            width: 230px;
+            height: 80px;
+        }
+
+        /*p*/
+        #content>p {
+            font-size: 5px;
+            margin: 10px;
+            line-height: 140%;
+        }
+    </style>
+    <!--ASIDE-->
+    <style>
+        /*aside*/
+        #aside {
+            /*왼쪽: 350, 오른쪽: 150*/
+            width: 148px;
+            height: 200px;
+            
+            padding: 10px;
+            
+           
+            float: left;
+        }
+        
+        #aside>ul>h4{
+            font-size: 10px;
+            font-weight: bolder;
+        }
+        
+        #aside>ul>li{
+            font-size: 5px;
+            color: gray;            
+            font-weight: lighter;
+            
+            padding: 5px;
+            line-height: 50%;
+            
+            list-style: none;
+        }
+    </style>
+    
+    <!--FOOTER-->
+    <style>
+        #footer {
+            clear: both;
+            width: 500px;
+            
+            font-size: 10px;
+            color: gray;
+            font-style: italic;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="header">
+        <h3>HTML5 Example Preview</h3>
+        <div id="h">한빛아카데미</div>
+    </div>
+    <hr>
+    <div id="navi">
+        <ul id="nav">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <div><input type="submit" value="검색"><input type="text"></div>
+
+        </ul>
+    </div>
+    <hr>
+    <div id="content">
+        <h3>고양이의 특징1</h3>
+        <div id="d">2020년 11월 24일</div>
+        <img src="img1.png" height="40">
+        <p>
+           고양이의 몸길이는 보통 30∼60cm이고, 꼬리길이 22∼38cm, 몸높이 25~28㎝, 몸무게는 2~3㎏ 나가는 소형에서 7.5∼8.5kg까지 나가는 대형에 이르기까지 다양하다. 꼬리가 없거나 아주 짧은 것도 있다. 귓바퀴는 삼각형이고, 귀 뒤쪽에 살쾡이에서 볼 수 있는 흰 무늬는 없다. 앞발에 다섯 발가락, 뒷발에 네 발가락이 있으며, 예리한 발톱이 있는데, 발톱은 속에 감출 수 있다. 앞뒷발의 발바닥은 두툼한 살로 이루어져 있는데, 매우 유연하고 탄력적이므로 소리를 내지 않고 걸을 수 있으며, 뒷발이 비교적 길어서 도약력(跳躍力)이 뛰어나다.
+
+        </p>
+
+        <br>
+        <hr>
+
+        <h3>고양이의 특징2</h3>
+        <div id="d">2020년 11월 25일</div>
+        <img src="img2.jpg" height="40">
+        <p>
+            
+            눈의 동공은 어두운 곳에서는 원형이나 밝은 데서는 침 모양으로 바뀐다. 입 주위·턱밑·윗입술·뺨·눈위에 감각이 예민한 긴 수염(감각모)이 있다. 몸빛깔은 흑색·백색·갈색·회색·오렌지색 등 여러 가지이며, 기본적인 무늬에는 호랑이와 같은 가로무늬가 있는 것과, 배 쪽에 큰 테가 있는 것 등 두 가지가 있다. 고양이과의 다른 동물과 마찬가지로 고기를 물어뜯을 수 있는 예리하고 날카로운 송곳니가 있다. 또 혓바닥에는 많은 가시돌기가 있어 먹이의 뼈나 가시를 발라 먹을 수 있고, 스스로 털을 고를 수도 있다.
+            [네이버 지식백과] 고양이의 형태 (두산백과)
+        </p>
+
+    </div>
+    <div id="aside">
+        <ul id="asi1">
+            <h4>카테고리</h4>
+            <li>데이터</li>
+            <li>데이터</li>
+            <li>데
+                
+                
+                bi
+                이터</li>
+            <li>데이터</li>
+            <li>데이터</li>
+        </ul>
+        <ul id="asi2"> 
+            <h4>최근 글</h4>
+            <li>데이터</li>
+            <li>데이터</li>
+            <li>데이터</li>
+            <li>데이터</li>
+
+        </ul>
+    </div>
+
+    <div id="footer">
+        <hr>Create By JeongSuin
+    </div>
+
+</body></html>

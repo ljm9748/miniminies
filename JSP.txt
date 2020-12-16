@@ -1,0 +1,35 @@
+#20.12.14
+bin: 실행폴더
+conf: 설정폴더
+lib:
+logs: 로고 파일
+webapps: 경로 파일 - ROOT: 경로 없이 실행
+
+
+// WebModul
+Context root: 콘텐트 경로
+Content directory: 프로젝트 내부에서 사용하는 폴더 이름
+
+Generate web.sml: 현재 프로젝트의 설정
+
+web.xml: 현재 프로젝트의 설정 파일 15:05
+
+http://localhost:8080/
+
+프로토콜정보, 호스트 정보, 포트정보 까지만
+파일의 이름을 명시하지 않은 경우
+
+web.xml 파일의
+welcome-file-list 에 저의된 파일을 찾는다.
+순서대로 찾는다.
+존재하는 파일이 있으면 해당 파일을 응답으로 사용한다.
+
+///
+JSP/servlet 실행할 수 있는 환경 설정
+1. JDK
+2. Tomcat: 설정 과정 정리 (버전 구별, 압축 후 실행 과정)
+3. 이클립스: 
+	1) 서버 설정 
+	2) 프로젝트 생성
+	3) jsp 파일 생성-> 실행 과정 
+	4) servlet 클래스 생성 -> web.xml 등록 -> 실행

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript form validation</title>
+    <script>
+        window.onload = function(){
+            document.querySelector('#myform').onsubmit = function(){
+                //alert('유효성 검사'); 
+                
+                //return false;
+                
+                // 캐스팅
+                var userid = document.querySelector('#userid');
+                var pw = document.getElementById('pw');
+                var pwcheck = document.getElementById('pw-check');
+                var username = document.querySelector('#username');
+                
+                // 유효성 검사1: 공백 여부 확인(공백이 없어야 한다.)
+                if(userid.value.trim().length<1){
+                    alert('필수로 입력해야 합니다. 다시 확인하쇼.')
+                    userid.value='';
+                    userid.focus();
+                    return false;
+                }
+                
+                if(pw.value.trim()<1){
+                    alert('비밀번호는 필수 항목임.');
+                    pw.value='';
+                    pw.focus();
+                    return false;
+                }
+                
+                // pw == pwcheck
+                if(pw-check.value.trim()<1 || pw.value!=pwcheck.value){
+                    alert('비밀번호 입력 후 확인을 눌러 체크하셈');
+                    pwcheck.value='';
+                    pwcheck.focus();
+                    return false;
+                }
+                
+                if(username.value.trim()<1){
+                    alert('이름항목은 필수 항목임.');
+                    username.value='';
+                    username.focus();
+                    return false;
+                }
+            };
+            
+        };
+        
+    </script>
+    
+</head>
+
+<body>
+    
+    <h1>회원가입</h1>
+    <hr>
+    <form id="myform" action="http://www.naver.com">
+        <table>
+            <tr>
+                <td><label for="userid">아이디(이메일)</label></td>
+                <td><input type="text" name="userid" id="userid"></td>
+            </tr>
+            <tr>
+                <td><label for="pw">비밀번호</label></td>
+                <td><input type="password" name="pw" id="pw"></td>
+            </tr>
+            <tr>
+                <!--name은 서버 전달용-->
+                <td><label for="pwcheck">비밀번호 확인</label></td>
+                <td><input type="password" id="pw-check"></td>
+            </tr>
+            <tr>
+                <td><label for="username">이름</label></td>
+                <td><input type="text" name="username" id="username"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="가입"><input type="reset"></td>
+            </tr>
+        </table>
+    
+    </form>
+    
+    
+</body>
+</html>

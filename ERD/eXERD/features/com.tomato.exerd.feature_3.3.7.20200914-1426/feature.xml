@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.tomato.exerd.feature"
+      label="eXERD Modeler"
+      version="3.3.7.20200914-1426"
+      provider-name="Tomato System"
+      plugin="com.tomato.exerd.core"
+      os="linux,macosx,win32"
+      ws="cocoa,gtk,win32"
+      arch="x86,x86_64">
+
+   <description url="http://exerd.com">
+      %description
+   </description>
+
+   <copyright url="http://exerd.com">
+      %copyright
+   </copyright>
+
+   <license url="http://exerd.com/#license">
+      %license
+   </license>
+
+   <url>
+      <update label="eXERD update site" url="http://exerd.com/update/3.x"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gef" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help" version="3.3.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.edit" version="2.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.forms" version="3.3.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.console" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.search" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.draw2d" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding" version="1.1.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.beans" version="1.1.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.databinding" version="1.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.emf.common.ui" version="2.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.compare" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.intro"/>
+   </requires>
+
+   <plugin
+         id="com.tomato.devkit"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.connection"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.core"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.modelview"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.oracle10g"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.reverse"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.forward"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.gefviewers"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.library"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.term.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.help"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.term.ui"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.validator"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.intro"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.sqlserver.core"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.sqlserver.forward"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.sqlserver.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.sqlserver.propertypage"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.sqlserver.library"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.diff"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.sqlserver.validator"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.erwin"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.db2.core"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.db2.forward"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.db2.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.db2.propertypage"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.mysql"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.annotations"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.xscript"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.export.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.postgresql"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.mysql.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.oracle.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.postgresql.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.model.ui"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.library.ui"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.devkit.ui"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+   <plugin
+         id="com.tomato.exerd.product.tibero"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+   
+   <plugin
+         id="com.tomato.exerd.product.cubrid"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+         
+         
+   <plugin
+         id="com.tomato.exerd.product.cubrid.model"
+         download-size="0"
+         install-size="0"
+         version="3.3.7.20200914-1426"
+         unpack="false"/>
+
+</feature>
